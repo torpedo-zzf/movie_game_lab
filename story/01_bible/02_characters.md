@@ -41,7 +41,7 @@
 | 标志物 | 右手虎口烫伤；腰间黄铜钥匙串；左手无名指旧戒痕 |
 | 表情 / 体态基线 | 笑时嘴角先动、眼睛不动；说话慢、音量低；习惯用身体堵住门框；右手常插兜或攥钥匙；不提高嗓门 |
 | 禁止漂移项 | 寸头长度；左眼下痣；右手虎口疤；夹克左袖磨白；不戴眼镜；胡茬保持青灰、不刮净；不换夹克 |
-| 锚定资产 | `assets/frames/anchors/zhou_qiming_anchor.png`（正面半身，中性灰背景；seed 20261124） |
+| 锚定资产 | `assets/frames/character_refs/周启明/default/front-full.v1.png`（2:3 白底正面全身，锚点已确认；seed 20261124；另有 face-front / side-full / back-full） |
 
 **角色描述块（中，逐字复用）**：周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，右手虎口有烫伤疤，腰间挂黄铜钥匙串。
 
@@ -109,11 +109,11 @@
 | 角色 | 锚定图路径 | 状态 | seed / 工作流 |
 |---|---|---|---|
 | 沈砚 | `assets/frames/anchors/shen_yan_anchor.png` | 已生成，待抽检 | seed 20261121；Qwen-Image 2.1 / qwen3vl_8b / 36 steps / cfg 1.0 / euler-simple；1024×576 母版 + 854×480 交付 |
-| 周启明 | `assets/frames/anchors/zhou_qiming_anchor.png` | v2 待抽检；shuohao 候选待确认 | seed 20261124；shuohao 参考图见下 |
+| 周启明 | `assets/frames/character_refs/周启明/default/front-full.v1.png` | shuohao 四视图完成，锚点已确认 | seed 20261124；Qwen 2.1 / qwen3vl_8b；2:3 白底；派生 face-front、side-full、back-full |
 | 苏敏 | `assets/frames/anchors/su_min_partial_anchor.png` | 已生成，待抽检（局部） | seed 20261123；同上工作流；1024×576 母版 + 854×480 交付 |
 | 陈警官 | 不生成形象 | — | — |
 
-- 周启明 shuohao 候选参考图（待确认）：`assets/frames/character_refs/周启明/default/front-full.v1.png`（2:3 / 1056×1584 / 白底，seed 20261124；流程见 `docs/shuohao_character_refs.md`）。确认后用它派生大头照/侧面/背面，并回做 16:9 定妆照。
+- 周启明 shuohao 参考图（锚点已确认 2026-11-21）：`assets/frames/character_refs/周启明/default/` 下 `front-full.v1.png`（锚点）、`face-front.v1.png`、`side-full.v1.png`、`back-full.v1.png`；seed 20261124；流程与残留偏差见 `docs/shuohao_character_refs.md`。旧 `assets/frames/anchors/zhou_qiming_anchor.png` 降为备选。
 - 画幅：16:9；锚定图建议 1280×720 以上，节点首尾帧按 480p 草稿（854×480）生成。
 - 沈砚与周启明各生成 1 张正面半身锚定图，再出 3/4 侧与全身各 1 张确认；苏敏只做手部 / 眼部局部参考；选定后记录 seed。
 - 同一角色跨节点只改场景、景别、光位，不改角色描述块；服装全片不换（同一夜）。

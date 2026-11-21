@@ -42,17 +42,17 @@
       },
       "scope": "先生成 3 张锚定并停下等用户抽检；通过后再生成 24 张首尾帧",
       "actual": {
-        "images": 3,
+        "images": 7,
         "anchors": 3,
         "node_frames": 0,
-        "accepted_runs": 3,
-        "submitted_runs": 6,
-        "generation_seconds": 405.9,
-        "wall_clock_minutes": 15,
-        "shuohao_refs": 1,
+        "accepted_runs": 7,
+        "submitted_runs": 12,
+        "generation_seconds": 2977.9,
+        "wall_clock_minutes": 65,
+        "shuohao_refs": 4,
         "total_local_images": 4
       },
-      "note": "3 张 16:9 锚定 + 周启明 shuohao 2:3 白底候选锚点；周启明仍待用户确认，24 张首尾帧未开始。"
+      "note": "周启明 shuohao 四视图完成（锚点已确认）；沈砚/苏敏 16:9 锚定待抽检；24 张首尾帧未开始。"
     },
     {
       "approval_id": "APR-20261121-VID-001",
@@ -268,7 +268,7 @@
       "blocked_by": [
         "T-013b 用户抽检 3 张锚定"
       ],
-      "progress": "3/27 的 16:9 锚定 + 周启明 shuohao 候选；周启明待确认，首尾帧未开始。"
+      "progress": "周启明 shuohao 四视图完成；沈砚/苏敏 16:9 待抽检；首尾帧未开始。"
     },
     {
       "id": "T-013b",
@@ -295,7 +295,7 @@
       "stage": "批量生图",
       "owner": "Agy + Codex",
       "title": "shuohao character-refs 优化周启明参考图",
-      "status": "waiting_user",
+      "status": "done",
       "depends_on": [
         "T-013b"
       ],
@@ -310,9 +310,8 @@
         "Codex Qwen 本地出锚点，check exit 0",
         "用户确认锚点后才出派生三视图"
       ],
-      "blocked_by": [
-        "等待用户确认 shuohao 锚点"
-      ]
+      "blocked_by": [],
+      "progress": "四视图 check exit 0；锚点已确认；残留袖口/疤/钥匙偏差已记录。"
     },
     {
       "id": "T-014a",
