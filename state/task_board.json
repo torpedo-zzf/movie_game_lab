@@ -42,9 +42,15 @@
       },
       "scope": "先生成 3 张锚定并停下等用户抽检；通过后再生成 24 张首尾帧",
       "actual": {
-        "images": 0
+        "images": 3,
+        "anchors": 3,
+        "node_frames": 0,
+        "accepted_runs": 3,
+        "submitted_runs": 5,
+        "generation_seconds": 400.8,
+        "wall_clock_minutes": 12
       },
-      "note": "本地生成无云端费用；用户已确认排期与抽检标准（A1/A2）。"
+      "note": "3 张锚定已生成（2 次试跑废弃：编码器错配导致噪声、左右锚点漂移）；24 张首尾帧未开始，等待用户抽检 A2。"
     },
     {
       "approval_id": "APR-20261121-VID-001",
@@ -257,7 +263,30 @@
         "角色跨镜一致",
         "路径回填可被校验器识别"
       ],
-      "blocked_by": []
+      "blocked_by": [
+        "T-013b 用户抽检 3 张锚定"
+      ],
+      "progress": "3/27：沈砚、周启明、苏敏局部锚定已出图并自检；首尾帧未开始。"
+    },
+    {
+      "id": "T-013b",
+      "stage": "批量生图",
+      "owner": "用户 + DeepSeek Harness",
+      "title": "3 张角色锚定图抽检",
+      "status": "waiting_user",
+      "deliverables": [
+        "assets/frames/anchors/shen_yan_anchor.png",
+        "assets/frames/anchors/zhou_qiming_anchor.png",
+        "assets/frames/anchors/su_min_partial_anchor.png",
+        "state/anchor_generation.json"
+      ],
+      "acceptance": [
+        "用户确认脸型/疤/痣/发型/服装/标志物一致",
+        "通过后才允许生成 24 张首尾帧"
+      ],
+      "blocked_by": [
+        "等待用户抽检回复"
+      ]
     },
     {
       "id": "T-014a",

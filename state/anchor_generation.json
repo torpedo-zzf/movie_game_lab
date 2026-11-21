@@ -1,0 +1,122 @@
+{
+  "chapter_id": "chapter_01",
+  "records": [
+    {
+      "character_id": "shen_yan",
+      "label": "沈砚",
+      "seed": 20261121,
+      "prompt": "角色定妆照，正面半身肖像，单人，直视镜头。沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾（画面右侧眉毛末端）有一道清晰可见的 1.5cm 旧疤；黑色短发三七分，分缝在画面左侧、画面左侧刘海略长垂到眉骨；穿深灰连帽卫衣与白色圆领 T 恤，卫衣左胸（画面右侧）有一小块洗不掉的白色漆点；银色头戴式监听耳机挂在脖上（不戴在头上），神情疲惫而克制；纯中性灰背景，柔和均匀布光，写实电影质感，35mm，浅景深，16:9 横向构图，画面干净，无文字、无水印、无 logo。",
+      "negative_prompt": "多余手指, 手部畸形, 双眼不对称, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 眼镜, 胡须, 耳机戴在头上, 多余肢体",
+      "params": {
+        "steps": 36,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0,
+        "master_size": [
+          1024,
+          576
+        ],
+        "delivery_size": [
+          854,
+          480
+        ],
+        "unet": "qwen_image_2.1_int8_convrot.safetensors",
+        "clip": "qwen3vl_8b_int8_convrot.safetensors",
+        "vae": "qwen_image_2.1_vae_bf16.safetensors",
+        "workflow": "qwen_image_2_1_t2i_minimal (TextEncodeQwenImage21 + EmptyLatentImage)"
+      },
+      "prompt_id": "2ad5ea15-7981-4d8e-9404-169fa6e97a5e",
+      "elapsed_sec": 130.4,
+      "master_path": "assets/frames/anchors/_master/shen_yan_anchor_1024x576.png",
+      "delivery_path": "assets/frames/anchors/shen_yan_anchor.png",
+      "master_px": [
+        1024,
+        576
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "generated_at": "2026-11-21T23:04:57+08:00"
+    },
+    {
+      "character_id": "zhou_qiming",
+      "label": "周启明",
+      "seed": 20261122,
+      "prompt": "角色定妆照，正面半身肖像，单人，直视镜头。周启明，42 岁，方脸、浓眉、眉间竖纹，左眼下方（画面右侧）一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰色 polo，夹克左袖口（画面右侧）磨白，右手虎口（画面左侧手）有烫伤疤，腰间挂黄铜钥匙串，站姿沉稳，神情温和而克制；纯中性灰背景，柔和均匀布光，写实电影质感，35mm，浅景深，16:9 横向构图，画面干净，无文字、无水印、无 logo。",
+      "negative_prompt": "多余手指, 手部畸形, 双眼不对称, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 眼镜, 胡须, 耳机戴在头上, 多余肢体",
+      "params": {
+        "steps": 36,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0,
+        "master_size": [
+          1024,
+          576
+        ],
+        "delivery_size": [
+          854,
+          480
+        ],
+        "unet": "qwen_image_2.1_int8_convrot.safetensors",
+        "clip": "qwen3vl_8b_int8_convrot.safetensors",
+        "vae": "qwen_image_2.1_vae_bf16.safetensors",
+        "workflow": "qwen_image_2_1_t2i_minimal (TextEncodeQwenImage21 + EmptyLatentImage)"
+      },
+      "prompt_id": "dd467474-6948-4a10-a43c-44a815b6ddc4",
+      "elapsed_sec": 135.2,
+      "master_path": "assets/frames/anchors/_master/zhou_qiming_anchor_1024x576.png",
+      "delivery_path": "assets/frames/anchors/zhou_qiming_anchor.png",
+      "master_px": [
+        1024,
+        576
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "generated_at": "2026-11-21T23:07:29+08:00"
+    },
+    {
+      "character_id": "su_min_partial",
+      "label": "苏敏（局部）",
+      "seed": 20261123,
+      "prompt": "局部一致性参考图，暗色室内地毯上的特写：一只苍白女性的右手从米色针织长裙袖口伸出，手腕戴着细银手链、三颗小珠，右手食指第二指节有浅咬痕，指甲短且无甲油；画面边缘可见一缕黑色长直发（发尾深棕）与一只浮肿的右眼，右眼下方有泪痣；不露全脸。写实电影质感，35mm，浅景深，低照度，16:9 横向构图，画面干净，无文字、无水印、无 logo。",
+      "negative_prompt": "多余手指, 手部畸形, 双眼不对称, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 眼镜, 胡须, 耳机戴在头上, 多余肢体",
+      "params": {
+        "steps": 36,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0,
+        "master_size": [
+          1024,
+          576
+        ],
+        "delivery_size": [
+          854,
+          480
+        ],
+        "unet": "qwen_image_2.1_int8_convrot.safetensors",
+        "clip": "qwen3vl_8b_int8_convrot.safetensors",
+        "vae": "qwen_image_2.1_vae_bf16.safetensors",
+        "workflow": "qwen_image_2_1_t2i_minimal (TextEncodeQwenImage21 + EmptyLatentImage)"
+      },
+      "prompt_id": "4aca1d22-1d96-4ccd-9a86-2c06c8aa65ca",
+      "elapsed_sec": 135.2,
+      "master_path": "assets/frames/anchors/_master/su_min_partial_anchor_1024x576.png",
+      "delivery_path": "assets/frames/anchors/su_min_partial_anchor.png",
+      "master_px": [
+        1024,
+        576
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "generated_at": "2026-11-21T23:09:44+08:00"
+    }
+  ]
+}

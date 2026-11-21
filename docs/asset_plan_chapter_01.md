@@ -122,21 +122,24 @@ exit=0
 
 ```text
 UNETLoader(qwen_image_2.1_int8_convrot, default)
-CLIPLoader(qwen3.5_9b_qwen_image_2.1_pe_t2i, type=qwen_image)
+CLIPLoader(qwen3vl_8b_int8_convrot, type=qwen_image)   # 主图像文本编码器
 VAELoader(qwen_image_2.1_vae_bf16)
-CLIPTextEncode(正向：角色描述块 + 中性灰背景 + 正面半身)
-CLIPTextEncode(负向：固定负面词)
-EmptySD3LatentImage(1024, 576, 1)
+TextEncodeQwenImage21(clip, 正向：角色描述块 + 中性灰背景 + 正面半身, 负向：固定负面词, resolution=1024, vae)
+EmptyLatentImage(1024, 576, 1)
 # 可选：ModelSamplingAuraFlow(3.1)；2.1 自带 shift=0.69，先不带 patch 试产对比
-KSampler(seed=锚定 seed, steps=20, cfg=4.0, sampler=euler, scheduler=simple, denoise=1.0)
+KSampler(seed=锚定 seed, steps=36, cfg=1.0, sampler=euler, scheduler=simple, denoise=1.0)
 VAEDecode -> ImageScale(854x480, lanczos) -> SaveImage
 ```
+
+> 2026-11-21 实测更正：`qwen3.5_9b_qwen_image_2.1_pe_t2i` 是提示词增强器（TextGenerate）的编码器，
+> 不是图像条件编码器；误用会输出纯噪声。官方 t2i 主编码器是 `qwen3vl_8b`，`cfg=1.0`；
+> 本机 36 steps / 130–135 秒一张已验证。详见 `docs/anchor_generation_chapter_01.md`。
 
 **B. 分镜帧（锚定图参考 + 文本）**
 
 ```text
 TextEncodeQwenImage21(
-  clip=qwen3.5_9b_qwen_image_2.1_pe_t2i,
+  clip=qwen3vl_8b_int8_convrot,
   vae=qwen_image_2.1_vae_bf16,
   prompt=角色描述块 + 本镜场景/景别/光位 + 首帧或末帧状态,
   negative_prompt=固定负面词,
@@ -144,14 +147,14 @@ TextEncodeQwenImage21(
   images=[角色锚定图]      # 可选再加同场景上一帧
 )
 -> positive / negative / latent
--> KSampler(seed=锚定 seed 或固定偏移, steps=20, cfg=4.0, euler, simple)
+-> KSampler(seed=锚定 seed 或固定偏移, steps=36, cfg=1.0, euler, simple)
 -> VAEDecode -> ImageScale(854x480) -> SaveImage
 ```
 
 说明：
 
 - `resolution=768` 是按“面积 768²、保持参考图 16:9、对齐 32 像素”推算的约 1024×576；以实际节点输出为准。
-- Qwen-Image 2.1 的 latent 是 **64 通道 / 1:16 下采样**；`EmptySD3LatentImage` 的 16 通道空 latent 会被 `KSampler` 自动适配。若改用自定义采样器报 shape 错误，改用 `TextEncodeQwenImage21` 输出的 latent。
+- Qwen-Image 2.1 官方 t2i 模板使用 `EmptyLatentImage`（16 通道）配 `KSampler`；本机 1024×576 实测可用。若参考图链路报 shape 错误，改用 `TextEncodeQwenImage21` 输出的 latent。
 - Qwen 2.1 自带 `sampling_settings.shift=0.69`；`ModelSamplingAuraFlow(3.1)` 来自 2512 蓝图，**不是 2.1 的已确认配置**，只作为 A/B 试产项。
 - 末帧应优先以本镜首帧为参考，再描述末态；这样比“只换文字”更容易保持机位与光位。
 - 角色一致性优先靠**参考图 + 角色块逐字复用 + 固定 seed**；一次只改一个变量（seed / 参考强度 / prompt）。没有 IPAdapter 权重，不要假装有。
@@ -163,6 +166,7 @@ TextEncodeQwenImage21(
 
 | 依据 | 单张耗时 | 27 张线性外推 | +20% 重试 |
 |---|---:|---:|---:|
+| **本机实测（1024×576 / 36 steps / cfg 1.0）** | **130–135s** | **58.5–60.8 分钟** | **70.2–72.9 分钟** |
 | 近期单次日志 | 102.53s | 46.1 分钟 | 55.4 分钟 |
 | 历史中负载 | 248.06–254.76s | 111.6–114.6 分钟 | 134.0–137.6 分钟 |
 | 历史高负载 | 431.66–454s | 194.3–204.3 分钟 | 233.1–245.2 分钟 |
@@ -170,9 +174,9 @@ TextEncodeQwenImage21(
 口径与限制：
 
 - 以上是 **MPS 执行墙钟时间**，不是云端 GPU 秒；不含人工抽检、修图、重绘迭代。
-- 日志未记录当时的分辨率/步数；单次执行还包含模型加载。同进程连续生成时后续可能更快，但本任务没有试产，**不能把区间当承诺**。
+- 日志未记录当时的分辨率/步数；单次执行还包含模型加载。同进程连续生成时后续可能更快；本机锚定实测 3 张稳定在 130–135 秒/张。
 - 本地现金成本：**0 USD**；电费、机器折旧、人工时间未计入。
-- 规划时建议按 **1.5–4 小时**留出 27 张 + 抽检 + 2 轮局部重跑的窗口；精确值在锚定试产后回填。
+- 规划时建议按 **1.5–4 小时**留出 27 张 + 抽检 + 2 轮局部重跑的窗口；实测锚定后可按 70–90 分钟（含重试）估计纯生成。
 
 ### 2.6 云端图像替代（仅作对比，未使用）
 

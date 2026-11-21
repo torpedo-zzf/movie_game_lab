@@ -1,7 +1,7 @@
 # 02 角色圣经 ·《猫眼之后》
 
 > 用途：角色外观与表演的唯一事实源。生成首尾帧时必须逐字复用“角色描述块”，不得临场改词。
-> 现状：本地 `imagegen` CLI 缺失；锚定图待通过 ComfyUI 降级路径生成（详见 `.agents/skills/imagegen-character-anchor/SKILL.md`）。下表 11 项字段已锁死，seed / 工作流待生成后回填。
+> 现状：本地 `imagegen` CLI 缺失；锚定图已通过本机 ComfyUI Qwen-Image 2.1 生成（3 张，2026-11-21，待用户抽检）。下表 11 项字段已锁死，seed / 工作流已回填。
 
 ## 1. 主角定妆（一句话）
 
@@ -21,7 +21,7 @@
 | 标志物 | 银色监听耳机（耳罩有磨痕）；左眉尾疤；卫衣白漆点 |
 | 表情 / 体态基线 | 说话前先屏息半秒；紧张时用拇指反复摩擦耳机耳罩；习惯侧身靠门框；不主动与人对视；坐姿前倾 |
 | 禁止漂移项 | 左眉尾疤；三七分方向（右分）；耳机必须挂脖；卫衣白漆点；单眼皮；不戴眼镜；不换发型；不出现胡须 |
-| 锚定资产 | `assets/frames/anchors/shen_yan_anchor.png`（正面半身，中性灰背景；seed / 工作流待回填） |
+| 锚定资产 | `assets/frames/anchors/shen_yan_anchor.png`（正面半身，中性灰背景；seed 20261121） |
 
 **角色描述块（中，逐字复用）**：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。
 
@@ -41,7 +41,7 @@
 | 标志物 | 右手虎口烫伤；腰间黄铜钥匙串；左手无名指旧戒痕 |
 | 表情 / 体态基线 | 笑时嘴角先动、眼睛不动；说话慢、音量低；习惯用身体堵住门框；右手常插兜或攥钥匙；不提高嗓门 |
 | 禁止漂移项 | 寸头长度；左眼下痣；右手虎口疤；夹克左袖磨白；不戴眼镜；胡茬保持青灰、不刮净；不换夹克 |
-| 锚定资产 | `assets/frames/anchors/zhou_qiming_anchor.png`（正面半身，中性灰背景；seed / 工作流待回填） |
+| 锚定资产 | `assets/frames/anchors/zhou_qiming_anchor.png`（正面半身，中性灰背景；seed 20261122） |
 
 **角色描述块（中，逐字复用）**：周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，右手虎口有烫伤疤，腰间挂黄铜钥匙串。
 
@@ -61,7 +61,7 @@
 | 标志物 | 细银手链，三颗小珠；**右手食指第二指节有咬痕**；指甲短、无甲油 |
 | 声音 / 表演 | 气音、字被吞掉；用指节从地毯下顶出“三下”求救；不哭喊、不尖叫 |
 | 禁止漂移项 | 手链必须三颗珠；泪痣在右眼；指甲短且无甲油；发色保持黑到深棕渐变；不露全脸 |
-| 锚定资产 | `assets/frames/anchors/su_min_partial_anchor.png`（右手 + 右眼局部参考；待生成） |
+| 锚定资产 | `assets/frames/anchors/su_min_partial_anchor.png`（右手 + 右眼局部参考；seed 20261123） |
 
 ## 5. 陈警官（警察 / 画外音）
 
@@ -108,9 +108,9 @@
 
 | 角色 | 锚定图路径 | 状态 | seed / 工作流 |
 |---|---|---|---|
-| 沈砚 | `assets/frames/anchors/shen_yan_anchor.png` | 待生成 | 占位，生成后回填 |
-| 周启明 | `assets/frames/anchors/zhou_qiming_anchor.png` | 待生成 | 占位，生成后回填 |
-| 苏敏 | `assets/frames/anchors/su_min_partial_anchor.png` | 待生成（局部） | 占位，生成后回填 |
+| 沈砚 | `assets/frames/anchors/shen_yan_anchor.png` | 已生成，待抽检 | seed 20261121；Qwen-Image 2.1 / qwen3vl_8b / 36 steps / cfg 1.0 / euler-simple；1024×576 母版 + 854×480 交付 |
+| 周启明 | `assets/frames/anchors/zhou_qiming_anchor.png` | 已生成，待抽检 | seed 20261122；同上工作流；1024×576 母版 + 854×480 交付 |
+| 苏敏 | `assets/frames/anchors/su_min_partial_anchor.png` | 已生成，待抽检（局部） | seed 20261123；同上工作流；1024×576 母版 + 854×480 交付 |
 | 陈警官 | 不生成形象 | — | — |
 
 - 画幅：16:9；锚定图建议 1280×720 以上，节点首尾帧按 480p 草稿（854×480）生成。
