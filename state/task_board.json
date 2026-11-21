@@ -1,0 +1,225 @@
+{
+  "project_name": "FMV-Interactive-Project",
+  "version": "0.1.0",
+  "updated_at": "2026-11-21",
+  "current_stage": "选材",
+  "stages": [
+    "初始化",
+    "选材",
+    "剧本分支",
+    "提示词",
+    "批量生图",
+    "批量生视频",
+    "播放器联调"
+  ],
+  "owners": {
+    "orchestrator": "DeepSeek Harness",
+    "creative": "Agy",
+    "engineering": "Codex"
+  },
+  "rules": [
+    "视频生成前必须提交成本预估单并获得用户明确确认；未确认禁止调用 ComfyUI /prompt（见 AGENTS.md 第 3 节）。"
+  ],
+  "approvals": [],
+  "environment": {
+    "checked_at": "2026-11-21T22:00:00+08:00",
+    "os": "macOS (darwin)",
+    "python": "3.14.6",
+    "node": "24.15.0",
+    "ffmpeg": "9.0.2",
+    "comfyui": {
+      "url": "http://127.0.0.1:8188",
+      "reachable": true,
+      "version": "0.46.1",
+      "minimax_h3_nodes": true
+    },
+    "imagegen_cli": false,
+    "third_party_python": "none (scripts must stay stdlib-only)",
+    "notes": [
+      "ComfyUI 已上线并注册 ComfyCloudMiniMaxH3FirstLastFrameToVideoNode 等 H3 节点。",
+      "本地未找到 imagegen CLI，生图阶段需确认替代路径或安装。",
+      "install_skills.sh 在受限 npm 沙箱下报 EPERM，社区 Skill 安装需放宽权限或手动放置。",
+      ".agents/skills/ 下 4 个专属 Skill 缺失，正在重建。"
+    ]
+  },
+  "tasks": [
+    {
+      "id": "T-000",
+      "stage": "初始化",
+      "owner": "Codex",
+      "title": "工程工具链初始化",
+      "status": "done",
+      "deliverables": [
+        ".gitignore",
+        "scripts/check_env.py",
+        "scripts/validate_graph.py（加固：结构/连通性/结局/道具闭环）",
+        "scripts/test_validate_graph.py",
+        "README.md 快速开始"
+      ],
+      "acceptance": [
+        "python3 scripts/check_env.py 可输出环境报告",
+        "python3 -m unittest scripts/test_validate_graph.py 全绿"
+      ]
+    },
+    {
+      "id": "T-001",
+      "stage": "初始化",
+      "owner": "Agy",
+      "title": "重建 4 个项目专属 Skill",
+      "status": "done",
+      "deliverables": [
+        ".agents/skills/harness-fmv-director/SKILL.md",
+        ".agents/skills/fmv-branch-schema/SKILL.md",
+        ".agents/skills/imagegen-character-anchor/SKILL.md",
+        ".agents/skills/comfyui-minimax-h3-pipeline/SKILL.md"
+      ],
+      "acceptance": [
+        "每份 SKILL.md 含 frontmatter 且与 AGENTS.md / schema 一致",
+        "不包含编造的 CLI 或 API"
+      ]
+    },
+    {
+      "id": "T-002",
+      "stage": "初始化",
+      "owner": "DeepSeek Harness",
+      "title": "版本库与全局看板初始化",
+      "status": "done",
+      "deliverables": [
+        "git init -b main",
+        "state/task_board.json"
+      ],
+      "acceptance": [
+        "目录结构完整",
+        "环境基线已记录"
+      ]
+    },
+    {
+      "id": "T-003",
+      "stage": "选材",
+      "owner": "用户 + DeepSeek Harness",
+      "title": "确认题材、核心设定与分支规模",
+      "status": "blocked",
+      "blocked_by": [
+        "等待用户确认题材"
+      ],
+      "deliverables": [
+        "题材一句话 logline",
+        "类型/基调/时代背景",
+        "目标章节数与结局数"
+      ],
+      "acceptance": [
+        "用户明确确认",
+        "写入 story/01_bible/00_project.md"
+      ]
+    },
+    {
+      "id": "T-010",
+      "stage": "剧本分支",
+      "owner": "Agy",
+      "title": "世界观、角色圣经与分支大纲",
+      "status": "pending",
+      "depends_on": [
+        "T-003"
+      ],
+      "deliverables": [
+        "story/01_bible/01_world.md",
+        "story/01_bible/02_characters.md",
+        "story/01_bible/03_outline.md"
+      ],
+      "acceptance": [
+        "总控审阅通过",
+        "分支规模与 T-003 一致"
+      ]
+    },
+    {
+      "id": "T-011",
+      "stage": "剧本分支",
+      "owner": "Agy",
+      "title": "第一章剧情图与首尾帧提示词",
+      "status": "pending",
+      "depends_on": [
+        "T-010"
+      ],
+      "deliverables": [
+        "story/03_storyboards/chapter_01.json"
+      ],
+      "acceptance": [
+        "字段符合 schema/story_graph.schema.json",
+        "节点 id 全局唯一"
+      ]
+    },
+    {
+      "id": "T-012",
+      "stage": "剧本分支",
+      "owner": "Codex",
+      "title": "剧情图连通性与道具闭环校验",
+      "status": "pending",
+      "depends_on": [
+        "T-011"
+      ],
+      "deliverables": [
+        "校验报告"
+      ],
+      "acceptance": [
+        "python3 scripts/validate_graph.py story/03_storyboards/chapter_01.json 通过"
+      ]
+    },
+    {
+      "id": "T-013",
+      "stage": "批量生图",
+      "owner": "Codex",
+      "title": "角色锚定图与首尾帧批量生成",
+      "status": "pending",
+      "depends_on": [
+        "T-012"
+      ],
+      "deliverables": [
+        "assets/frames/chapter_01/*.png",
+        "chapter_01.json 回填 first_frame_path/last_frame_path"
+      ],
+      "acceptance": [
+        "角色跨镜一致",
+        "路径回填可被校验器识别"
+      ]
+    },
+    {
+      "id": "T-014",
+      "stage": "批量生视频",
+      "owner": "Codex",
+      "title": "MiniMax H3 分镜视频批量生成",
+      "status": "pending",
+      "depends_on": [
+        "T-013"
+      ],
+      "requires_cost_approval": true,
+      "deliverables": [
+        "assets/videos/*.mp4",
+        "chapter_01.json 回填 video_path"
+      ],
+      "acceptance": [
+        "用户已明确确认《视频成本预估单》",
+        "每个非 ending 节点均有视频",
+        "时长/分辨率符合预算表",
+        "实际用量写入 approvals"
+      ]
+    },
+    {
+      "id": "T-015",
+      "stage": "播放器联调",
+      "owner": "Codex",
+      "title": "互动播放器联调与试玩交付",
+      "status": "pending",
+      "depends_on": [
+        "T-014"
+      ],
+      "deliverables": [
+        "player/ 可运行版本",
+        "试玩说明"
+      ],
+      "acceptance": [
+        "分支选择、道具、QTE、超时兜底可用",
+        "用户试玩验收"
+      ]
+    }
+  ]
+}

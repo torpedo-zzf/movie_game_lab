@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# macOS / 编辑器
+.DS_Store
+.idea/
+.vscode/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# 日志与临时文件
+*.log
+logs/
+*.tmp
+*.temp
+.cache/
+tmp/
+
+# 媒体产物：目录保留，内容忽略
+assets/frames/*
+!assets/frames/.gitkeep
+assets/videos/*
+!assets/videos/.gitkeep
+
+# 本地环境自检报告
+state/env_report.json
