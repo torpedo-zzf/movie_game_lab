@@ -2,7 +2,7 @@
   "project_name": "FMV-Interactive-Project",
   "version": "0.1.0",
   "updated_at": "2026-11-21",
-  "current_stage": "选材",
+  "current_stage": "批量生图",
   "stages": [
     "初始化",
     "选材",
@@ -98,14 +98,12 @@
       "stage": "选材",
       "owner": "用户 + DeepSeek Harness",
       "title": "确认题材、核心设定与分支规模",
-      "status": "blocked",
+      "status": "done",
       "blocked_by": [
         "等待用户确认题材"
       ],
       "deliverables": [
-        "题材一句话 logline",
-        "类型/基调/时代背景",
-        "目标章节数与结局数"
+        "story/01_bible/00_project.md（3 个候选 logline + 推荐项 + 生产预算）"
       ],
       "acceptance": [
         "用户明确确认",
@@ -116,8 +114,8 @@
       "id": "T-010",
       "stage": "剧本分支",
       "owner": "Agy",
-      "title": "世界观、角色圣经与分支大纲",
-      "status": "pending",
+      "title": "《猫眼之后》世界观、角色圣经与分支大纲",
+      "status": "done",
       "depends_on": [
         "T-003"
       ],
@@ -136,7 +134,7 @@
       "stage": "剧本分支",
       "owner": "Agy",
       "title": "第一章剧情图与首尾帧提示词",
-      "status": "pending",
+      "status": "done",
       "depends_on": [
         "T-010"
       ],
@@ -153,7 +151,7 @@
       "stage": "剧本分支",
       "owner": "Codex",
       "title": "剧情图连通性与道具闭环校验",
-      "status": "pending",
+      "status": "done",
       "depends_on": [
         "T-011"
       ],
@@ -165,11 +163,30 @@
       ]
     },
     {
+      "id": "T-013a",
+      "stage": "批量生图",
+      "owner": "Codex",
+      "title": "资产生产预检与成本预估（只读）",
+      "status": "in_progress",
+      "depends_on": [
+        "T-012"
+      ],
+      "deliverables": [
+        "docs/asset_plan_chapter_01.md",
+        "state/cost_estimate_chapter_01.json"
+      ],
+      "acceptance": [
+        "不调用 /prompt、不生成资产",
+        "明确本机图像模型可用性",
+        "列出视频用量与待用户确认的成本项"
+      ]
+    },
+    {
       "id": "T-013",
       "stage": "批量生图",
       "owner": "Codex",
       "title": "角色锚定图与首尾帧批量生成",
-      "status": "pending",
+      "status": "blocked",
       "depends_on": [
         "T-012"
       ],
@@ -180,6 +197,10 @@
       "acceptance": [
         "角色跨镜一致",
         "路径回填可被校验器识别"
+      ],
+      "blocked_by": [
+        "T-013a 资产生产预检",
+        "用户确认生图/生视频成本"
       ]
     },
     {
@@ -221,5 +242,14 @@
         "用户试玩验收"
       ]
     }
-  ]
+  ],
+  "brief": {
+    "genre": "都市悬疑 / 惊悚",
+    "format": "最小可玩 Demo：8–12 镜 / 2 结局 / 480p",
+    "confirmed_at": "2026-11-21",
+    "confirmed_by": "用户",
+    "premise": "A《猫眼之后》",
+    "target_length": "2 分钟可玩 Demo（10–12 镜）",
+    "rating": "PG-13（暗示性暴力，无 jump scare）"
+  }
 }
