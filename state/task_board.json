@@ -46,11 +46,11 @@
         "anchors": 3,
         "node_frames": 0,
         "accepted_runs": 3,
-        "submitted_runs": 5,
-        "generation_seconds": 400.8,
-        "wall_clock_minutes": 12
+        "submitted_runs": 6,
+        "generation_seconds": 405.9,
+        "wall_clock_minutes": 15
       },
-      "note": "3 张锚定已生成（2 次试跑废弃：编码器错配导致噪声、左右锚点漂移）；24 张首尾帧未开始，等待用户抽检 A2。"
+      "note": "3 张锚定已生成；周启明 v1 被用户否决后按 42 岁/185cm/85kg 重做 v2。24 张首尾帧未开始，等待用户抽检 A2。"
     },
     {
       "approval_id": "APR-20261121-VID-001",
@@ -266,7 +266,7 @@
       "blocked_by": [
         "T-013b 用户抽检 3 张锚定"
       ],
-      "progress": "3/27：沈砚、周启明、苏敏局部锚定已出图并自检；首尾帧未开始。"
+      "progress": "3/27：沈砚、周启明 v2、苏敏局部锚定已出图并自检；首尾帧未开始。"
     },
     {
       "id": "T-013b",
