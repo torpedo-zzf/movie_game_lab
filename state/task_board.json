@@ -20,7 +20,66 @@
   "rules": [
     "视频生成前必须提交成本预估单并获得用户明确确认；未确认禁止调用 ComfyUI /prompt（见 AGENTS.md 第 3 节）。"
   ],
-  "approvals": [],
+  "approvals": [
+    {
+      "approval_id": "APR-20261121-IMG-001",
+      "task_id": "T-013",
+      "stage": "批量生图",
+      "kind": "local_qwen_image_batch",
+      "status": "approved",
+      "confirmed_at": "2026-11-21T22:53:56+08:00",
+      "confirmed_by": "user",
+      "user_reply": "本地 27 张，先试产锚定（推荐）",
+      "estimated": {
+        "images": 27,
+        "anchors": 3,
+        "node_frames": 24,
+        "cash_usd": 0.0,
+        "time_minutes": [
+          55,
+          245
+        ]
+      },
+      "scope": "先生成 3 张锚定并停下等用户抽检；通过后再生成 24 张首尾帧",
+      "actual": {
+        "images": 0
+      },
+      "note": "本地生成无云端费用；用户已确认排期与抽检标准（A1/A2）。"
+    },
+    {
+      "approval_id": "APR-20261121-VID-001",
+      "task_id": "T-014a",
+      "stage": "批量生视频",
+      "kind": "minimax_h3_calibration",
+      "status": "approved",
+      "confirmed_at": "2026-11-21T22:53:56+08:00",
+      "confirmed_by": "user",
+      "user_reply": "只批准 1 条 7s 校准（推荐）",
+      "estimated": {
+        "clips": 1,
+        "duration_sec": 7,
+        "resolution": "480p",
+        "aspect_ratio": "16:9",
+        "usd": [
+          0.06,
+          0.08
+        ],
+        "credits": [
+          14,
+          16
+        ]
+      },
+      "cap": {
+        "credits": 16,
+        "usd": 0.08
+      },
+      "actual": {
+        "clips": 0,
+        "gpu_seconds": 0
+      },
+      "note": "仅 1 条校准；12 条全量未批准，校准后须重新出《视频成本预估单》。"
+    }
+  ],
   "environment": {
     "checked_at": "2026-11-21T22:00:00+08:00",
     "os": "macOS (darwin)",
@@ -186,7 +245,7 @@
       "stage": "批量生图",
       "owner": "Codex",
       "title": "角色锚定图与首尾帧批量生成",
-      "status": "blocked",
+      "status": "in_progress",
       "depends_on": [
         "T-012"
       ],
@@ -198,9 +257,26 @@
         "角色跨镜一致",
         "路径回填可被校验器识别"
       ],
-      "blocked_by": [
-        "用户确认 A1：本地 27 张生图排期",
-        "用户确认 A2：锚定试产与抽检标准"
+      "blocked_by": []
+    },
+    {
+      "id": "T-014a",
+      "stage": "批量生视频",
+      "owner": "Codex",
+      "title": "H3 单条 7s 480p 付费校准",
+      "status": "pending",
+      "depends_on": [
+        "T-013"
+      ],
+      "requires_cost_approval": true,
+      "deliverables": [
+        "assets/videos/calibration_ch01_s01.mp4",
+        "实际 GPU 秒与费用回填"
+      ],
+      "acceptance": [
+        "仅提交 1 条",
+        "实际用量写入 approvals",
+        "全量 12 条尚未提交"
       ]
     },
     {
@@ -225,7 +301,8 @@
       ],
       "blocked_by": [
         "T-013",
-        "用户确认 A4/A5：H3 校准与全量成本"
+        "T-014a 校准结果",
+        "用户确认 A5：12 条全量成本"
       ]
     },
     {
@@ -259,7 +336,7 @@
   "cost_request": {
     "file": "state/cost_estimate_chapter_01.json",
     "plan": "docs/asset_plan_chapter_01.md",
-    "status": "awaiting_user",
+    "status": "approved",
     "items": [
       "A1 本地 27 张（$0，55–245 分钟）",
       "A4 H3 单条校准（约 $0.06–0.08）",
