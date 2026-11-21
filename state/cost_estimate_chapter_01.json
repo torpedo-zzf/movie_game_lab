@@ -1,0 +1,419 @@
+{
+  "chapter_id": "chapter_01",
+  "title": "第一章：猫眼之后",
+  "generated_at": "2026-11-21T22:48:49+08:00",
+  "mode": "read_only_preflight",
+  "requires_user_approval": true,
+  "read_only": true,
+  "source": {
+    "storyboard": "story/03_storyboards/chapter_01.json",
+    "validation": {
+      "command": "python3 scripts/validate_graph.py story/03_storyboards/chapter_01.json --strict",
+      "exit_code": 0,
+      "node_count": 12,
+      "ending_count": 2,
+      "reachable_count": 12
+    },
+    "scope": {
+      "nodes": 12,
+      "choices": 2,
+      "endings": 2,
+      "requested_video_duration_sec": 91.0,
+      "resolution": "480p",
+      "aspect_ratio": "16:9",
+      "frame_count": 27,
+      "anchor_count": 3,
+      "node_frame_count": 24
+    }
+  },
+  "images": {
+    "local": {
+      "feasible": true,
+      "workflow_validated": false,
+      "recommended_path": "Qwen-Image 2.1 本地生成；先试产 1 张锚定，验证后再批 27 张",
+      "hardware": {
+        "chip": "Apple M5 Pro",
+        "os": "macOS 27.0.1",
+        "device": "mps",
+        "unified_memory_gb": 48,
+        "free_memory_gb_at_probe": 24.18,
+        "comfyui_version": "0.46.1"
+      },
+      "models_present": [
+        {
+          "path": "/Users/yul/ComfyUI-Shared/models/diffusion_models/qwen_image_2.1_int8_convrot.safetensors",
+          "size_gb": 6.8,
+          "role": "Qwen-Image 2.1 diffusion model"
+        },
+        {
+          "path": "/Users/yul/ComfyUI-Shared/models/text_encoders/qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+          "size_gb": 8.8,
+          "role": "Qwen-Image 2.1 text-to-image text/vision encoder"
+        },
+        {
+          "path": "/Users/yul/ComfyUI-Shared/models/text_encoders/qwen3.5_9b_qwen_image_2.1_pe_i2i.int8_convrot.safetensors",
+          "size_gb": 8.8,
+          "role": "Qwen-Image 2.1 image-to-image/reference encoder"
+        },
+        {
+          "path": "/Users/yul/ComfyUI-Shared/models/vae/qwen_image_2.1_vae_bf16.safetensors",
+          "size_gb": 0.644,
+          "role": "Qwen-Image 2.1 VAE"
+        }
+      ],
+      "missing": [
+        {
+          "item": "Qwen-Image 2.1 API 格式工作流 JSON",
+          "required_for_batch": true,
+          "status": "missing",
+          "note": "项目内没有 comfyui/ 目录；需先在 ComfyUI UI 搭通并导出 API JSON"
+        },
+        {
+          "item": "图片批处理脚本",
+          "required_for_batch": true,
+          "status": "missing",
+          "note": "scripts/batch_minimax_h3.py 只覆盖视频"
+        },
+        {
+          "item": "1 张锚定试产验证",
+          "required_for_batch": true,
+          "status": "pending",
+          "note": "验证模型加载、16:9、身份锚点、参考图链路"
+        },
+        {
+          "item": "imagegen CLI",
+          "required_for_batch": false,
+          "status": "missing",
+          "note": "本地 ComfyUI 可替代"
+        },
+        {
+          "item": "SDXL/Flux 本地 checkpoint",
+          "required_for_batch": false,
+          "status": "missing",
+          "note": "checkpoints 目录仅有 stable-audio-open-1.0（音频）；Qwen-Image 2.1 可满足基线"
+        },
+        {
+          "item": "IPAdapter/ControlNet/InstantID/PuLID 权重",
+          "required_for_batch": false,
+          "status": "missing",
+          "note": "对应模型目录为空；当前一致性依赖 Qwen 参考图 + 锚定图 + prompt，不假装已有 IPAdapter"
+        },
+        {
+          "item": "Qwen-Image 2.1 Lightning/4-step LoRA",
+          "required_for_batch": false,
+          "status": "missing",
+          "note": "未安装，不能按 4 步估算时间"
+        },
+        {
+          "item": "Qwen-Image 2512 模型 / qwen2.5-vl-7b / 2512 Lightning LoRA",
+          "required_for_batch": false,
+          "status": "missing",
+          "note": "官方 2512 蓝图依赖这些资产，本机不具备，不能直接套用"
+        }
+      ],
+      "workflow": {
+        "target_generation_size": "1024x576 (16:9, multiples of 32)",
+        "delivery_size": "854x480 (480p 16:9)",
+        "anchor_t2i": [
+          "UNETLoader(qwen_image_2.1_int8_convrot, default)",
+          "CLIPLoader(qwen3.5_9b_qwen_image_2.1_pe_t2i, type=qwen_image)",
+          "VAELoader(qwen_image_2.1_vae_bf16)",
+          "CLIPTextEncode positive/negative",
+          "EmptySD3LatentImage(1024, 576, 1)",
+          "KSampler(steps=20, cfg=4.0, sampler=euler, scheduler=simple, denoise=1.0)",
+          "VAEDecode -> ImageScale(854x480, lanczos) -> SaveImage"
+        ],
+        "frame_with_reference": [
+          "TextEncodeQwenImage21(clip=t2i, vae, prompt, negative_prompt, resolution=768, images=[anchor or previous frame])",
+          "outputs positive/negative/latent (about 1024x576)",
+          "KSampler(steps=20, cfg=4.0, euler, simple, denoise=1.0)",
+          "VAEDecode -> ImageScale(854x480, lanczos) -> SaveImage"
+        ],
+        "notes": [
+          "未运行任何生成；以上为按已注册节点和官方蓝图推导的待验证方案。",
+          "20 steps/CFG 4 来自官方 Qwen-Image 蓝图；ModelSamplingAuraFlow 3.1 也来自 2512 蓝图，但 2.1 自带 shift=0.69，AuraFlow 仅作为 A/B 试产项，不是确认配置。",
+          "Qwen-Image 2.1 的 latent 为 64 通道、1:16 下采样；KSampler 会把 EmptySD3LatentImage 的 16 通道空 latent 自动适配。若自定义采样器报 shape 错误，改用 TextEncodeQwenImage21 输出的 latent。",
+          "s08 手机屏文字建议生成无字底板，后期/播放器叠字；固定负面词中的“文字”与该镜头冲突。"
+        ]
+      },
+      "estimated_time": {
+        "per_image_sec_range": [102.53, 454.0],
+        "total_sec_range": [2768.31, 12258.0],
+        "total_minutes_range": [46.14, 204.3],
+        "retry_rate": 0.2,
+        "with_retry_total_sec_range": [3321.97, 14709.6],
+        "with_retry_total_minutes_range": [55.37, 245.16],
+        "benchmarked": false,
+        "basis": "同一台 M5 Pro 的 ComfyUI 日志：Qwen-Image 2.1 单次 Prompt executed 为 102.53s、248.06-254.76s、431.66-454s；日志未记录分辨率和步数，且包含模型加载。",
+        "excludes": [
+          "人工抽检与修图",
+          "超出 20% 的重跑迭代",
+          "电费与机器折旧"
+        ]
+      },
+      "cash_cost_usd": 0.0,
+      "cash_cost_note": "本地生成无云端现金费用；电费、折旧、人工未计。"
+    },
+    "cloud_options": [
+      {
+        "provider": "Qwen-Image 3.0 API",
+        "node": "QwenImageTextToImageApi",
+        "unit_price_usd_per_image": 0.0429,
+        "images": 27,
+        "estimated_cost_usd": 1.1583,
+        "with_20pct_retry_images": 33,
+        "with_20pct_retry_cost_usd": 1.4157,
+        "price_source": "GET /object_info price_badge (approximate)",
+        "support_480p_16_9": "待按节点 model/size 参数确认",
+        "note": "非 pro 档；鉴权/额度/16:9 支持未在本次预检验证"
+      },
+      {
+        "provider": "Flux.2 API",
+        "node": "Flux2ImageNode",
+        "unit_price_usd_per_image_base": 0.03,
+        "images": 27,
+        "estimated_base_cost_usd": 0.81,
+        "with_20pct_retry_cost_usd": 0.99,
+        "price_source": "GET /object_info price_badge (approximate)",
+        "note": "≤1MP、无参考图的基础价；参考图/超过 1MP 另计，角色参考可能到 $0.045-$0.15/张"
+      },
+      {
+        "provider": "Comfy Cloud Flux2",
+        "node": "ComfyCloudFlux2TextToImageNode",
+        "unit_price": "USD 0.001295/GPU-second",
+        "total": "待核实（GPU 秒未知）",
+        "price_source": "GET /object_info price_badge (approximate)",
+        "note": "与 H3 相同的 GPU 秒计费；需实测单张 GPU 秒"
+      }
+    ]
+  },
+  "videos": {
+    "node": "ComfyCloudMiniMaxH3FirstLastFrameToVideoNode",
+    "node_class": "comfy cloud/video",
+    "api_node": true,
+    "clip_count": 12,
+    "clip_node_ids": [
+      "ch01_s01_voiceover",
+      "ch01_s02_peephole",
+      "ch01_s03_knock",
+      "ch01_s04_open",
+      "ch01_s05_listen",
+      "ch01_s06_lock",
+      "ch01_s07_elevator",
+      "ch01_s08_groupchat",
+      "ch01_s09_second_knock",
+      "ch01_s10_choice",
+      "ch01_s11_end_testify",
+      "ch01_s12_end_silence"
+    ],
+    "durations_sec": [7.0, 8.0, 8.0, 8.0, 8.0, 7.0, 7.0, 7.0, 8.0, 8.0, 7.0, 8.0],
+    "total_requested_duration_sec": 91.0,
+    "resolution": "480p",
+    "aspect_ratio": "16:9",
+    "inputs": {
+      "first_frame": "IMAGE (required)",
+      "last_frame": "IMAGE (optional)",
+      "prompt": "STRING (chapter video.video_prompt)",
+      "seed": "INT",
+      "aspect_ratio": "COMBO (16:9)",
+      "resolution": "COMBO (480p)",
+      "duration_seconds": "INT (min 5, max 15; chapter 7/8)"
+    },
+    "output": "VIDEO",
+    "output_note": "节点描述称生成匹配音轨；实际像素/音轨以 Comfy Cloud 返回为准，待首条实测。",
+    "pricing_metadata": {
+      "readable": true,
+      "source": "GET /object_info/ComfyCloudMiniMaxH3FirstLastFrameToVideoNode",
+      "usd_per_gpu_second": 0.001295,
+      "price_badge_expr": "{\"type\":\"usd\",\"usd\":0.001295,\"format\":{\"suffix\":\"/GPU-second\",\"approximate\":true}}",
+      "node_description": "Runs on a Comfy Cloud GPU, billed by how long it runs at $0.001295/GPU-second (0.27 credits). Paid in credits, no Cloud subscription required.",
+      "credits_per_gpu_second_approx": 0.273,
+      "credits_per_usd": 211,
+      "credit_source_note": "节点描述写 0.27 credits；源码注释给出 211 credits/USD，换算约 0.273 credits/GPU-second。"
+    },
+    "usage_basis": {
+      "billing_unit": "GPU-second",
+      "formula": "total_usd = total_gpu_seconds * 0.001295; total_credits = total_gpu_seconds * 0.273",
+      "output_seconds_are_not_gpu_seconds": true,
+      "note": "不能用 91 秒输出时长直接乘单价；GPU 秒/条需首条校准或云端账单。"
+    },
+    "gpu_seconds_per_clip": "待实测",
+    "total_gpu_seconds": "待实测",
+    "cost_scenarios": [
+      {
+        "gpu_sec_per_clip": 20,
+        "total_gpu_sec": 240,
+        "usd": 0.3108,
+        "credits": 65.52,
+        "with_retry_usd": 0.373,
+        "with_retry_credits": 78.62
+      },
+      {
+        "gpu_sec_per_clip": 30,
+        "total_gpu_sec": 360,
+        "usd": 0.4662,
+        "credits": 98.28,
+        "with_retry_usd": 0.5594,
+        "with_retry_credits": 117.94
+      },
+      {
+        "gpu_sec_per_clip": 40,
+        "total_gpu_sec": 480,
+        "usd": 0.6216,
+        "credits": 131.04,
+        "with_retry_usd": 0.7459,
+        "with_retry_credits": 157.25
+      },
+      {
+        "gpu_sec_per_clip": 60,
+        "total_gpu_sec": 720,
+        "usd": 0.9324,
+        "credits": 196.56,
+        "with_retry_usd": 1.1189,
+        "with_retry_credits": 235.87
+      }
+    ],
+    "historical_proxy": {
+      "note": "本地 MiniMaxH3FirstLastFrameNode 的历史端到端耗时，不是 Comfy Cloud GPU 秒。",
+      "runs": [
+        {
+          "output_duration_sec": 4.458333,
+          "wall_sec": 34.764,
+          "resolution": "768P",
+          "output_size": "1344x768"
+        },
+        {
+          "output_duration_sec": 5.166667,
+          "wall_sec": 36.863,
+          "resolution": "768P",
+          "output_size": "1344x768"
+        }
+      ],
+      "output_to_wall_ratio_range": [7.13, 7.8],
+      "planning_7x": {
+        "gpu_sec": 637.0,
+        "usd": 0.8249,
+        "credits": 173.9,
+        "with_retry_gpu_sec": 764.4,
+        "with_retry_usd": 0.9899,
+        "with_retry_credits": 208.68
+      },
+      "planning_8x": {
+        "gpu_sec": 728.0,
+        "usd": 0.9428,
+        "credits": 198.74,
+        "with_retry_gpu_sec": 873.6,
+        "with_retry_usd": 1.1313,
+        "with_retry_credits": 238.49
+      }
+    },
+    "retry_budget": {
+      "rate": 0.2,
+      "clips": 3,
+      "requested_seconds": 18.2,
+      "note": "任何重跑、补片、换分辨率都需重新确认；超出基础预估 10% 必须重新确认。"
+    },
+    "estimated_total": "待核实（首条 480p 校准后回填）",
+    "planning_total_range": {
+      "base_usd": [0.8249, 0.9428],
+      "base_credits": [173.9, 198.74],
+      "with_retry_usd": [0.9899, 1.1313],
+      "with_retry_credits": [208.68, 238.49],
+      "basis": "按历史端到端 7-8 倍输出秒做代理；with_retry 为再加 20% 重试，不是报价。"
+    }
+  },
+  "unknowns": [
+    "H3 480p/16:9 每条实际 GPU 秒（决定最终费用）",
+    "H3 实际输出像素、音轨与时长量化（17 帧@24fps，总长可能小幅偏离 91s）",
+    "Comfy Cloud 账户鉴权、额度与账单单位（本次未调用 /prompt）",
+    "Qwen-Image 2.1 1024x576 / 20 steps 工作流的质量与耗时（未试产）",
+    "Qwen 参考图对沈砚/周启明/苏敏局部的一致性是否足够（IPAdapter 权重缺失）",
+    "云端 Qwen-Image 3.0 / Flux.2 是否按 16:9 480p 输出，以及参考图加价",
+    "Bible 建议的 3/4 侧与全身锚定是否追加（不在 27 张预算内）",
+    "s08 手机屏文字的后期合成/播放器叠字方案",
+    "credits/USD 精确换算、税费与云端最低消费"
+  ],
+  "approval_items": [
+    {
+      "id": "A1",
+      "item": "本地 27 张图片排期",
+      "detail": "3 张锚定 + 24 张首尾帧；本地现金 0 USD；估算 55.37-245.16 分钟（含 20% 重试，历史外推）。",
+      "requires_explicit_confirmation": true
+    },
+    {
+      "id": "A2",
+      "item": "本地工作流验收标准",
+      "detail": "先试产 1 张沈砚锚定；3 张锚定抽检通过后才生成 24 张；s08 屏幕文字改后期叠字/无字底板。",
+      "requires_explicit_confirmation": true
+    },
+    {
+      "id": "A3",
+      "item": "云端图片替代（仅当本地失败时）",
+      "detail": "Qwen-Image 3.0 API 约 $1.16/27 张（重试 33 张约 $1.42）；Flux.2 约 $0.81 起（参考图另计）。",
+      "requires_explicit_confirmation": true
+    },
+    {
+      "id": "A4",
+      "item": "H3 1 条付费校准",
+      "detail": "建议最短 7s 镜头，480p/16:9；实际 GPU 秒与费用按云端账单，必须单独确认。",
+      "requires_explicit_confirmation": true
+    },
+    {
+      "id": "A5",
+      "item": "H3 正式 12 条 + 20% 重试",
+      "detail": "12 条/91s/480p/16:9；按 7-8 倍输出秒代理，规划 $0.99-$1.13 / 209-239 credits（含重试），最终以校准单为准。",
+      "requires_explicit_confirmation": true
+    },
+    {
+      "id": "A6",
+      "item": "任何 720p、补片、换分辨率或超 10% 重跑",
+      "detail": "重新出《视频成本预估单》并重新确认；未确认不调用 /prompt。",
+      "requires_explicit_confirmation": true
+    },
+    {
+      "id": "A7",
+      "item": "覆盖已验收资产",
+      "detail": "已验收锚定/帧/视频默认不可覆盖；如必须替换，先确认并保留旧版本。",
+      "requires_explicit_confirmation": true
+    }
+  ],
+  "approval_gate": "未获得上述明确确认前，禁止调用 ComfyUI /prompt；不允许“先跑一条试试”。",
+  "recommended_next_action": "确认 A1/A2 后，本地试产 1 张沈砚锚定；同时确认 A4 的 1 条 H3 校准范围。",
+  "safety": {
+    "comfyui_prompt_calls": 0,
+    "images_generated": 0,
+    "videos_generated": 0,
+    "story_modified": false,
+    "scripts_modified": false,
+    "schema_modified": false,
+    "task_board_modified": false,
+    "git_commit": false
+  },
+  "probes": {
+    "comfyui_url": "http://127.0.0.1:8188",
+    "endpoints": [
+      "/system_stats",
+      "/object_info",
+      "/object_info/ComfyCloudMiniMaxH3FirstLastFrameToVideoNode",
+      "/models",
+      "/models/checkpoints",
+      "/models/diffusion_models",
+      "/models/vae",
+      "/models/text_encoders",
+      "/models/ipadapter",
+      "/models/controlnet",
+      "/models/instantid",
+      "/models/pulid",
+      "/models/clip_vision",
+      "/history?max_items=20"
+    ],
+    "comfyui_version": "0.46.1",
+    "node_class_count": 1701,
+    "h3_node_registered": true,
+    "h3_price_badge_readable": true,
+    "qwen_image_models_present": true,
+    "image_checkpoint_present": false,
+    "ipadapter_weights_present": false,
+    "comfy_cloud_auth_verified": false
+  }
+}

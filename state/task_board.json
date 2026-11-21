@@ -167,7 +167,7 @@
       "stage": "批量生图",
       "owner": "Codex",
       "title": "资产生产预检与成本预估（只读）",
-      "status": "in_progress",
+      "status": "done",
       "depends_on": [
         "T-012"
       ],
@@ -199,8 +199,8 @@
         "路径回填可被校验器识别"
       ],
       "blocked_by": [
-        "T-013a 资产生产预检",
-        "用户确认生图/生视频成本"
+        "用户确认 A1：本地 27 张生图排期",
+        "用户确认 A2：锚定试产与抽检标准"
       ]
     },
     {
@@ -222,6 +222,10 @@
         "每个非 ending 节点均有视频",
         "时长/分辨率符合预算表",
         "实际用量写入 approvals"
+      ],
+      "blocked_by": [
+        "T-013",
+        "用户确认 A4/A5：H3 校准与全量成本"
       ]
     },
     {
@@ -251,5 +255,16 @@
     "premise": "A《猫眼之后》",
     "target_length": "2 分钟可玩 Demo（10–12 镜）",
     "rating": "PG-13（暗示性暴力，无 jump scare）"
+  },
+  "cost_request": {
+    "file": "state/cost_estimate_chapter_01.json",
+    "plan": "docs/asset_plan_chapter_01.md",
+    "status": "awaiting_user",
+    "items": [
+      "A1 本地 27 张（$0，55–245 分钟）",
+      "A4 H3 单条校准（约 $0.06–0.08）",
+      "A5 H3 12 条全量（约 $0.99–1.13 / 209–239 credits）"
+    ],
+    "rule": "未确认前禁止调用 ComfyUI /prompt"
   }
 }
