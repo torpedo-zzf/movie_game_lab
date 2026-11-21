@@ -48,9 +48,11 @@
         "accepted_runs": 3,
         "submitted_runs": 6,
         "generation_seconds": 405.9,
-        "wall_clock_minutes": 15
+        "wall_clock_minutes": 15,
+        "shuohao_refs": 1,
+        "total_local_images": 4
       },
-      "note": "3 张锚定已生成；周启明 v1 被用户否决后按 42 岁/185cm/85kg 重做 v2。24 张首尾帧未开始，等待用户抽检 A2。"
+      "note": "3 张 16:9 锚定 + 周启明 shuohao 2:3 白底候选锚点；周启明仍待用户确认，24 张首尾帧未开始。"
     },
     {
       "approval_id": "APR-20261121-VID-001",
@@ -266,7 +268,7 @@
       "blocked_by": [
         "T-013b 用户抽检 3 张锚定"
       ],
-      "progress": "3/27：沈砚、周启明 v2、苏敏局部锚定已出图并自检；首尾帧未开始。"
+      "progress": "3/27 的 16:9 锚定 + 周启明 shuohao 候选；周启明待确认，首尾帧未开始。"
     },
     {
       "id": "T-013b",
@@ -286,6 +288,30 @@
       ],
       "blocked_by": [
         "等待用户抽检回复"
+      ]
+    },
+    {
+      "id": "T-013c",
+      "stage": "批量生图",
+      "owner": "Agy + Codex",
+      "title": "shuohao character-refs 优化周启明参考图",
+      "status": "waiting_user",
+      "depends_on": [
+        "T-013b"
+      ],
+      "deliverables": [
+        "state/character_refs/zhou_qiming-intake.json",
+        "assets/frames/character_refs/周启明/asset.json",
+        "assets/frames/character_refs/周启明/default/front-full.v1.png",
+        "assets/frames/character_refs/character-refs.html"
+      ],
+      "acceptance": [
+        "Agy intake-check 通过",
+        "Codex Qwen 本地出锚点，check exit 0",
+        "用户确认锚点后才出派生三视图"
+      ],
+      "blocked_by": [
+        "等待用户确认 shuohao 锚点"
       ]
     },
     {

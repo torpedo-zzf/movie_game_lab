@@ -30,3 +30,6 @@ assets/videos/*
 
 # 本地环境自检报告
 state/env_report.json
+
+# 第三方 skill 仓库（本地克隆，不纳入版本库）
+vendor/

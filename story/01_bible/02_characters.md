@@ -109,10 +109,11 @@
 | 角色 | 锚定图路径 | 状态 | seed / 工作流 |
 |---|---|---|---|
 | 沈砚 | `assets/frames/anchors/shen_yan_anchor.png` | 已生成，待抽检 | seed 20261121；Qwen-Image 2.1 / qwen3vl_8b / 36 steps / cfg 1.0 / euler-simple；1024×576 母版 + 854×480 交付 |
-| 周启明 | `assets/frames/anchors/zhou_qiming_anchor.png` | 已生成 v2，待抽检 | seed 20261124；同上工作流；1024×576 母版 + 854×480 交付 |
+| 周启明 | `assets/frames/anchors/zhou_qiming_anchor.png` | v2 待抽检；shuohao 候选待确认 | seed 20261124；shuohao 参考图见下 |
 | 苏敏 | `assets/frames/anchors/su_min_partial_anchor.png` | 已生成，待抽检（局部） | seed 20261123；同上工作流；1024×576 母版 + 854×480 交付 |
 | 陈警官 | 不生成形象 | — | — |
 
+- 周启明 shuohao 候选参考图（待确认）：`assets/frames/character_refs/周启明/default/front-full.v1.png`（2:3 / 1056×1584 / 白底，seed 20261124；流程见 `docs/shuohao_character_refs.md`）。确认后用它派生大头照/侧面/背面，并回做 16:9 定妆照。
 - 画幅：16:9；锚定图建议 1280×720 以上，节点首尾帧按 480p 草稿（854×480）生成。
 - 沈砚与周启明各生成 1 张正面半身锚定图，再出 3/4 侧与全身各 1 张确认；苏敏只做手部 / 眼部局部参考；选定后记录 seed。
 - 同一角色跨节点只改场景、景别、光位，不改角色描述块；服装全片不换（同一夜）。

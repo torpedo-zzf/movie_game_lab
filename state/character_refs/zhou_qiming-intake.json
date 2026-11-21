@@ -1,0 +1,81 @@
+{
+  "name": "周启明",
+  "lang": "zh",
+  "source": "《猫眼之后》角色圣经 02_characters.md 第 3 节（character_id: zhou_qiming）",
+  "identity": {
+    "age": 42,
+    "gender": "male",
+    "en": "A forty-two-year-old Chinese man, 185 cm tall and about 85 kg, living in an old apartment block in a second-tier Chinese city in the present day",
+    "text": "当代二线城市老公寓的住户，身高 185cm、体重约 85kg，做点小生意，说话慢、站姿稳",
+    "source": "stated"
+  },
+  "face": {
+    "en": "A square face with a broad heavy jaw and flat cheekbones, thick dark eyebrows, a deep vertical frown line between the brows, wide nostrils, a small 2 mm black mole just below his left eye, and close grey stubble over the jaw, chin and upper lip; East Asian features, heavy-lidded eyes, a wide mouth with a thin upper lip",
+    "text": "方脸、宽下颌，浓眉，眉间一道深竖纹，鼻翼宽，左眼下方一颗 2mm 小黑痣，青灰胡茬；东亚五官，眼皮略厚，嘴唇偏薄",
+    "source": "inferred"
+  },
+  "hair": {
+    "en": "A grey-black buzz cut about six millimetres long all over, a receding hairline at the temples, sideburns trimmed square and neat",
+    "text": "灰黑寸头，约 6mm，发际线后移，鬓角修齐",
+    "source": "stated"
+  },
+  "build": {
+    "en": "Tall and heavily built, with broad shoulders, a thick chest and back and a short thick neck; square, steady stance. Broad blunt hands, a healed three-centimetre burn scar across the web of his right hand, and a pale worn band of old ring mark on the ring finger of his left hand",
+    "text": "185cm、约 85kg，肩宽背厚、脖子粗，站姿方正沉稳；手掌宽厚，右手虎口一道 3cm 旧烫伤疤，左手无名指有一圈发白的旧戒痕",
+    "source": "stated"
+  },
+  "skin": {
+    "en": "Weathered, slightly coarse skin with visible pores, a faint flush across the nose and cheeks, a little sun-darkened, with fine lines at the outer corners of the eyes",
+    "text": "皮肤粗糙有风吹日晒的痕迹，毛孔可见，鼻翼和脸颊微微泛红，眼角有细纹",
+    "source": "inferred"
+  },
+  "backCue": {
+    "en": "The back of his close-cropped head and his thick neck, the plain back panel of the dark navy work jacket, and the ring of brass keys hanging at his right hip",
+    "text": "寸头后脑与粗脖颈、深蓝夹克平整的后背，右胯挂着那串黄铜钥匙",
+    "source": "inferred"
+  },
+  "outfit": {
+    "id": "default",
+    "label": "常态 · 同一夜",
+    "top": {
+      "en": "a heavy dark navy cotton work jacket with two chest pockets, open at the front over a grey polo shirt, the left cuff worn pale and fuzzy at the edge",
+      "text": "深蓝厚棉工装夹克，两个胸袋，敞开穿在灰 polo 外面，左袖口自然磨白起毛",
+      "source": "stated"
+    },
+    "bottom": {
+      "en": "black straight-leg trousers, a plain dark leather belt and brown leather work boots",
+      "text": "黑色直筒裤、深色皮腰带、棕色工装靴",
+      "source": "stated"
+    },
+    "details": [
+      {
+        "slot": "neck",
+        "en": "the ribbed collar of his grey polo shirt, soft and slightly stretched, with one button left open at the throat",
+        "text": "灰 polo 的罗纹领口，洗得发软，喉下松着一颗扣",
+        "source": "inferred"
+      },
+      {
+        "slot": "sleeve",
+        "en": "the left cuff of his dark navy work jacket, worn pale and fuzzy where it rubs against the wrist",
+        "text": "夹克左袖口，长期摩擦处磨白起毛",
+        "source": "stated"
+      },
+      {
+        "slot": "custom",
+        "id": "keys",
+        "part": "waist",
+        "en": "the ring of seven brass keys on a steel split ring, hanging from a worn leather loop at his right hip",
+        "text": "右胯腰带皮环上挂着的七把黄铜钥匙串",
+        "source": "stated"
+      },
+      {
+        "slot": "custom",
+        "id": "burn-scar",
+        "part": "hands",
+        "en": "the healed three-centimetre burn scar across the web of his right hand, flat and slightly paler than the skin around it, long healed",
+        "text": "右手虎口的 3cm 旧烫伤疤，愈合多年、平整略浅、几乎不凸",
+        "source": "stated"
+      }
+    ]
+  }
+}
