@@ -61,7 +61,7 @@
       "task_id": "T-014a",
       "stage": "批量生视频",
       "kind": "minimax_h3_calibration",
-      "status": "approved",
+      "status": "failed",
       "confirmed_at": "2026-11-21T22:53:56+08:00",
       "confirmed_by": "user",
       "user_reply": "只批准 1 条 7s 校准（推荐）",
@@ -85,9 +85,26 @@
       },
       "actual": {
         "clips": 0,
-        "gpu_seconds": 0
+        "duration_sec": 0,
+        "gpu_seconds": 0,
+        "credits": 0,
+        "usd": 0.0
       },
-      "note": "仅 1 条校准；12 条全量未批准，校准后须重新出《视频成本预估单》。"
+      "note": "仅 1 条校准；12 条全量未批准，校准后须重新出《视频成本预估单》。 2026-11-22 20:46 提交失败：Comfy Cloud 未登录，未产生费用；登录后重试原 1 条，无需新批准。",
+      "requested_at": "2026-11-22T20:46:27+08:00",
+      "chapter_file": "story/03_storyboards/chapter_01.json",
+      "workflow_file": "comfyui/minimax_h3_calibration_api.json",
+      "submitted": {
+        "clips": 0,
+        "duration_sec": 0,
+        "gpu_seconds": 0,
+        "credits": 0
+      },
+      "failed_nodes": [
+        "ch01_s01_voiceover"
+      ],
+      "failed_at": "2026-11-22T20:46:40+08:00",
+      "error": "ComfyCloudMiniMaxH3FirstLastFrameToVideoNode: Unauthorized: Please login first to use this node."
     }
   ],
   "environment": {
@@ -321,7 +338,7 @@
       "stage": "批量生视频",
       "owner": "Codex",
       "title": "H3 单条 7s 480p 付费校准",
-      "status": "pending",
+      "status": "blocked",
       "depends_on": [
         "T-013"
       ],
@@ -334,7 +351,11 @@
         "仅提交 1 条",
         "实际用量写入 approvals",
         "全量 12 条尚未提交"
-      ]
+      ],
+      "blocked_by": [
+        "Comfy Cloud 未登录（节点报 Unauthorized）"
+      ],
+      "progress": "工作流已建、首尾帧已上传；提交单条时 Cloud 节点报未登录，0 GPU 秒 / 0 费用。"
     },
     {
       "id": "T-013e",

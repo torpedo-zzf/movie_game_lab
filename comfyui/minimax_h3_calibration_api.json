@@ -1,0 +1,44 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ch01_s01_voiceover_first.png"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ch01_s01_voiceover_last.png"
+    }
+  },
+  "3": {
+    "class_type": "ComfyCloudMiniMaxH3FirstLastFrameToVideoNode",
+    "inputs": {
+      "first_frame": [
+        "1",
+        0
+      ],
+      "last_frame": [
+        "2",
+        0
+      ],
+      "prompt": "从首帧到末帧：深夜老公寓 703 玄关，沈砚缓缓摘下挂在脖上的银色监听耳机，走廊深处传来低沉的拖行声；他停住动作，转头看向防盗门，镜头极缓慢前推，尘埃在暖黄落地灯光里浮动，门缝的冷绿光保持不变。写实电影质感，16:9，无剪切、无转场、无文字、无水印。",
+      "seed": 20261122,
+      "aspect_ratio": "16:9",
+      "resolution": "480p",
+      "duration_seconds": 7
+    }
+  },
+  "4": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "3",
+        0
+      ],
+      "filename_prefix": "calibration/ch01_s01",
+      "format": "mp4",
+      "codec": "h264"
+    }
+  }
+}
