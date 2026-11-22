@@ -41,3 +41,6 @@ vendor/
 # 音频产物：设计/报告入库，生成物忽略
 assets/audio/*
 !assets/audio/report_chapter_01.md
+
+# Pages 构建产物
+dist/
