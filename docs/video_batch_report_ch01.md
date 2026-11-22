@@ -74,3 +74,17 @@ python3 scripts/minimax_h3_generate.py --approval-id APR-20261122-VID-005 \
 ffmpeg -y -i assets/videos/ch01_s08_groupchat.mp4 -vf "fps=1,scale=320:180,tile=4x2" \
   -frames:v 1 -update 1 assets/videos/strip_ch01_s08_groupchat.png
 ```
+
+
+## 7. 补拍结果（2026-11-23 00:48）
+
+审批 `APR-20261123-VID-006`（用户回复「补拍」），3/3 成功、0 重试，实际 **160.32 credits**（cap 180），余额 10862.54 → 10702.22。
+
+| 节点 | 修改 | 结果 |
+|---|---|---|
+| `ch01_s01_voiceover` | 提示词压暗去杂物、动作锁在玄关；改用 Qwen 帧统一影调 | 7.30s，摘耳机→转头→贴门，**不再走向走廊** |
+| `ch01_s07_elevator` | 电梯门紧闭 + 楼层「7」+ 无字维修牌；一条镜头 | 7.30s，「7」全程可见，停梯信息成立 |
+| `ch01_s08_groupchat` | 手机屏过曝失焦、去可读文字；镜头内不硬切 | 7.30s，屏幕无文字；约 4.4s 有一次**过肩→正面反应切镜**（Qwen 首末帧机位不同导致，作为反应镜头可接受） |
+
+- 新关键帧已备份旧版本到 `assets/frames/chapter_01/_wip/`；旧成片在 `assets/videos/prev/*_v1.mp4`。
+- 3 条均已补混音（T-017），见 `docs/audio_report_ch01.md`。

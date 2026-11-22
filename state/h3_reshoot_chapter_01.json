@@ -1,0 +1,50 @@
+{
+  "reshoot_id": "RESHOOT-20261123-CH01",
+  "approval_id": "APR-20261123-VID-006",
+  "started_at": "2026-11-23T00:48:16+08:00",
+  "finished_at": "2026-11-23T00:49:33+08:00",
+  "clips": [
+    {
+      "node_id": "ch01_s01_voiceover",
+      "task_id": "2124545515405844480",
+      "duration_sec": 7,
+      "credits": 53.44,
+      "output": "assets/videos/ch01_s01_voiceover.mp4",
+      "resolution": "480P",
+      "balance_after": 10809.1
+    },
+    {
+      "node_id": "ch01_s07_elevator",
+      "task_id": "2124545608343232512",
+      "duration_sec": 7,
+      "credits": 53.44,
+      "output": "assets/videos/ch01_s07_elevator.mp4",
+      "resolution": "480P",
+      "balance_after": 10755.66
+    },
+    {
+      "node_id": "ch01_s08_groupchat",
+      "task_id": "2124545703898521600",
+      "duration_sec": 7,
+      "credits": 53.44,
+      "output": "assets/videos/ch01_s08_groupchat.mp4",
+      "resolution": "480P",
+      "balance_after": 10702.22
+    }
+  ],
+  "totals": {
+    "clips": 3,
+    "duration_sec": 21,
+    "credits": 160.32
+  },
+  "balances": {
+    "before": 10862.54,
+    "after": 10702.22
+  },
+  "prev_versions": "assets/videos/prev/*_v1.mp4",
+  "notes": [
+    "s01 换 Qwen 帧统一影调，动作锁在玄关",
+    "s07 电梯 7F + 无字维修牌",
+    "s08 手机屏去文字；4.4s 有一次反应切镜（可接受）"
+  ]
+}

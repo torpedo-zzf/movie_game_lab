@@ -1,21 +1,21 @@
 {
-  "approval_id": "APR-20261122-VID-005",
-  "task_id": "2124535284470390784",
+  "approval_id": "APR-20261123-VID-006",
+  "task_id": "2124545703898521600",
   "status": "succeeded",
   "resolution": "480P",
-  "duration_sec": 8,
+  "duration_sec": 7,
   "usage": {
-    "total_seconds": 8,
+    "total_seconds": 7,
     "input_seconds": 0,
-    "output_seconds": 8,
+    "output_seconds": 7,
     "input_image_count": 2
   },
-  "balance_before": 10922.8,
-  "balance_after": 10862.54,
-  "credits_spent": 60.2599999999984,
-  "usd_estimate_at_cap_rate": 0.1506,
-  "output": "assets/videos/ch01_s12_end_silence.mp4",
-  "bytes": 1507070,
+  "balance_before": 10755.66,
+  "balance_after": 10702.22,
+  "credits_spent": 53.44000000000051,
+  "usd_estimate_at_cap_rate": 0.1336,
+  "output": "assets/videos/ch01_s08_groupchat.mp4",
+  "bytes": 1259405,
   "ffprobe": {
     "programs": [],
     "stream_groups": [],
@@ -30,7 +30,7 @@
       }
     ],
     "format": {
-      "duration": "8.000000"
+      "duration": "7.300000"
     }
   }
 }

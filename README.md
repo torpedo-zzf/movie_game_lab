@@ -15,6 +15,21 @@
 - `install_skills.sh`：尝试安装社区基础 Skill（可选，见“降级说明”）。
 - `assets/frames/`、`assets/videos/`：首尾帧与视频产物目录（仅 `.gitkeep` 入库）。
 
+## 当前可玩 Demo（第一章）
+
+第一章《猫眼之后》12 个节点、2 个选择点、2 个结局已全部成片，含 TTS 配音、音效与 BGM。
+
+```bash
+# 仓库根目录
+python3 -m http.server 8123
+# 浏览器打开 http://127.0.0.1:8123/player/
+```
+
+- 播放器：`player/`（纯静态、零依赖），默认每条播完再切；`?advance=trigger` 按分镜时间切镜。
+- 剧情图：`story/03_storyboards/chapter_01.json`；音频设计：`story/04_audio/audio_design_chapter_01.json`。
+- 交付报告：`docs/video_batch_report_ch01.md`、`docs/audio_report_ch01.md`、`docs/player_report_ch01.md`。
+- 重建音轨：`python3 scripts/build_audio_chapter_01.py`（原始视频在 `assets/videos/raw/`）。
+
 ## 快速开始
 
 以下命令均在项目根目录执行（`/Users/yul/work/games/movie_game_lab`）。

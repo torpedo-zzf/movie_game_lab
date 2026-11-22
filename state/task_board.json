@@ -302,6 +302,64 @@
       },
       "note": "11/11 成功、0 重试、0 失败；实际 635.58 credits < 预估 641.25，占 cap 800 的 79.4%，未触发 10% 重新确认阈值。s01 不重复计费。",
       "completed_at": "2026-11-23T00:09:00+08:00"
+    },
+    {
+      "approval_id": "APR-20261123-VID-006",
+      "task_id": "T-016",
+      "stage": "批量生视频",
+      "kind": "minimax_h3_direct_api_reshoot",
+      "status": "completed",
+      "requested_at": "2026-11-23T00:26:00+08:00",
+      "confirmed_at": "2026-11-23T00:30:02+08:00",
+      "confirmed_by": "user",
+      "user_reply": "2、补拍。",
+      "provider": "MiniMax API (metaso.cn proxy)",
+      "nodes": [
+        "ch01_s01_voiceover",
+        "ch01_s07_elevator",
+        "ch01_s08_groupchat"
+      ],
+      "estimated": {
+        "clips": 3,
+        "duration_sec": 21,
+        "resolution": "480p",
+        "credits": [
+          160,
+          180
+        ],
+        "usd": [
+          0.4,
+          0.45
+        ],
+        "retry_budget_credits": 20
+      },
+      "cap": {
+        "credits": 180,
+        "usd": 0.45
+      },
+      "submitted": {
+        "clips": 3,
+        "duration_sec": 21,
+        "resolution": "480p"
+      },
+      "actual": {
+        "clips": 3,
+        "duration_sec": 21,
+        "resolution": "480P",
+        "credits": 160.32,
+        "usd_estimate": 0.4,
+        "balance_before": 10862.54,
+        "balance_after": 10702.22,
+        "failed_nodes": [],
+        "retries": 0,
+        "outputs": [
+          "assets/videos/ch01_s01_voiceover.mp4",
+          "assets/videos/ch01_s07_elevator.mp4",
+          "assets/videos/ch01_s08_groupchat.mp4"
+        ]
+      },
+      "note": "3/3 成功、0 重试；实际 160.32 credits < cap 180；旧版备份在 assets/videos/prev/。",
+      "completed_at": "2026-11-23T00:56:00+08:00"
     }
   ],
   "environment": {
@@ -626,7 +684,7 @@
       "stage": "播放器联调",
       "owner": "Codex",
       "title": "互动播放器联调与试玩交付",
-      "status": "waiting_user",
+      "status": "done",
       "depends_on": [
         "T-014"
       ],
@@ -643,10 +701,57 @@
         "node player/selftest.mjs 通过",
         "用户试玩验收"
       ],
-      "progress": "播放器已实现：zero-dep 静态页 + 双结局 + 超时兜底 + s08 群聊叠层 + 移动端。selftest 13/13 PASS，headless E2E 53/53。等用户试玩验收；默认切镜 ended 与 trigger 两种模式待定。",
-      "blocked_by": [
-        "用户试玩验收"
-      ]
+      "progress": "播放器默认 ended 已确认；音频回填后回归：selftest 13/13、E2E 通过、视频未静音。",
+      "blocked_by": []
+    },
+    {
+      "id": "T-016",
+      "stage": "批量生视频",
+      "owner": "Agy + Codex",
+      "title": "补拍 s01/s07/s08（提示词修订 + 关键帧 + H3）",
+      "status": "done",
+      "depends_on": [
+        "T-014"
+      ],
+      "requires_cost_approval": true,
+      "deliverables": [
+        "story/03_storyboards/chapter_01.json（3 节点提示词修订）",
+        "assets/frames/chapter_01/{ch01_s01_voiceover,ch01_s07_elevator,ch01_s08_groupchat}_{first,last}.png",
+        "assets/videos/raw/{ch01_s01_voiceover,ch01_s07_elevator,ch01_s08_groupchat}.mp4"
+      ],
+      "acceptance": [
+        "validate_graph --strict 通过",
+        "3 条视频 ffprobe 可读",
+        "画面缺陷已修",
+        "实际用量 ≤ 180 credits"
+      ],
+      "blocked_by": [],
+      "progress": "3/3 补拍完成（160.32 credits）；Qwen 新帧 + 新提示词已上 OSS；ffprobe 832×480/7.3s。"
+    },
+    {
+      "id": "T-017",
+      "stage": "播放器联调",
+      "owner": "Agy + Codex",
+      "title": "TTS 配音、音效与 BGM 设计及混音",
+      "status": "done",
+      "depends_on": [
+        "T-014"
+      ],
+      "requires_cost_approval": false,
+      "deliverables": [
+        "story/04_audio/audio_design_chapter_01.json",
+        "assets/audio/**（TTS/SFX/BGM 母版）",
+        "assets/videos/*.mp4（音轨混音后，video 流 copy）"
+      ],
+      "acceptance": [
+        "12 节点全部有台词 TTS",
+        "关键动作有音效",
+        "BGM 不抢台词",
+        "-16 LUFS 目标",
+        "播放器无需改动即可听到"
+      ],
+      "blocked_by": [],
+      "progress": "12/12 条已混音：5 个 TTS 音色、19 类音效、3 段 BGM，-16 LUFS，视频流 copy 无损；报告 docs/audio_report_ch01.md，状态 state/audio_build_chapter_01.json。"
     }
   ],
   "brief": {

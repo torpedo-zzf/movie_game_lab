@@ -1,0 +1,488 @@
+{
+  "chapter_id": "chapter_01",
+  "target_lufs": -16.0,
+  "voices": {
+    "narrator": {
+      "say_voice": "Eddy (Chinese (China mainland))",
+      "rate": 165,
+      "pitch": 0,
+      "note": "低沉克制"
+    },
+    "zhou_qiming": {
+      "say_voice": "Grandpa (Chinese (China mainland))",
+      "rate": 155,
+      "note": "42岁粗哑"
+    },
+    "su_min": {
+      "say_voice": "Flo (Chinese (China mainland))",
+      "rate": 170,
+      "note": "压低声音"
+    },
+    "shen_yan": {
+      "say_voice": "Reed (Chinese (China mainland))",
+      "rate": 168,
+      "note": "疲惫"
+    },
+    "chen_officer": {
+      "say_voice": "Rocko (Chinese (China mainland))",
+      "rate": 160,
+      "note": "画外音/对讲机"
+    }
+  },
+  "bgm": {
+    "beds": {
+      "tension": {
+        "file": "tension",
+        "gain_db": -28,
+        "note": "低频 drone，贯穿 s01-s10；s01 前 1.5s 淡入，s10 末尾 2s 淡出；s08 警笛段再压低 2dB，不抢旁白"
+      },
+      "ending_a": {
+        "file": "ending_a",
+        "gain_db": -24,
+        "note": "结局 A 收束；s11 前 0.8s 淡入，结尾 2.5s 淡出"
+      },
+      "ending_b": {
+        "file": "ending_b",
+        "gain_db": -26,
+        "note": "结局 B 空洞；s12 前 1.0s 淡入，结尾 3s 淡出"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "node_id": "ch01_s01_voiceover",
+      "voice": "narrator",
+      "line": "凌晨两点，最后一条配音过了。",
+      "start_sec": 1.2,
+      "tts_gain_db": -3,
+      "bgm": "tension",
+      "sfx": [
+        {
+          "id": "room_tone",
+          "at_sec": 0.0,
+          "dur_sec": 7.0,
+          "gain_db": -34,
+          "note": "深夜室内底噪，极轻"
+        },
+        {
+          "id": "corridor_drag",
+          "at_sec": 4.0,
+          "dur_sec": 2.5,
+          "gain_db": -14,
+          "note": "走廊拖行"
+        },
+        {
+          "id": "peephole_metal",
+          "at_sec": 5.9,
+          "dur_sec": 0.6,
+          "gain_db": -26,
+          "note": "拖行里的金属轻响（苏敏手链伏笔）"
+        }
+      ]
+    },
+    {
+      "node_id": "ch01_s02_peephole",
+      "voice": "narrator",
+      "line": "猫眼里，对门的老周正拖着一卷地毯。",
+      "start_sec": 1.2,
+      "tts_gain_db": -3,
+      "bgm": "tension",
+      "sfx": [
+        {
+          "id": "room_tone",
+          "at_sec": 0.0,
+          "dur_sec": 8.0,
+          "gain_db": -34,
+          "note": "门内底噪"
+        },
+        {
+          "id": "carpet_drag",
+          "at_sec": 0.8,
+          "dur_sec": 4.2,
+          "gain_db": -16,
+          "note": "周启明拖暗红地毯经过 703 门口"
+        },
+        {
+          "id": "peephole_metal",
+          "at_sec": 6.0,
+          "dur_sec": 0.8,
+          "gain_db": -12,
+          "note": "周启明贴向猫眼，猫眼金属罩轻响"
+        }
+      ]
+    },
+    {
+      "node_id": "ch01_s03_knock",
+      "voice": "zhou_qiming",
+      "line": "小沈，我家跳闸了，借个电话。",
+      "start_sec": 0.8,
+      "tts_gain_db": -2,
+      "bgm": "tension",
+      "sfx": [
+        {
+          "id": "room_tone",
+          "at_sec": 0.0,
+          "dur_sec": 8.0,
+          "gain_db": -34,
+          "note": "门内底噪"
+        },
+        {
+          "id": "knock_three",
+          "at_sec": 0.2,
+          "dur_sec": 1.2,
+          "gain_db": -8,
+          "note": "三下沉闷敲门"
+        },
+        {
+          "id": "keys_jingle",
+          "at_sec": 5.2,
+          "dur_sec": 1.0,
+          "gain_db": -20,
+          "note": "周启明右手插兜攥着腰间钥匙串"
+        }
+      ]
+    },
+    {
+      "node_id": "ch01_s04_open",
+      "voice": "zhou_qiming",
+      "line": "地毯？旧东西，明天就扔。",
+      "start_sec": 1.2,
+      "tts_gain_db": -2,
+      "bgm": "tension",
+      "sfx": [
+        {
+          "id": "room_tone",
+          "at_sec": 0.0,
+          "dur_sec": 8.0,
+          "gain_db": -36,
+          "note": "开门后走廊底噪抬升"
+        },
+        {
+          "id": "door_open_creak",
+          "at_sec": 0.3,
+          "dur_sec": 1.6,
+          "gain_db": -12,
+          "note": "沈砚拉开防盗门"
+        },
+        {
+          "id": "carpet_drag",
+          "at_sec": 3.6,
+          "dur_sec": 2.0,
+          "gain_db": -18,
+          "note": "周启明用身体挡住地毯时的拖动"
+        },
+        {
+          "id": "heartbeat",
+          "at_sec": 5.8,
+          "dur_sec": 2.0,
+          "gain_db": -16,
+          "note": "沈砚看见地毯边缘手指，心跳加速"
+        }
+      ]
+    },
+    {
+      "node_id": "ch01_s05_listen",
+      "voice": "su_min",
+      "line": "别信他。",
+      "start_sec": 2.6,
+      "tts_gain_db": -4,
+      "bgm": "tension",
+      "sfx": [
+        {
+          "id": "room_tone",
+          "at_sec": 0.0,
+          "dur_sec": 8.0,
+          "gain_db": -36,
+          "note": "门内极静，几乎只有电流声"
+        },
+        {
+          "id": "knock_three",
+          "at_sec": 0.9,
+          "dur_sec": 1.2,
+          "gain_db": -18,
+          "note": "地毯下三下闷响，低频、被织物闷住；先响，气音随后"
+        },
+        {
+          "id": "heartbeat",
+          "at_sec": 5.4,
+          "dur_sec": 2.4,
+          "gain_db": -14,
+          "note": "沈砚手指收紧，屏息"
+        }
+      ]
+    },
+    {
+      "node_id": "ch01_s06_lock",
+      "voice": "narrator",
+      "line": "门锁扣上的声音，比想象中响。",
+      "start_sec": 1.2,
+      "tts_gain_db": -3,
+      "bgm": "tension",
+      "sfx": [
+        {
+          "id": "room_tone",
+          "at_sec": 0.0,
+          "dur_sec": 7.0,
+          "gain_db": -34,
+          "note": "玄关底噪"
+        },
+        {
+          "id": "door_lock_click",
+          "at_sec": 2.6,
+          "dur_sec": 0.5,
+          "gain_db": -8,
+          "note": "反锁，锁舌扣入"
+        },
+        {
+          "id": "door_lock_click",
+          "at_sec": 3.3,
+          "dur_sec": 0.5,
+          "gain_db": -10,
+          "note": "扣上门链，第二声更轻"
+        },
+        {
+          "id": "footsteps_hall",
+          "at_sec": 4.4,
+          "dur_sec": 2.0,
+          "gain_db": -22,
+          "note": "走廊脚步声远去，704 门合上"
+        }
+      ]
+    },
+    {
+      "node_id": "ch01_s07_elevator",
+      "voice": "narrator",
+      "line": "电梯停在七楼，很久没有动。",
+      "start_sec": 1.4,
+      "tts_gain_db": -3,
+      "bgm": "tension",
+      "sfx": [
+        {
+          "id": "elevator_hum",
+          "at_sec": 0.0,
+          "dur_sec": 7.0,
+          "gain_db": -24,
+          "note": "电梯停层后的低频嗡鸣，持续不断"
+        },
+        {
+          "id": "elevator_ding",
+          "at_sec": 0.9,
+          "dur_sec": 1.2,
+          "gain_db": -24,
+          "note": "层站提示音余响，之后长时间无门机声"
+        },
+        {
+          "id": "keys_jingle",
+          "at_sec": 3.4,
+          "dur_sec": 1.0,
+          "gain_db": -24,
+          "note": "周启明挂维修牌时腰间钥匙轻响"
+        },
+        {
+          "id": "room_tone",
+          "at_sec": 0.0,
+          "dur_sec": 7.0,
+          "gain_db": -36,
+          "note": "电梯厅底噪"
+        }
+      ]
+    },
+    {
+      "node_id": "ch01_s08_groupchat",
+      "voice": "narrator",
+      "line": "业主群里有人说：704 好像出事，已经报警。",
+      "start_sec": 1.4,
+      "tts_gain_db": -3,
+      "bgm": "tension",
+      "sfx": [
+        {
+          "id": "room_tone",
+          "at_sec": 0.0,
+          "dur_sec": 7.0,
+          "gain_db": -36,
+          "note": "玄关底噪"
+        },
+        {
+          "id": "phone_notify",
+          "at_sec": 0.4,
+          "dur_sec": 1.0,
+          "gain_db": -8,
+          "note": "业主群消息弹出"
+        },
+        {
+          "id": "heartbeat",
+          "at_sec": 3.6,
+          "dur_sec": 2.4,
+          "gain_db": -18,
+          "note": "看见发送者头像后心跳"
+        },
+        {
+          "id": "police_siren_far",
+          "at_sec": 4.6,
+          "dur_sec": 2.4,
+          "gain_db": -20,
+          "note": "远处警笛由远及近"
+        }
+      ]
+    },
+    {
+      "node_id": "ch01_s09_second_knock",
+      "voice": "zhou_qiming",
+      "line": "警察来了，你打算怎么说？",
+      "start_sec": 1.2,
+      "tts_gain_db": -2,
+      "bgm": "tension",
+      "sfx": [
+        {
+          "id": "knock_hard",
+          "at_sec": 0.2,
+          "dur_sec": 1.2,
+          "gain_db": -8,
+          "note": "三下更重的敲门"
+        },
+        {
+          "id": "keys_jingle",
+          "at_sec": 2.6,
+          "dur_sec": 1.2,
+          "gain_db": -18,
+          "note": "周启明攥着黄铜钥匙串"
+        },
+        {
+          "id": "police_siren_far",
+          "at_sec": 5.8,
+          "dur_sec": 2.2,
+          "gain_db": -22,
+          "note": "警车逼近，警灯开始扫墙"
+        },
+        {
+          "id": "radio_squelch",
+          "at_sec": 5.2,
+          "dur_sec": 1.0,
+          "gain_db": -22,
+          "note": "楼下警用对讲机电流声"
+        }
+      ]
+    },
+    {
+      "node_id": "ch01_s10_choice",
+      "voice": "shen_yan",
+      "line": "门外的警灯，一下一下扫过猫眼。",
+      "start_sec": 0.8,
+      "tts_gain_db": -3,
+      "bgm": "tension",
+      "sfx": [
+        {
+          "id": "room_tone",
+          "at_sec": 0.0,
+          "dur_sec": 8.0,
+          "gain_db": -36,
+          "note": "玄关底噪"
+        },
+        {
+          "id": "police_siren_far",
+          "at_sec": 0.0,
+          "dur_sec": 4.0,
+          "gain_db": -18,
+          "note": "警笛在楼下，红蓝光扫过猫眼"
+        },
+        {
+          "id": "heartbeat",
+          "at_sec": 1.6,
+          "dur_sec": 4.0,
+          "gain_db": -14,
+          "note": "沈砚呼吸加重，手指停在门锁上"
+        },
+        {
+          "id": "radio_squelch",
+          "at_sec": 4.8,
+          "dur_sec": 1.0,
+          "gain_db": -24,
+          "note": "门外警察对讲机"
+        }
+      ]
+    },
+    {
+      "node_id": "ch01_s11_end_testify",
+      "voice": "chen_officer",
+      "line": "沈先生，把录音给我。",
+      "start_sec": 1.4,
+      "tts_gain_db": -3,
+      "bgm": "ending_a",
+      "sfx": [
+        {
+          "id": "door_open_creak",
+          "at_sec": 0.3,
+          "dur_sec": 1.0,
+          "gain_db": -18,
+          "note": "沈砚开门，门轴轻响收在台词前"
+        },
+        {
+          "id": "radio_squelch",
+          "at_sec": 1.0,
+          "dur_sec": 0.8,
+          "gain_db": -20,
+          "note": "警察对讲机确认现场"
+        },
+        {
+          "id": "footsteps_hall",
+          "at_sec": 0.8,
+          "dur_sec": 2.4,
+          "gain_db": -26,
+          "note": "走廊多人脚步"
+        },
+        {
+          "id": "gurney_wheels",
+          "at_sec": 3.0,
+          "dur_sec": 2.6,
+          "gain_db": -18,
+          "note": "担架轮子从沈砚面前经过"
+        }
+      ]
+    },
+    {
+      "node_id": "ch01_s12_end_silence",
+      "voice": "narrator",
+      "line": "天亮之前，他删掉了那段录音。",
+      "start_sec": 1.4,
+      "tts_gain_db": -3,
+      "bgm": "ending_b",
+      "sfx": [
+        {
+          "id": "room_tone",
+          "at_sec": 0.0,
+          "dur_sec": 8.0,
+          "gain_db": -36,
+          "note": "黑暗玄关底噪"
+        },
+        {
+          "id": "heartbeat",
+          "at_sec": 1.0,
+          "dur_sec": 2.4,
+          "gain_db": -26,
+          "note": "沈砚背靠门坐着，心跳"
+        },
+        {
+          "id": "delete_confirm",
+          "at_sec": 3.0,
+          "dur_sec": 0.8,
+          "gain_db": -18,
+          "note": "删除录音的确认提示音，压在旁白下"
+        },
+        {
+          "id": "light_switch",
+          "at_sec": 4.2,
+          "dur_sec": 0.5,
+          "gain_db": -10,
+          "note": "关灯，玄关陷入黑暗"
+        },
+        {
+          "id": "police_siren_far",
+          "at_sec": 5.8,
+          "dur_sec": 2.2,
+          "gain_db": -28,
+          "note": "次日清晨远处警笛，收在极轻"
+        }
+      ]
+    }
+  ]
+}
