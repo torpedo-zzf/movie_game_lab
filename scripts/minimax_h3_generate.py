@@ -87,6 +87,8 @@ def main() -> int:
     parser.add_argument("--duration", type=int, default=7)
     parser.add_argument("--ratio", default="adaptive")
     parser.add_argument("--out", default="assets/videos/calibration_ch01_s01_480p.mp4")
+    parser.add_argument("--first-key", default=None, help="自定义 OSS 首帧 key")
+    parser.add_argument("--last-key", default=None, help="自定义 OSS 末帧 key")
     parser.add_argument("--ttl", type=int, default=7 * 24 * 3600)
     parser.add_argument("--poll-interval", type=int, default=10)
     parser.add_argument("--timeout", type=int, default=1800)
@@ -107,8 +109,8 @@ def main() -> int:
         + "\n从首帧平滑过渡到尾帧，保持人物外观、发型与服装一致；镜头运动克制，无剪切、无转场、无文字、无水印。"
     )
 
-    first_key = f"movie_game_lab/frames/{args.node}_first.png"
-    last_key = f"movie_game_lab/frames/{args.node}_last.png"
+    first_key = args.first_key or f"movie_game_lab/frames/{args.node}_first.png"
+    last_key = args.last_key or f"movie_game_lab/frames/{args.node}_last.png"
     env = parse_env(ENV_PATH)
     first_url = presign(env, first_key, args.ttl)
     last_url = presign(env, last_key, args.ttl)

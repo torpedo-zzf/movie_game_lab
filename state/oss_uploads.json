@@ -11,6 +11,14 @@
     {
       "key": "movie_game_lab/frames/ch01_s01_voiceover_last.png",
       "bytes": 533632
+    },
+    {
+      "key": "movie_game_lab/ab_codex/ch01_s01_voiceover_first_codex.png",
+      "bytes": 569226
+    },
+    {
+      "key": "movie_game_lab/ab_codex/ch01_s01_voiceover_last_codex.png",
+      "bytes": 551655
     }
   ]
 }

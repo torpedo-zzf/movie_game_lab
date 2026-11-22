@@ -1,0 +1,36 @@
+{
+  "approval_id": "APR-20261122-VID-004",
+  "task_id": "2124525420619771904",
+  "status": "succeeded",
+  "resolution": "480P",
+  "duration_sec": 7,
+  "usage": {
+    "total_seconds": 7,
+    "input_seconds": 0,
+    "output_seconds": 7,
+    "input_image_count": 2
+  },
+  "balance_before": 11551.56,
+  "balance_after": 11498.12,
+  "credits_spent": 53.43999999999869,
+  "usd_estimate_at_cap_rate": 0.1336,
+  "output": "assets/videos/ab_codex_s01_480p.mp4",
+  "bytes": 1989543,
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 832,
+        "height": 480
+      },
+      {
+        "codec_name": "aac"
+      }
+    ],
+    "format": {
+      "duration": "7.300000"
+    }
+  }
+}
