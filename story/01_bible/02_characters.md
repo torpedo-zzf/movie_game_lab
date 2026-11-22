@@ -114,6 +114,8 @@
 | 陈警官 | 不生成形象 | — | — |
 
 - 周启明 shuohao 参考图（锚点已确认 2026-11-21）：`assets/frames/character_refs/周启明/default/` 下 `front-full.v1.png`（锚点）、`face-front.v1.png`、`side-full.v1.png`、`back-full.v1.png`；seed 20261124；流程与残留偏差见 `docs/shuohao_character_refs.md`。旧 `assets/frames/anchors/zhou_qiming_anchor.png` 降为备选。
+- 沈砚 shuohao 四视图（2026-11-22，补充参考）：`assets/frames/character_refs/沈砚/default/`，seed 20261121；正面锚点有耳机，但大头照/侧面/背面漏画耳机，四视图只作补充，不替换现有 16:9 帧参考。
+- 苏敏 shuohao 四视图（2026-11-22，仅内部参考）：`assets/frames/character_refs/苏敏/default/`，seed 20261123；成片仍只用右手/右眼/部分黑发，不露全脸。
 - 画幅：16:9；锚定图建议 1280×720 以上，节点首尾帧按 480p 草稿（854×480）生成。
 - 沈砚与周启明各生成 1 张正面半身锚定图，再出 3/4 侧与全身各 1 张确认；苏敏只做手部 / 眼部局部参考；选定后记录 seed。
 - 同一角色跨节点只改场景、景别、光位，不改角色描述块；服装全片不换（同一夜）。

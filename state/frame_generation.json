@@ -1,0 +1,740 @@
+{
+  "chapter_id": "chapter_01",
+  "params": {
+    "steps": 30,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0,
+    "master_px": [
+      1024,
+      576
+    ],
+    "delivery_px": [
+      854,
+      480
+    ],
+    "resolution": 1024,
+    "seed_base": 20261122,
+    "models": {
+      "unet": "qwen_image_2.1_int8_convrot.safetensors",
+      "clip": "qwen3vl_8b_int8_convrot.safetensors",
+      "vae": "qwen_image_2.1_vae_bf16.safetensors"
+    },
+    "workflow": "qwen_image_2_1_t2i_minimal (TextEncodeQwenImage21 + EmptyLatentImage, no refs)",
+    "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+    "suffix": "16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印"
+  },
+  "records": [
+    {
+      "node_id": "ch01_s01_voiceover",
+      "frame": "first",
+      "seed": 20261132,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png"
+      ],
+      "characters": [
+        "shen_yan"
+      ],
+      "prompt": "深夜老公寓 703 玄关，沈砚穿深灰连帽卫衣、银色耳机挂脖，左眉尾有旧疤，黑色三七分短发，落地灯暖黄，门缝透进走廊冷绿光，中景，16:9 电影静帧。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "7c78069a-123f-40a2-aa8c-170e6a4c8078",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s01_voiceover_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s01_voiceover_first.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:03:44+08:00"
+    },
+    {
+      "node_id": "ch01_s01_voiceover",
+      "frame": "last",
+      "seed": 20261133,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png"
+      ],
+      "characters": [
+        "shen_yan"
+      ],
+      "prompt": "沈砚侧身贴近防盗门，右手悬在门把上方，门缝冷光切过侧脸，走廊拖行声逼近，浅景深。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "42953729-aaed-4a7d-8c96-c8c5aa0bc9d7",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s01_voiceover_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s01_voiceover_last.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:05:34+08:00"
+    },
+    {
+      "node_id": "ch01_s02_peephole",
+      "frame": "first",
+      "seed": 20261142,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/chapter_01/_refs/zhou_qiming_16x9.png"
+      ],
+      "characters": [
+        "zhou_qiming"
+      ],
+      "prompt": "猫眼鱼眼视角，老公寓七楼走廊，绿色应急灯，周启明拖着暗红地毯经过 703 门口，寸头、深蓝工装夹克、左眼下黑痣，画面边缘暗角，16:9。shot through a door peephole, 8mm fisheye lens, heavy circular barrel distortion, black circular vignette around the frame, extreme wide-angle, the corridor bends at the edges。角色设定（逐字复用，不得改词）：周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，右手虎口有烫伤疤，腰间挂黄铜钥匙串。周启明左眼下方的黑痣在画面右侧；右手虎口烫伤疤在画面左侧的手上。腰间挂一串黄铜钥匙。42 岁，方脸宽下颌、体格厚实，不要年轻化。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "eb75b44b-00d8-483e-a9c9-bddfa246ff21",
+      "elapsed_sec": 115.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s02_peephole_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s02_peephole_first.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:07:30+08:00"
+    },
+    {
+      "node_id": "ch01_s02_peephole",
+      "frame": "last",
+      "seed": 20261143,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/chapter_01/_refs/zhou_qiming_16x9.png"
+      ],
+      "characters": [
+        "zhou_qiming"
+      ],
+      "prompt": "鱼眼画面里周启明的脸贴向猫眼，一只眼睛占据画面中心，身后走廊灯拉出长影，边缘畸变。shot through a door peephole, 8mm fisheye lens, heavy circular barrel distortion, black circular vignette around the frame, extreme wide-angle, the corridor bends at the edges。角色设定（逐字复用，不得改词）：周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，右手虎口有烫伤疤，腰间挂黄铜钥匙串。周启明左眼下方的黑痣在画面右侧；右手虎口烫伤疤在画面左侧的手上。腰间挂一串黄铜钥匙。42 岁，方脸宽下颌、体格厚实，不要年轻化。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "1cd89f61-54ba-46cc-855b-d389572ec847",
+      "elapsed_sec": 110.2,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s02_peephole_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s02_peephole_last.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:09:20+08:00"
+    },
+    {
+      "node_id": "ch01_s03_knock",
+      "frame": "first",
+      "seed": 20261152,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/chapter_01/_refs/zhou_qiming_16x9.png"
+      ],
+      "characters": [
+        "zhou_qiming"
+      ],
+      "prompt": "门内视角，猫眼外周启明抬手敲门，寸头、深蓝工装夹克、左眼下黑痣，门灯暖黄，背景走廊冷绿，16:9。角色设定（逐字复用，不得改词）：周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，右手虎口有烫伤疤，腰间挂黄铜钥匙串。周启明左眼下方的黑痣在画面右侧；右手虎口烫伤疤在画面左侧的手上。腰间挂一串黄铜钥匙。42 岁，方脸宽下颌、体格厚实，不要年轻化。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "1b959ec6-6abe-4a30-94d7-ab3239547948",
+      "elapsed_sec": 110.2,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s03_knock_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s03_knock_first.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:11:10+08:00"
+    },
+    {
+      "node_id": "ch01_s03_knock",
+      "frame": "last",
+      "seed": 20261153,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/chapter_01/_refs/zhou_qiming_16x9.png"
+      ],
+      "characters": [
+        "zhou_qiming"
+      ],
+      "prompt": "周启明的手停在门板上，右手虎口烫伤疤清晰，身体前倾，门缝透出半张脸。角色设定（逐字复用，不得改词）：周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，右手虎口有烫伤疤，腰间挂黄铜钥匙串。周启明左眼下方的黑痣在画面右侧；右手虎口烫伤疤在画面左侧的手上。腰间挂一串黄铜钥匙。42 岁，方脸宽下颌、体格厚实，不要年轻化。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "f342b22f-7f89-4a87-a07d-ca36594e63b0",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s03_knock_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s03_knock_last.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:13:00+08:00"
+    },
+    {
+      "node_id": "ch01_s04_open",
+      "frame": "first",
+      "seed": 20261162,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png",
+        "assets/frames/chapter_01/_refs/zhou_qiming_16x9.png"
+      ],
+      "characters": [
+        "shen_yan",
+        "zhou_qiming"
+      ],
+      "prompt": "703 门口中景，沈砚拉开防盗门一半，深灰连帽卫衣、银色挂脖耳机，周启明站门外，暗红地毯卷在他脚后，走廊绿色应急灯，16:9。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，右手虎口有烫伤疤，腰间挂黄铜钥匙串。周启明左眼下方的黑痣在画面右侧；右手虎口烫伤疤在画面左侧的手上。腰间挂一串黄铜钥匙。42 岁，方脸宽下颌、体格厚实，不要年轻化。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "6edc7d5f-22e4-4c04-9b0e-639d3ec10e29",
+      "elapsed_sec": 130.4,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s04_open_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s04_open_first.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:15:11+08:00"
+    },
+    {
+      "node_id": "ch01_s05_listen",
+      "frame": "first",
+      "seed": 20261172,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png"
+      ],
+      "characters": [
+        "shen_yan"
+      ],
+      "prompt": "门内特写，沈砚侧脸贴防盗门，深灰卫衣，手机屏幕亮着录音界面，冷蓝光映在脸上，左眉尾疤可见，16:9。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "bb0fce75-c052-46f7-926b-540b870f321d",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s05_listen_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s05_listen_first.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:19:21+08:00"
+    },
+    {
+      "node_id": "ch01_s05_listen",
+      "frame": "last",
+      "seed": 20261173,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png"
+      ],
+      "characters": [
+        "shen_yan"
+      ],
+      "prompt": "沈砚瞳孔收缩，手指按住手机屏幕，门缝外传来气音，画面停在门锁特写。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "90a4aab7-ffa6-45e8-9e07-17ad01aac308",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s05_listen_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s05_listen_last.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:21:12+08:00"
+    },
+    {
+      "node_id": "ch01_s06_lock",
+      "frame": "first",
+      "seed": 20261182,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png"
+      ],
+      "characters": [
+        "shen_yan"
+      ],
+      "prompt": "703 玄关，沈砚把防盗门反锁、扣上门链，暖黄壁灯，深灰连帽卫衣，银色耳机挂脖，16:9。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "85c86d50-3577-4b2d-8ac8-bdbec02d02ec",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s06_lock_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s06_lock_first.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:23:02+08:00"
+    },
+    {
+      "node_id": "ch01_s06_lock",
+      "frame": "last",
+      "seed": 20261183,
+      "mode": "t2i",
+      "steps": 30,
+      "cfg": 1.0,
+      "refs": [],
+      "characters": [],
+      "prompt": "猫眼视角，704 的门轻轻合上，走廊空无一人，绿色应急灯闪烁。16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "b1280d1a-467d-4bc9-a443-74b1488239e5",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s06_lock_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s06_lock_last.png",
+      "master_px": [
+        1024,
+        576
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:24:52+08:00"
+    },
+    {
+      "node_id": "ch01_s07_elevator",
+      "frame": "first",
+      "seed": 20261192,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/chapter_01/_refs/zhou_qiming_16x9.png"
+      ],
+      "characters": [
+        "zhou_qiming"
+      ],
+      "prompt": "七楼电梯厅，周启明把黄色「维修中」牌子挂在电梯门上，寸头、深蓝工装夹克，电梯指示灯琥珀色，16:9。角色设定（逐字复用，不得改词）：周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，右手虎口有烫伤疤，腰间挂黄铜钥匙串。周启明左眼下方的黑痣在画面右侧；右手虎口烫伤疤在画面左侧的手上。腰间挂一串黄铜钥匙。42 岁，方脸宽下颌、体格厚实，不要年轻化。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "1367bbf9-444f-4ffd-b309-caee6d734a85",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s07_elevator_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s07_elevator_first.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:26:43+08:00"
+    },
+    {
+      "node_id": "ch01_s07_elevator",
+      "frame": "last",
+      "seed": 20261193,
+      "mode": "t2i",
+      "steps": 30,
+      "cfg": 1.0,
+      "refs": [],
+      "characters": [],
+      "prompt": "电梯门缓缓合上，楼层数字停在 7，走廊尽头只剩应急灯，维修牌轻轻晃动。16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "f3e554bb-c278-4232-ab1f-056a14940d62",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s07_elevator_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s07_elevator_last.png",
+      "master_px": [
+        1024,
+        576
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:28:33+08:00"
+    },
+    {
+      "node_id": "ch01_s08_groupchat",
+      "frame": "first",
+      "seed": 20261202,
+      "mode": "t2i",
+      "steps": 30,
+      "cfg": 1.0,
+      "refs": [],
+      "characters": [],
+      "prompt": "手机屏幕特写，业主群聊天界面，消息「704 好像出事，已经报警」，发送者头像为周启明，冷白屏光照亮手指，16:9。16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "f9522534-9ab7-488b-981b-fac1d7651670",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s08_groupchat_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s08_groupchat_first.png",
+      "master_px": [
+        1024,
+        576
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:30:23+08:00"
+    },
+    {
+      "node_id": "ch01_s08_groupchat",
+      "frame": "last",
+      "seed": 20261203,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png"
+      ],
+      "characters": [
+        "shen_yan"
+      ],
+      "prompt": "沈砚抬头看向防盗门，手机还亮着，窗外远处红蓝警灯扫过窗帘，他握紧手机。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "dcb59091-f98a-424f-9cfa-9f1cc030a4dd",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s08_groupchat_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s08_groupchat_last.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:32:13+08:00"
+    },
+    {
+      "node_id": "ch01_s09_second_knock",
+      "frame": "first",
+      "seed": 20261212,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/chapter_01/_refs/zhou_qiming_16x9.png"
+      ],
+      "characters": [
+        "zhou_qiming"
+      ],
+      "prompt": "猫眼鱼眼视角，周启明站在 703 门外，手里攥着黄铜钥匙串，左眼下黑痣，寸头，走廊绿色应急灯，16:9。shot through a door peephole, 8mm fisheye lens, heavy circular barrel distortion, black circular vignette around the frame, extreme wide-angle, the corridor bends at the edges。角色设定（逐字复用，不得改词）：周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，右手虎口有烫伤疤，腰间挂黄铜钥匙串。周启明左眼下方的黑痣在画面右侧；右手虎口烫伤疤在画面左侧的手上。腰间挂一串黄铜钥匙。42 岁，方脸宽下颌、体格厚实，不要年轻化。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "7208a144-f0fc-449f-85d1-d0818b21e86e",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s09_second_knock_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s09_second_knock_first.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:34:04+08:00"
+    },
+    {
+      "node_id": "ch01_s09_second_knock",
+      "frame": "last",
+      "seed": 20261213,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/chapter_01/_refs/zhou_qiming_16x9.png"
+      ],
+      "characters": [
+        "zhou_qiming"
+      ],
+      "prompt": "周启明把耳朵贴向门板，右手按住门框，钥匙串垂在身侧，门外警灯开始扫过墙面。shot through a door peephole, 8mm fisheye lens, heavy circular barrel distortion, black circular vignette around the frame, extreme wide-angle, the corridor bends at the edges。角色设定（逐字复用，不得改词）：周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，右手虎口有烫伤疤，腰间挂黄铜钥匙串。周启明左眼下方的黑痣在画面右侧；右手虎口烫伤疤在画面左侧的手上。腰间挂一串黄铜钥匙。42 岁，方脸宽下颌、体格厚实，不要年轻化。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "a9c3fab3-5396-47fb-9593-d42d706b1c5b",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s09_second_knock_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s09_second_knock_last.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:35:54+08:00"
+    },
+    {
+      "node_id": "ch01_s10_choice",
+      "frame": "first",
+      "seed": 20261222,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png"
+      ],
+      "characters": [
+        "shen_yan"
+      ],
+      "prompt": "703 玄关，沈砚一手握手机一手搭在门把上，警灯红蓝光从猫眼与窗帘缝隙扫进来，深灰连帽卫衣，16:9。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "83168391-a957-47bb-a193-25e2b215d2f6",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s10_choice_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s10_choice_first.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:37:44+08:00"
+    },
+    {
+      "node_id": "ch01_s10_choice",
+      "frame": "last",
+      "seed": 20261223,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png"
+      ],
+      "characters": [
+        "shen_yan"
+      ],
+      "prompt": "沈砚的手指停在门锁上，猫眼里红蓝光一闪而过，侧脸一半暖黄一半冷蓝。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "75abd2ea-9090-4348-b725-f8c0344d6ed9",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s10_choice_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s10_choice_last.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:39:35+08:00"
+    },
+    {
+      "node_id": "ch01_s11_end_testify",
+      "frame": "first",
+      "seed": 20261232,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/chapter_01/_refs/zhou_qiming_16x9.png",
+        "assets/frames/anchors/su_min_partial_anchor.png"
+      ],
+      "characters": [
+        "zhou_qiming",
+        "su_min"
+      ],
+      "prompt": "703 门外走廊，两名警察背影，周启明被按在墙边，暗红地毯旁一副担架，毯子盖住人形，无血腥，警灯红蓝，16:9。角色设定（逐字复用，不得改词）：周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方一颗小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，右手虎口有烫伤疤，腰间挂黄铜钥匙串。周启明左眼下方的黑痣在画面右侧；右手虎口烫伤疤在画面左侧的手上。腰间挂一串黄铜钥匙。42 岁，方脸宽下颌、体格厚实，不要年轻化。苏敏，31 岁，仅右手、右眼与部分黑发可见；右眼下方一颗泪痣，皮肤苍白，眼睑浮肿，不化妆；黑色长直发、发尾深棕；米色针织长裙袖口起球，细银手链三颗小珠，右手食指第二指节有咬痕，指甲短且无甲油；不露全脸。苏敏右眼泪痣在画面右侧；右手食指第二指节咬痕；右腕三颗小珠银手链。米色针织袖口、短甲无甲油。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "12be1164-6042-443b-b9af-8ae307632411",
+      "elapsed_sec": 120.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s11_end_testify_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s11_end_testify_first.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:41:35+08:00"
+    },
+    {
+      "node_id": "ch01_s11_end_testify",
+      "frame": "last",
+      "seed": 20261233,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png"
+      ],
+      "characters": [
+        "shen_yan"
+      ],
+      "prompt": "警察抬着担架经过，沈砚站在门口，视线落在自家猫眼上，猫眼贴着一枚崭新的同款贴纸。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "b02162f5-934e-41f3-917a-548edbd59839",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s11_end_testify_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s11_end_testify_last.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:43:25+08:00"
+    },
+    {
+      "node_id": "ch01_s12_end_silence",
+      "frame": "first",
+      "seed": 20261242,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png"
+      ],
+      "characters": [
+        "shen_yan"
+      ],
+      "prompt": "黑暗玄关，沈砚背靠防盗门坐在地上，手机屏幕照亮下颌，深灰连帽卫衣，银色耳机挂脖，16:9。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "de7d3c45-a355-46f0-a007-221cb8ebd957",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s12_end_silence_first.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s12_end_silence_first.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:45:16+08:00"
+    },
+    {
+      "node_id": "ch01_s12_end_silence",
+      "frame": "last",
+      "seed": 20261243,
+      "mode": "t2i",
+      "steps": 30,
+      "cfg": 1.0,
+      "refs": [],
+      "characters": [],
+      "prompt": "次日清晨，703 门口拉起警戒线，走廊监控探头红灯亮着，地面有取证标记，无人。16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "6919dc2f-25a1-4192-9633-d55d15ca7175",
+      "elapsed_sec": 110.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s12_end_silence_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s12_end_silence_last.png",
+      "master_px": [
+        1024,
+        576
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:47:06+08:00"
+    },
+    {
+      "node_id": "ch01_s04_open",
+      "frame": "last",
+      "seed": 20261163,
+      "mode": "ref",
+      "steps": 16,
+      "cfg": 2.5,
+      "refs": [
+        "assets/frames/anchors/shen_yan_anchor.png",
+        "assets/frames/chapter_01/_refs/zhou_qiming_16x9.png"
+      ],
+      "characters": [
+        "shen_yan",
+        "zhou_qiming"
+      ],
+      "prompt": "Extreme close-up of the bottom edge of a rolled dark red carpet at the apartment threshold. A sliver of a pale female hand with short unpolished nails protrudes from under the carpet edge. Zhou Qiming's leg and torso block most of the opening; Shen Yan's blurred shoulder in the foreground. Zhou's face is partly visible at the edge, still smiling. No face of the woman, no full woman, no full body, no group photo, no lineup. Shallow depth of field, green emergency light and warm door light, 16:9 cinematic still.",
+      "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
+      "prompt_id": "3013f364-153e-4c29-92bf-ccd4f7835923",
+      "elapsed_sec": 120.3,
+      "master_path": "assets/frames/chapter_01/_master/ch01_s04_open_last.png",
+      "delivery_path": "assets/frames/chapter_01/ch01_s04_open_last.png",
+      "master_px": [
+        864,
+        480
+      ],
+      "delivery_px": [
+        854,
+        480
+      ],
+      "status": "ok",
+      "generated_at": "2026-11-22T14:49:45+08:00"
+    }
+  ]
+}

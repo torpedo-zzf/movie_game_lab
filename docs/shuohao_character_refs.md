@@ -102,3 +102,22 @@ node scripts/character-refs.mjs check "../../../assets/frames/character_refs/周
 node scripts/character-refs.mjs render "../../../assets/frames/character_refs/周启明/asset.json" \
   --out ../../../assets/frames/character_refs/character-refs.html
 ```
+
+## 8. 沈砚 / 苏敏四视图（2026-11-22）
+
+在周启明之后，同一套 `character-refs` + 本机 Qwen 2.1 补齐了沈砚、苏敏。`check` 均 exit 0。
+
+| 角色 | 锚点 seed | 锚点 | 大头照 | 侧面 | 背面 |
+|---|---:|---:|---:|---:|---:|
+| 沈砚 | 20261121 | 353s | 250s | 323s | 242s |
+| 苏敏 | 20261123 | 358s | 254s | 245s | 241s |
+
+路径：`assets/frames/character_refs/沈砚/default/`、`assets/frames/character_refs/苏敏/default/`；联系表 `assets/frames/character_refs/contact_sheet.png`。
+
+已知偏差：
+
+- **沈砚**：正面锚点有银色监听耳机挂脖，但大头照/侧面/背面没有把耳机画出来；帽兜在锚点与派生图之间也有「立起/放下」的差异。耳机是标志物，四视图一致性不完整。
+- **苏敏**：四视图全脸/全身只是内部一致性参考；成片仍按圣经只取右手、右眼与部分黑发。全脸观感偏 38–40 岁（设定 31），泪痣/三珠手链/右食指咬痕在对应视图可见。
+- **周启明**：沿用第 4 节的袖口/旧疤/钥匙偏差。
+
+若要严格一致：可只重出沈砚的 face/side/back（约 15 分钟，加强「silver headphones hanging around his neck, clearly visible」），苏敏可重出 face（约 5 分钟，脸更年轻）。不影响已完成的 24 帧。

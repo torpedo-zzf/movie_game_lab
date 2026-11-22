@@ -12,7 +12,9 @@
         "first_frame_prompt": "深夜老公寓 703 玄关，沈砚穿深灰连帽卫衣、银色耳机挂脖，左眉尾有旧疤，黑色三七分短发，落地灯暖黄，门缝透进走廊冷绿光，中景，16:9 电影静帧",
         "last_frame_prompt": "沈砚侧身贴近防盗门，右手悬在门把上方，门缝冷光切过侧脸，走廊拖行声逼近，浅景深",
         "video_prompt": "沈砚摘下耳机，走廊传来低沉拖行声，他转头看向门，镜头缓慢前推，尘埃在暖光里浮动",
-        "duration_sec": 7.0
+        "duration_sec": 7.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s01_voiceover_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s01_voiceover_last.png"
       },
       "interaction": {
         "trigger_time_sec": 6.0,
@@ -30,7 +32,9 @@
         "first_frame_prompt": "猫眼鱼眼视角，老公寓七楼走廊，绿色应急灯，周启明拖着暗红地毯经过 703 门口，寸头、深蓝工装夹克、左眼下黑痣，画面边缘暗角，16:9",
         "last_frame_prompt": "鱼眼画面里周启明的脸贴向猫眼，一只眼睛占据画面中心，身后走廊灯拉出长影，边缘畸变",
         "video_prompt": "鱼眼畸变下，周启明拖地毯到 703 门前停下，缓慢抬头贴向猫眼，镜头轻微推近",
-        "duration_sec": 8.0
+        "duration_sec": 8.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s02_peephole_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s02_peephole_last.png"
       },
       "interaction": {
         "trigger_time_sec": 6.8,
@@ -48,7 +52,9 @@
         "first_frame_prompt": "门内视角，猫眼外周启明抬手敲门，寸头、深蓝工装夹克、左眼下黑痣，门灯暖黄，背景走廊冷绿，16:9",
         "last_frame_prompt": "周启明的手停在门板上，右手虎口烫伤疤清晰，身体前倾，门缝透出半张脸",
         "video_prompt": "三下沉闷敲门，周启明贴近门缝低声说话，镜头从猫眼缓慢拉回门板，门灯轻微闪烁",
-        "duration_sec": 8.0
+        "duration_sec": 8.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s03_knock_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s03_knock_last.png"
       },
       "interaction": {
         "trigger_time_sec": 4.0,
@@ -77,7 +83,9 @@
         "first_frame_prompt": "703 门口中景，沈砚拉开防盗门一半，深灰连帽卫衣、银色挂脖耳机，周启明站门外，暗红地毯卷在他脚后，走廊绿色应急灯，16:9",
         "last_frame_prompt": "沈砚视线下移，地毯边缘露出一截苍白手指，周启明侧身挡住，脸上仍挂着笑",
         "video_prompt": "门开，周启明向前半步用身体挡住地毯，沈砚低头看见手指，呼吸停顿，镜头轻推",
-        "duration_sec": 8.0
+        "duration_sec": 8.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s04_open_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s04_open_last.png"
       },
       "interaction": {
         "trigger_time_sec": 6.5,
@@ -95,7 +103,9 @@
         "first_frame_prompt": "门内特写，沈砚侧脸贴防盗门，深灰卫衣，手机屏幕亮着录音界面，冷蓝光映在脸上，左眉尾疤可见，16:9",
         "last_frame_prompt": "沈砚瞳孔收缩，手指按住手机屏幕，门缝外传来气音，画面停在门锁特写",
         "video_prompt": "门内极静，地毯下传来三下闷响，一个女声气音说「别信他」，沈砚手指收紧",
-        "duration_sec": 8.0
+        "duration_sec": 8.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s05_listen_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s05_listen_last.png"
       },
       "interaction": {
         "trigger_time_sec": 6.5,
@@ -113,7 +123,9 @@
         "first_frame_prompt": "703 玄关，沈砚把防盗门反锁、扣上门链，暖黄壁灯，深灰连帽卫衣，银色耳机挂脖，16:9",
         "last_frame_prompt": "猫眼视角，704 的门轻轻合上，走廊空无一人，绿色应急灯闪烁",
         "video_prompt": "锁舌扣入，脚步声远去，704 门合拢，沈砚从猫眼退开，镜头切到走廊空镜",
-        "duration_sec": 7.0
+        "duration_sec": 7.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s06_lock_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s06_lock_last.png"
       },
       "interaction": {
         "trigger_time_sec": 6.0,
@@ -131,7 +143,9 @@
         "first_frame_prompt": "七楼电梯厅，周启明把黄色「维修中」牌子挂在电梯门上，寸头、深蓝工装夹克，电梯指示灯琥珀色，16:9",
         "last_frame_prompt": "电梯门缓缓合上，楼层数字停在 7，走廊尽头只剩应急灯，维修牌轻轻晃动",
         "video_prompt": "电梯叮一声停层，门开却无人，周启明挂上维修牌，电梯门合拢，镜头沿走廊后退",
-        "duration_sec": 7.0
+        "duration_sec": 7.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s07_elevator_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s07_elevator_last.png"
       },
       "interaction": {
         "trigger_time_sec": 6.0,
@@ -149,7 +163,9 @@
         "first_frame_prompt": "手机屏幕特写，业主群聊天界面，消息「704 好像出事，已经报警」，发送者头像为周启明，冷白屏光照亮手指，16:9",
         "last_frame_prompt": "沈砚抬头看向防盗门，手机还亮着，窗外远处红蓝警灯扫过窗帘，他握紧手机",
         "video_prompt": "群消息弹出，沈砚放大周启明的头像，远处警笛由远及近，镜头从屏幕摇到他的脸",
-        "duration_sec": 7.0
+        "duration_sec": 7.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s08_groupchat_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s08_groupchat_last.png"
       },
       "interaction": {
         "trigger_time_sec": 6.0,
@@ -167,7 +183,9 @@
         "first_frame_prompt": "猫眼鱼眼视角，周启明站在 703 门外，手里攥着黄铜钥匙串，左眼下黑痣，寸头，走廊绿色应急灯，16:9",
         "last_frame_prompt": "周启明把耳朵贴向门板，右手按住门框，钥匙串垂在身侧，门外警灯开始扫过墙面",
         "video_prompt": "三下更重的敲门，周启明贴近门缝低声施压，镜头在鱼眼画面里缓慢推近他的眼睛",
-        "duration_sec": 8.0
+        "duration_sec": 8.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s09_second_knock_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s09_second_knock_last.png"
       },
       "interaction": {
         "trigger_time_sec": 6.5,
@@ -185,7 +203,9 @@
         "first_frame_prompt": "703 玄关，沈砚一手握手机一手搭在门把上，警灯红蓝光从猫眼与窗帘缝隙扫进来，深灰连帽卫衣，16:9",
         "last_frame_prompt": "沈砚的手指停在门锁上，猫眼里红蓝光一闪而过，侧脸一半暖黄一半冷蓝",
         "video_prompt": "沈砚看向猫眼，又低头看手机里的录音，呼吸加重，手指在门锁上停住",
-        "duration_sec": 8.0
+        "duration_sec": 8.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s10_choice_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s10_choice_last.png"
       },
       "interaction": {
         "trigger_time_sec": 4.0,
@@ -214,7 +234,9 @@
         "first_frame_prompt": "703 门外走廊，两名警察背影，周启明被按在墙边，暗红地毯旁一副担架，毯子盖住人形，无血腥，警灯红蓝，16:9",
         "last_frame_prompt": "警察抬着担架经过，沈砚站在门口，视线落在自家猫眼上，猫眼贴着一枚崭新的同款贴纸",
         "video_prompt": "门开，警灯照亮走廊，担架从沈砚面前经过，镜头缓慢推向他家门上的猫眼，叠化出一枚同款贴纸",
-        "duration_sec": 7.0
+        "duration_sec": 7.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s11_end_testify_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s11_end_testify_last.png"
       }
     },
     {
@@ -226,7 +248,9 @@
         "first_frame_prompt": "黑暗玄关，沈砚背靠防盗门坐在地上，手机屏幕照亮下颌，深灰连帽卫衣，银色耳机挂脖，16:9",
         "last_frame_prompt": "次日清晨，703 门口拉起警戒线，走廊监控探头红灯亮着，地面有取证标记，无人",
         "video_prompt": "沈砚删掉录音，关掉手机，黑暗吞没玄关；叠化到次日警戒线与监控红灯",
-        "duration_sec": 8.0
+        "duration_sec": 8.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s12_end_silence_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s12_end_silence_last.png"
       }
     }
   ]

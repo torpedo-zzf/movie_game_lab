@@ -1,0 +1,79 @@
+{
+  "name": "沈砚",
+  "lang": "zh",
+  "source": "《猫眼之后》角色圣经 02_characters.md 第 2 节（character_id: shen_yan）",
+  "identity": {
+    "age": 33,
+    "gender": "male",
+    "en": "A thirty-three-year-old Chinese man, 178 cm tall and lean, living in an old apartment block in a second-tier Chinese city in the present day",
+    "text": "当代二线城市老公寓 703 的住户，身高 178cm、偏瘦，做配音工作，常年熬夜",
+    "source": "stated"
+  },
+  "face": {
+    "en": "A narrow, long face with a soft jawline, monolid eyes with slightly downturned outer corners, dark circles under the eyes, a high straight nose, thin lips, a pale 1.5 cm old scar at the tail of his left eyebrow, on the right side of the image; cool pale skin, no beard, no glasses, tired and restrained expression, not smiling",
+    "text": "窄长脸，单眼皮、眼尾略垂，眼下青黑，高鼻梁，薄唇，左眉尾一道 1.5cm 旧疤；肤色偏冷白，不蓄须，不戴眼镜，神情疲惫克制、不笑",
+    "source": "stated"
+  },
+  "hair": {
+    "en": "Short black hair parted three-to-seven, the parting line on the left side of the image with the longer fringe hanging on that side down to the brow; sideburns cut short",
+    "text": "黑色三七分短发，分缝在画面左侧（即他的右侧），左侧刘海略长垂到眉骨，鬓角短",
+    "source": "stated"
+  },
+  "build": {
+    "en": "178 cm and lean, with narrow shoulders and thin wrists, a slight forward stoop from years of late nights",
+    "text": "178cm、偏瘦，肩窄手腕细，长期熬夜导致轻微驼背",
+    "source": "stated"
+  },
+  "skin": {
+    "en": "Cool pale, slightly dry skin with fine visible pores, no tan and little colour in the cheeks; clean-shaven",
+    "text": "冷白皮，偏干，毛孔细可见，没有晒痕，脸颊没什么血色；刮得很干净",
+    "source": "inferred"
+  },
+  "backCue": {
+    "en": "The back of his short black hair, the dark grey hood lying flat and bunched across his upper back, and the silver band of the headphones resting at the back of his neck",
+    "text": "黑色短发的后脑、深灰卫衣的帽兜塌在上背，耳机银色头梁搁在后颈",
+    "source": "inferred"
+  },
+  "outfit": {
+    "id": "default",
+    "label": "常态 · 同一夜",
+    "top": {
+      "en": "a dark grey cotton pullover hoodie with the hood down and bunched behind his neck, a small white paint speck on his left chest, on the right side of the image, worn over a white crew-neck T-shirt",
+      "text": "深灰棉质连帽卫衣，帽兜放下堆在后颈，左胸（画面右侧）一小块洗不掉的白色漆点，里面是白色圆领 T",
+      "source": "stated"
+    },
+    "bottom": {
+      "en": "black loose loungewear trousers and grey cotton slippers",
+      "text": "黑色宽松家居长裤、灰色棉拖",
+      "source": "stated"
+    },
+    "details": [
+      {
+        "slot": "neck",
+        "en": "the silver over-ear headphones hanging around his neck, the earcups worn shiny at the edges, resting over the ribbed collar of his white crew-neck T-shirt",
+        "text": "银色头戴式监听耳机挂脖、没戴在头上，耳罩边缘磨得发亮，压在白色圆领 T 的罗纹领口上",
+        "source": "stated"
+      },
+      {
+        "slot": "custom",
+        "id": "paint-speck",
+        "part": "body",
+        "en": "the small white paint speck on the left chest of his dark grey hoodie, soaked into the cotton, never washed out",
+        "text": "卫衣左胸那块洗不掉的白色漆点",
+        "source": "stated"
+      },
+      {
+        "slot": "sleeve",
+        "en": "the ribbed cuff of his dark grey hoodie, stretched soft and slightly frayed along the edge",
+        "text": "卫衣的罗纹袖口，洗得发软，边缘有点起毛",
+        "source": "inferred"
+      },
+      {
+        "slot": "feet",
+        "en": "grey cotton slippers, flattened and worn down at the heel",
+        "text": "灰色棉拖，后跟踩塌了",
+        "source": "inferred"
+      }
+    ]
+  }
+}

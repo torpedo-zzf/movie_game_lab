@@ -1,0 +1,79 @@
+{
+  "name": "苏敏",
+  "lang": "zh",
+  "source": "《猫眼之后》角色圣经 02_characters.md 第 4 节（character_id: su_min）。注：圣经规定成片只出现右手、右眼与部分黑发，不露全脸；本次完整四视图仅作内部一致性参考（给 Codex 做服装与手部锚定），成片仍按圣经只用局部，不因此改动剧情或角色设定",
+  "identity": {
+    "age": 31,
+    "gender": "female",
+    "en": "A thirty-one-year-old Chinese woman, 165 cm tall and slim, living in an old apartment block in a second-tier Chinese city in the present day",
+    "text": "当代二线城市老公寓 704 的住户，身高 165cm、偏瘦（身高体型圣经未写，本项为补全）",
+    "source": "inferred"
+  },
+  "face": {
+    "en": "A pale oval face with hollow cheeks and a soft jawline, dark brown eyes, the eyelids puffy and swollen as if she has been crying, a small dark mole just below her right eye, on the left side of the image, a straight narrow nose, pale dry lips, no makeup",
+    "text": "鹅蛋脸偏清瘦、脸颊略陷，深褐眼睛，眼睑浮肿像刚哭过，右眼下方一颗泪痣，鼻子窄直，嘴唇苍白发干，素颜",
+    "source": "inferred"
+  },
+  "hair": {
+    "en": "Long straight black hair worn loose, falling past the shoulders, the ends faded to dark brown, slightly dry and tangled",
+    "text": "黑色长直发，松散垂到肩下，发尾染过的深棕已褪色，发丝有点干、有点乱",
+    "source": "stated"
+  },
+  "build": {
+    "en": "165 cm and thin, small-framed with narrow shoulders, standing a little drawn in with rounded shoulders",
+    "text": "165cm、偏瘦，骨架小、肩窄，站着有点缩着肩",
+    "source": "inferred"
+  },
+  "skin": {
+    "en": "Very pale, almost bloodless skin with fine visible pores, dry lips, faint shadows under the eyes, no makeup at all",
+    "text": "皮肤苍白几乎没有血色，毛孔细可见，嘴唇发干，眼下有淡淡的青影，完全不化妆",
+    "source": "inferred"
+  },
+  "backCue": {
+    "en": "Her long black hair falling loose down her back, fading to dark brown at the ends, over the plain back of the beige knit dress",
+    "text": "黑色长直发披在后背、发尾转深棕，下面是米色针织长裙素净的后片",
+    "source": "inferred"
+  },
+  "outfit": {
+    "id": "default",
+    "label": "常态 · 同一夜",
+    "top": {
+      "en": "a beige fine-knit long-sleeved dress with a soft round neckline, the cuffs pilled from wear",
+      "text": "米色细针织长袖连衣裙，圆领，袖口起球",
+      "source": "stated"
+    },
+    "bottom": {
+      "en": "the skirt of the same beige knit dress, falling to mid-calf, and bare feet",
+      "text": "同一条米色针织裙的下摆到小腿中段，赤脚（鞋子圣经未写，按室内地毯场景补全）",
+      "source": "inferred"
+    },
+    "details": [
+      {
+        "slot": "custom",
+        "id": "bracelet-bite",
+        "part": "hands",
+        "en": "the thin silver bracelet with three small beads on her right wrist, and a small healed bite mark on the second knuckle of her right index finger, her nails short and unpolished",
+        "text": "右腕细银手链带三颗小珠，右手食指第二指节一处愈合的咬痕，指甲剪得短、没有甲油",
+        "source": "stated"
+      },
+      {
+        "slot": "sleeve",
+        "en": "the pilled cuff of her beige knit dress, the fine wool bobbled and softened from wear",
+        "text": "米色针织裙的袖口，起了小球、磨得发软",
+        "source": "stated"
+      },
+      {
+        "slot": "neck",
+        "en": "the soft round neckline of her beige knit dress, slightly stretched out of shape",
+        "text": "米色针织裙的软圆领，略微松垮变形",
+        "source": "inferred"
+      },
+      {
+        "slot": "hair",
+        "en": "the ends of her long black hair, faded to dark brown at the tips and a little dry and split",
+        "text": "黑色长发的发尾，染过的深棕已褪，发梢有点干、有分叉",
+        "source": "stated"
+      }
+    ]
+  }
+}

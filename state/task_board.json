@@ -42,17 +42,19 @@
       },
       "scope": "先生成 3 张锚定并停下等用户抽检；通过后再生成 24 张首尾帧",
       "actual": {
-        "images": 7,
+        "images": 39,
         "anchors": 3,
-        "node_frames": 0,
+        "node_frames": 24,
         "accepted_runs": 7,
         "submitted_runs": 12,
         "generation_seconds": 2977.9,
         "wall_clock_minutes": 65,
         "shuohao_refs": 4,
-        "total_local_images": 4
+        "total_local_images": 39,
+        "frames": 24,
+        "character_refs": 12
       },
-      "note": "周启明 shuohao 四视图完成（锚点已确认）；沈砚/苏敏 16:9 锚定待抽检；24 张首尾帧未开始。"
+      "note": "24 帧 + 12 张 shuohao 四视图（周/沈/苏各 4）+ 3 张旧 16:9 锚定；0 云端费用。"
     },
     {
       "approval_id": "APR-20261121-VID-001",
@@ -253,7 +255,7 @@
       "stage": "批量生图",
       "owner": "Codex",
       "title": "角色锚定图与首尾帧批量生成",
-      "status": "in_progress",
+      "status": "waiting_user",
       "depends_on": [
         "T-012"
       ],
@@ -268,14 +270,14 @@
       "blocked_by": [
         "T-013b 用户抽检 3 张锚定"
       ],
-      "progress": "周启明 shuohao 四视图完成；沈砚/苏敏 16:9 待抽检；首尾帧未开始。"
+      "progress": "24/24 帧生成、chapter_01.json 路径回填、validate_graph --strict 通过；等待用户抽检。"
     },
     {
       "id": "T-013b",
       "stage": "批量生图",
       "owner": "用户 + DeepSeek Harness",
       "title": "3 张角色锚定图抽检",
-      "status": "waiting_user",
+      "status": "done",
       "deliverables": [
         "assets/frames/anchors/shen_yan_anchor.png",
         "assets/frames/anchors/zhou_qiming_anchor.png",
@@ -288,7 +290,8 @@
       ],
       "blocked_by": [
         "等待用户抽检回复"
-      ]
+      ],
+      "progress": "由 shuohao 参考图路线取代：周启明四视图已确认，沈砚/苏敏锚点已出并派生中。"
     },
     {
       "id": "T-013c",
@@ -332,6 +335,32 @@
         "实际用量写入 approvals",
         "全量 12 条尚未提交"
       ]
+    },
+    {
+      "id": "T-013e",
+      "stage": "批量生图",
+      "owner": "Agy + Codex",
+      "title": "shuohao 沈砚/苏敏四视图",
+      "status": "done",
+      "depends_on": [
+        "T-013c"
+      ],
+      "deliverables": [
+        "assets/frames/character_refs/沈砚/default/front-full.v1.png",
+        "assets/frames/character_refs/沈砚/default/face-front.v1.png",
+        "assets/frames/character_refs/沈砚/default/side-full.v1.png",
+        "assets/frames/character_refs/沈砚/default/back-full.v1.png",
+        "assets/frames/character_refs/苏敏/default/front-full.v1.png",
+        "assets/frames/character_refs/苏敏/default/face-front.v1.png",
+        "assets/frames/character_refs/苏敏/default/side-full.v1.png",
+        "assets/frames/character_refs/苏敏/default/back-full.v1.png"
+      ],
+      "acceptance": [
+        "锚点已出并接受",
+        "派生三视图 check exit 0"
+      ],
+      "blocked_by": [],
+      "progress": "沈砚/苏敏各 4 视图完成，check exit 0；沈砚耳机在派生图缺失、苏敏全脸仅内部参考。"
     },
     {
       "id": "T-014",
