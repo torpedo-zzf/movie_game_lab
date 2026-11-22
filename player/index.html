@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d10" />
+  <meta name="description" content="《猫眼之后》第一章互动播放器：FMV 分支、限时选择与双结局。" />
+  <title>猫眼之后 · 第一章</title>
+  <link rel="stylesheet" href="player.css" />
+</head>
+<body>
+  <div id="app" class="app" data-state="loading">
+    <header class="topbar">
+      <div class="brand" aria-label="猫眼之后 第一章">
+        <span class="brand-mark" aria-hidden="true">◉</span>
+        <span class="brand-title">猫眼之后</span>
+        <span class="brand-chapter">第一章</span>
+      </div>
+      <div class="topbar-right">
+        <div id="item-hud" class="item-hud" aria-label="道具栏">
+          <span class="item-hud-label">道具</span>
+          <div id="item-list" class="item-list"><span class="item-empty">空</span></div>
+        </div>
+        <button id="debug-btn" class="icon-btn" type="button" title="调试面板（~）" aria-label="打开调试面板">~</button>
+      </div>
+    </header>
+
+    <main class="stage" aria-label="播放器">
+      <div class="frame-shell">
+        <div id="frame" class="frame">
+          <img id="poster" class="poster" alt="" draggable="false" />
+          <div id="video-layer" class="video-layer"></div>
+          <div class="frame-vignette" aria-hidden="true"></div>
+
+          <div id="fallback" class="fallback" hidden>
+            <div class="fallback-top">
+              <span class="badge-live">视频生成中</span>
+            </div>
+            <div class="fallback-bottom">
+              <span id="fallback-text" class="fallback-text">首帧占位 · 流程可继续</span>
+              <button id="fallback-skip" class="ghost-btn" type="button">跳过等待 <kbd>Space</kbd></button>
+            </div>
+          </div>
+
+          <div id="chat-overlay" class="chat-overlay" aria-hidden="true">
+            <div class="chat-panel">
+              <div class="chat-head">
+                <span class="chat-dot" aria-hidden="true"></span>
+                <span class="chat-title">7楼业主群</span>
+                <span class="chat-meta">12</span>
+              </div>
+              <div class="chat-body">
+                <div class="chat-avatar" aria-hidden="true">周</div>
+                <div class="chat-content">
+                  <div class="chat-name">周启明</div>
+                  <div class="chat-bubble">704 好像出事，已经报警</div>
+                  <div class="chat-stamp">23:47</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="video-loading" class="video-loading" hidden>
+            <span class="spinner" aria-hidden="true"></span>
+            <span>正在载入镜头…</span>
+          </div>
+
+          <div id="resume-prompt" class="resume-prompt" hidden>
+            <button id="resume-btn" class="primary-btn" type="button">点击继续播放</button>
+          </div>
+        </div>
+
+        <div id="subtitle" class="subtitle" aria-live="polite">
+          <span id="speaker" class="subtitle-speaker"></span>
+          <p id="dialogue" class="subtitle-dialogue"></p>
+        </div>
+      </div>
+    </main>
+
+    <section id="choice-layer" class="choice-layer" hidden aria-label="选择">
+      <div class="choice-scrim" aria-hidden="true"></div>
+      <div class="choice-card" role="dialog" aria-modal="false" aria-labelledby="choice-title">
+        <div class="choice-head">
+          <div>
+            <div class="choice-kicker">抉择</div>
+            <h2 id="choice-title" class="choice-title">你要怎么做？</h2>
+          </div>
+          <div id="countdown" class="countdown" aria-label="剩余选择时间">
+            <svg viewBox="0 0 44 44" aria-hidden="true">
+              <circle class="ring-bg" cx="22" cy="22" r="18"></circle>
+              <circle id="ring-fg" class="ring-fg" cx="22" cy="22" r="18"></circle>
+            </svg>
+            <span id="countdown-num" class="countdown-num">4</span>
+          </div>
+        </div>
+        <p id="choice-context" class="choice-context" hidden></p>
+        <div id="options" class="options"></div>
+        <div id="choice-hint" class="choice-hint">
+          <span><kbd>1</kbd> / <kbd>2</kbd> 选择</span>
+          <span>超时将自动推进</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="ending" class="ending" hidden aria-labelledby="ending-title">
+      <div class="ending-inner">
+        <div id="ending-code" class="ending-code">结局</div>
+        <h2 id="ending-title">结局</h2>
+        <p id="ending-quote" class="ending-quote"></p>
+        <div id="ending-meta" class="ending-meta"></div>
+        <div class="ending-actions">
+          <button id="replay-btn" class="primary-btn" type="button">重玩本章</button>
+          <button id="rewind-btn" class="ghost-btn" type="button">回到第一个选择</button>
+        </div>
+        <details id="ending-path-details" class="ending-path">
+          <summary>观看路径 <span id="path-count"></span></summary>
+          <ol id="ending-path"></ol>
+        </details>
+      </div>
+    </section>
+
+    <section id="start-screen" class="start-screen" aria-labelledby="start-title">
+      <img id="start-cover" class="start-cover" alt="" />
+      <div class="start-veil" aria-hidden="true"></div>
+      <div class="start-content">
+        <div class="start-kicker">互动影游 · CHAPTER 01</div>
+        <h1 id="start-title">猫眼之后</h1>
+        <p class="start-sub">凌晨两点，门外拖着一卷地毯。</p>
+        <div class="start-meta">
+          <span id="meta-nodes">12 个节点</span>
+          <span id="meta-endings">2 个结局</span>
+          <span id="meta-duration">约 92 秒</span>
+        </div>
+        <button id="start-btn" class="primary-btn" type="button" disabled>正在载入…</button>
+        <p class="start-hint">建议戴耳机 · <kbd>1</kbd>/<kbd>2</kbd> 选择 · <kbd>~</kbd> 调试面板</p>
+        <p id="start-status" class="start-status" role="status">正在载入章节…</p>
+      </div>
+    </section>
+
+    <section id="error-screen" class="error-screen" hidden aria-labelledby="error-title">
+      <div class="error-inner">
+        <div class="error-code">LOAD ERROR</div>
+        <h2 id="error-title">无法载入章节</h2>
+        <p id="error-msg" class="error-msg">章节数据读取失败。</p>
+        <pre id="error-detail" class="error-detail"></pre>
+        <p class="error-help">请在仓库根目录启动本地服务：</p>
+        <code class="error-cmd">python3 -m http.server 8123</code>
+        <p class="error-help">然后打开 <code>http://127.0.0.1:8123/player/</code>。浏览器直接打开 <code>file://</code> 时无法 fetch 章节 JSON。</p>
+        <button id="retry-btn" class="ghost-btn" type="button">重新载入</button>
+      </div>
+    </section>
+
+    <aside id="debug-panel" class="debug-panel" hidden aria-label="调试面板">
+      <header>
+        <h2>DEBUG · T-015</h2>
+        <button id="debug-close" class="icon-btn" type="button" aria-label="关闭调试面板">×</button>
+      </header>
+      <dl class="debug-grid">
+        <dt>状态</dt><dd id="dbg-state">-</dd>
+        <dt>节点</dt><dd id="dbg-node">-</dd>
+        <dt>类型</dt><dd id="dbg-type">-</dd>
+        <dt>播放</dt><dd id="dbg-time">-</dd>
+        <dt>触发 / 超时</dt><dd id="dbg-trigger">-</dd>
+        <dt>切镜模式</dt><dd id="dbg-mode">-</dd>
+        <dt>道具</dt><dd id="dbg-items">-</dd>
+        <dt>路径</dt><dd id="dbg-pathlen">-</dd>
+      </dl>
+      <div class="debug-controls">
+        <button id="debug-advance" class="ghost-btn" type="button">切镜模式：播完</button>
+        <button id="debug-reset" class="ghost-btn" type="button">重置到 s01</button>
+        <button id="debug-clear-items" class="ghost-btn" type="button">清空道具</button>
+      </div>
+      <h3>节点跳转</h3>
+      <div id="debug-node-list" class="debug-node-list"></div>
+      <h3>已走路径</h3>
+      <ol id="debug-path-list" class="debug-path-list"></ol>
+      <p class="debug-foot">按 <kbd>~</kbd> 关闭 · 点击节点直接跳转</p>
+    </aside>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
+
+  <script src="player.js"></script>
+</body>
+</html>

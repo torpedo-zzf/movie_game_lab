@@ -2,7 +2,7 @@
   "project_name": "FMV-Interactive-Project",
   "version": "0.1.0",
   "updated_at": "2026-11-23",
-  "current_stage": "批量生视频",
+  "current_stage": "播放器联调",
   "stages": [
     "初始化",
     "选材",
@@ -626,19 +626,27 @@
       "stage": "播放器联调",
       "owner": "Codex",
       "title": "互动播放器联调与试玩交付",
-      "status": "in_progress",
+      "status": "waiting_user",
       "depends_on": [
         "T-014"
       ],
       "deliverables": [
-        "player/ 可运行版本",
-        "试玩说明"
+        "player/index.html",
+        "player/player.css",
+        "player/player.js",
+        "player/README.md",
+        "player/selftest.mjs"
       ],
       "acceptance": [
-        "分支选择、道具、QTE、超时兜底可用",
+        "python3 -m http.server 8123 后 /player/ 可玩",
+        "两个结局均可到达",
+        "node player/selftest.mjs 通过",
         "用户试玩验收"
       ],
-      "progress": "视频齐备；播放器规格 docs/player_spec_chapter_01.md，已派 Codex 实现。"
+      "progress": "播放器已实现：zero-dep 静态页 + 双结局 + 超时兜底 + s08 群聊叠层 + 移动端。selftest 13/13 PASS，headless E2E 53/53。等用户试玩验收；默认切镜 ended 与 trigger 两种模式待定。",
+      "blocked_by": [
+        "用户试玩验收"
+      ]
     }
   ],
   "brief": {
