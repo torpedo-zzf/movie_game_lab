@@ -1,5 +1,7 @@
 # 互动影游项目脚手架 (DeepSeek Harness + Agy + Codex)
 
+**在线试玩：<https://torpedo-zzf.github.io/movie_game_lab/>**（GitHub Pages，手机/桌面均可）
+
 本仓库是互动影游（FMV）的最小工程脚手架：剧情图 → 结构/连通性/道具校验 → 首尾帧与 MiniMax H3 视频生产 → 播放器联调。工程脚本只依赖 Python 标准库，不需要 `pip install`。
 
 ## 目录说明
@@ -191,3 +193,20 @@ python3 scripts/batch_minimax_h3.py ... --yes --cost-per-sec 1.5
 - `.gitignore` 已忽略 `__pycache__`、`.DS_Store`、`.venv`、`node_modules`、日志、临时文件与 `state/env_report.json`。
 - 生成产物应归档到 `assets/`，章节 JSON 只保存相对路径；提交前用 `ffprobe` 验证文件真实可读。
 - 不要 `git commit` 未确认的媒体产物；成本确认与用量记录以 `state/task_board.json` 的 `approvals` 为准。
+
+## 发布到 GitHub Pages
+
+站点只包含播放器、章节 JSON、12 条成片和 24 张首末帧（约 30MB），原始备份/音频工程不入库。
+
+```bash
+python3 scripts/build_pages.py          # 生成 dist/
+# 首次：GitHub 仓库 Settings -> Pages -> Source: Deploy from a branch -> gh-pages / (root)
+# 之后重新发布：把 dist/ 推到 gh-pages
+rm -rf /tmp/pages-repo && cp -R dist /tmp/pages-repo
+cd /tmp/pages-repo && git init -b gh-pages && git add -A \
+  && git commit -m "site: update" \
+  && git remote add origin https://github.com/torpedo-zzf/movie_game_lab.git \
+  && git push -f origin gh-pages
+```
+
+线上地址：<https://torpedo-zzf.github.io/movie_game_lab/>（入口自动跳转 `/player/`）。
