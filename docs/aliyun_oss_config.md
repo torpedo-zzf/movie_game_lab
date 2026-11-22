@@ -34,9 +34,19 @@ OSS_ACCESS_KEY_SECRET=...
 OSS_BUCKET=your-bucket
 OSS_ENDPOINT=oss-cn-hangzhou.aliyuncs.com
 OSS_PUBLIC_BASE_URL=
+OSS_DIR_PREFIX=movie_game_lab
 ```
 
-## 3. 上传并拿签名 URL
+## 3. 目录前缀
+
+- `OSS_DIR_PREFIX` 是对象根前缀，当前为 `movie_game_lab`；
+- 上传键 = `<OSS_DIR_PREFIX>/<--prefix 子目录>/<文件名>`；
+- `--prefix` 默认 `frames`，所以 s01 首帧落在：
+  `movie_game_lab/frames/ch01_s01_voiceover_first.png`。
+
+如果 `--prefix` 已经以根前缀开头（例如 `movie_game_lab/chapter_01`），不会重复拼接。
+
+## 4. 上传并拿签名 URL
 
 ```bash
 python3 scripts/oss_upload.py assets/frames/chapter_01/ch01_s01_voiceover_first.png --check
@@ -59,14 +69,20 @@ python3 scripts/oss_upload.py assets/frames/chapter_01/ch01_s01_voiceover_first.
 - `--ttl 86400` 可改 1 天；`--prefix` 改对象前缀；`--name` 改文件名；
 - `--check` 会对签名 URL 做 HEAD，确认公网可读。
 
-## 4. 安全
+## 5. 常见错误
+
+- `AccessDenied ... must be addressed using the specified endpoint`：`OSS_ENDPOINT` 与 Bucket 地域不一致；改成 Bucket 所在地域（本桶是 `oss-cn-shanghai.aliyuncs.com`）。
+- 签名 URL 403：RAM 账号需要 `oss:GetObject`；`--check` 已改用 GET（HEAD 会被 OSS 拒绝）。
+- 私有桶：用 `presigned_url`，不要用裸 `url`。
+
+## 6. 安全
 
 - `.env.local` 已 gitignore + 600；
 - 建议用 RAM 子账号、只授权单 Bucket，不要用主账号 AccessKey；
 - 签名 URL 谁拿到谁能读，TTL 尽量短；给 MiniMax 前先生成，生成后不需要长期公开；
 - 如泄露 AccessKey，在阿里云控制台禁用并轮换。
 
-## 5. 和 MiniMax 的衔接
+## 7. 和 MiniMax 的衔接
 
 1. `oss_upload.py` 上传 s01 首/末帧，拿到两个 `presigned_url`；
 2. 调 `POST /v2/video_generation`：

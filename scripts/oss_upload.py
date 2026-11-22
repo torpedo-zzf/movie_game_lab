@@ -92,10 +92,13 @@ def presign(env: dict[str, str], key: str, ttl: int) -> str:
 
 
 def check_url(url: str) -> tuple[int, int]:
-    req = urllib.request.Request(url, method="HEAD")
+    # Presigned URLs are signed for GET; a HEAD request would be rejected by OSS.
+    req = urllib.request.Request(url, method="GET")
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
-            return resp.status, int(resp.headers.get("Content-Length") or 0)
+            length = int(resp.headers.get("Content-Length") or 0)
+            resp.read(1)
+            return resp.status, length
     except urllib.error.HTTPError as exc:
         return exc.code, 0
 
@@ -103,7 +106,7 @@ def check_url(url: str) -> tuple[int, int]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Upload a file to Alibaba Cloud OSS")
     parser.add_argument("file", type=Path)
-    parser.add_argument("--prefix", default="movie_game_lab/frames")
+    parser.add_argument("--prefix", default=None, help="子目录，默认 frames；会拼在 OSS_DIR_PREFIX 后")
     parser.add_argument("--name", default=None, help="OSS object name; defaults to source filename")
     parser.add_argument("--ttl", type=int, default=7 * 24 * 3600)
     parser.add_argument("--check", action="store_true", help="HEAD the generated URL")
@@ -118,7 +121,14 @@ def main() -> int:
         print(f"OSS 未配置：{', '.join(missing)}；先运行 python3 scripts/oss_config.py set", file=sys.stderr)
         return 2
 
-    key = f"{args.prefix.strip('/')}/{args.name or args.file.name}"
+    root = env.get("OSS_DIR_PREFIX", "").strip("/")
+    sub = (args.prefix if args.prefix is not None else "frames").strip("/")
+    name = args.name or args.file.name
+    if root and (sub == root or sub.startswith(root + "/")):
+        key = "/".join(part for part in (sub, name) if part)
+    else:
+        key = "/".join(part for part in (root, sub, name) if part)
+
     try:
         result = upload(env, args.file, key)
     except urllib.error.HTTPError as exc:

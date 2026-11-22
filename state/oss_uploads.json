@@ -1,0 +1,16 @@
+{
+  "bucket": "yul-oss-test",
+  "endpoint": "oss-cn-shanghai.aliyuncs.com",
+  "dir_prefix": "movie_game_lab",
+  "objects": [
+    {
+      "key": "movie_game_lab/frames/ch01_s01_voiceover_first.png",
+      "bytes": 547173,
+      "etag": "49EE9D70C77960E9865A6432E2D70AB9"
+    },
+    {
+      "key": "movie_game_lab/frames/ch01_s01_voiceover_last.png",
+      "bytes": 533632
+    }
+  ]
+}

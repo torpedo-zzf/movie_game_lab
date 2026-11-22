@@ -26,7 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ENV_PATH = ROOT / ".env.local"
-KEYS = ["OSS_ACCESS_KEY_ID", "OSS_ACCESS_KEY_SECRET", "OSS_BUCKET", "OSS_ENDPOINT", "OSS_PUBLIC_BASE_URL"]
+KEYS = ["OSS_ACCESS_KEY_ID", "OSS_ACCESS_KEY_SECRET", "OSS_BUCKET", "OSS_ENDPOINT", "OSS_PUBLIC_BASE_URL", "OSS_DIR_PREFIX"]
 
 
 def parse_env(path: Path) -> dict[str, str]:
@@ -87,6 +87,7 @@ def cmd_show() -> int:
     print(f"bucket      : {env.get('OSS_BUCKET', '(未配置)')}")
     print(f"endpoint    : {env.get('OSS_ENDPOINT', '(未配置)')}")
     print(f"public base : {env.get('OSS_PUBLIC_BASE_URL', '(未配置，使用 bucket.endpoint)')}")
+    print(f"dir prefix  : {env.get('OSS_DIR_PREFIX', '(未配置)')}")
     return 0
 
 
@@ -108,6 +109,8 @@ def cmd_set() -> int:
     public_base = input(f"自定义域名/公网前缀（可留空）[{env.get('OSS_PUBLIC_BASE_URL', '')}]: ").strip()
     if public_base:
         env["OSS_PUBLIC_BASE_URL"] = public_base
+    dir_prefix = input(f"OSS 目录前缀 [{env.get('OSS_DIR_PREFIX', 'movie_game_lab')}]: ").strip()
+    env["OSS_DIR_PREFIX"] = dir_prefix or env.get("OSS_DIR_PREFIX") or "movie_game_lab"
     missing = [k for k in ["OSS_ACCESS_KEY_ID", "OSS_ACCESS_KEY_SECRET", "OSS_BUCKET", "OSS_ENDPOINT"] if not env.get(k)]
     if missing:
         print(f"还缺：{', '.join(missing)}；未写入。", file=sys.stderr)
