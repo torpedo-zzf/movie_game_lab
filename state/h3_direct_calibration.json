@@ -1,21 +1,21 @@
 {
-  "approval_id": "APR-20261122-VID-003",
-  "task_id": "2124521845248765952",
+  "approval_id": "APR-20261122-VID-005",
+  "task_id": "2124535284470390784",
   "status": "succeeded",
   "resolution": "480P",
-  "duration_sec": 7,
+  "duration_sec": 8,
   "usage": {
-    "total_seconds": 7,
+    "total_seconds": 8,
     "input_seconds": 0,
-    "output_seconds": 7,
+    "output_seconds": 8,
     "input_image_count": 2
   },
-  "balance_before": 11605.0,
-  "balance_after": 11551.56,
-  "credits_spent": 53.44000000000051,
-  "usd_estimate_at_cap_rate": 0.1336,
-  "output": "assets/videos/calibration_ch01_s01_480p.mp4",
-  "bytes": 1567129,
+  "balance_before": 10922.8,
+  "balance_after": 10862.54,
+  "credits_spent": 60.2599999999984,
+  "usd_estimate_at_cap_rate": 0.1506,
+  "output": "assets/videos/ch01_s12_end_silence.mp4",
+  "bytes": 1507070,
   "ffprobe": {
     "programs": [],
     "stream_groups": [],
@@ -30,7 +30,7 @@
       }
     ],
     "format": {
-      "duration": "7.300000"
+      "duration": "8.000000"
     }
   }
 }

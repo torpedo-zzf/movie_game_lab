@@ -1,0 +1,128 @@
+{
+  "batch_id": "BATCH-20261123-CH01",
+  "approval_id": "APR-20261122-VID-005",
+  "provider": "MiniMax H3 direct API",
+  "started_at": "2026-11-23T00:03:38+08:00",
+  "finished_at": "2026-11-23T00:08:00+08:00",
+  "clips": [
+    {
+      "node_id": "ch01_s01_voiceover",
+      "duration_sec": 7.0,
+      "video_path": "assets/videos/ch01_s01_voiceover.mp4",
+      "task_id": null,
+      "credits_spent": 53.44,
+      "resolution": "832x480",
+      "status": "done_earlier"
+    },
+    {
+      "node_id": "ch01_s02_peephole",
+      "duration_sec": 8.0,
+      "video_path": "assets/videos/ch01_s02_peephole.mp4",
+      "task_id": "2124534301522796544",
+      "credits_spent": 60.26,
+      "resolution": "832x480",
+      "status": "succeeded"
+    },
+    {
+      "node_id": "ch01_s03_knock",
+      "duration_sec": 8.0,
+      "video_path": "assets/videos/ch01_s03_knock.mp4",
+      "task_id": "2124534395828969472",
+      "credits_spent": 60.26,
+      "resolution": "832x480",
+      "status": "succeeded"
+    },
+    {
+      "node_id": "ch01_s04_open",
+      "duration_sec": 8.0,
+      "video_path": "assets/videos/ch01_s04_open.mp4",
+      "task_id": "2124534488535015424",
+      "credits_spent": 60.26,
+      "resolution": "832x480",
+      "status": "succeeded"
+    },
+    {
+      "node_id": "ch01_s05_listen",
+      "duration_sec": 8.0,
+      "video_path": "assets/videos/ch01_s05_listen.mp4",
+      "task_id": "2124534582326865920",
+      "credits_spent": 60.26,
+      "resolution": "832x480",
+      "status": "succeeded"
+    },
+    {
+      "node_id": "ch01_s06_lock",
+      "duration_sec": 7.0,
+      "video_path": "assets/videos/ch01_s06_lock.mp4",
+      "task_id": "2124534718974664704",
+      "credits_spent": 53.44,
+      "resolution": "832x480",
+      "status": "succeeded"
+    },
+    {
+      "node_id": "ch01_s07_elevator",
+      "duration_sec": 7.0,
+      "video_path": "assets/videos/ch01_s07_elevator.mp4",
+      "task_id": "2124534810569351168",
+      "credits_spent": 53.44,
+      "resolution": "832x480",
+      "status": "succeeded"
+    },
+    {
+      "node_id": "ch01_s08_groupchat",
+      "duration_sec": 7.0,
+      "video_path": "assets/videos/ch01_s08_groupchat.mp4",
+      "task_id": "2124534902814547968",
+      "credits_spent": 53.44,
+      "resolution": "832x480",
+      "status": "succeeded"
+    },
+    {
+      "node_id": "ch01_s09_second_knock",
+      "duration_sec": 8.0,
+      "video_path": "assets/videos/ch01_s09_second_knock.mp4",
+      "task_id": "2124534996449636352",
+      "credits_spent": 60.26,
+      "resolution": "832x480",
+      "status": "succeeded"
+    },
+    {
+      "node_id": "ch01_s10_choice",
+      "duration_sec": 8.0,
+      "video_path": "assets/videos/ch01_s10_choice.mp4",
+      "task_id": "2124535098362703872",
+      "credits_spent": 60.26,
+      "resolution": "832x480",
+      "status": "succeeded"
+    },
+    {
+      "node_id": "ch01_s11_end_testify",
+      "duration_sec": 7.0,
+      "video_path": "assets/videos/ch01_s11_end_testify.mp4",
+      "task_id": "2124535191406915584",
+      "credits_spent": 53.44,
+      "resolution": "832x480",
+      "status": "succeeded"
+    },
+    {
+      "node_id": "ch01_s12_end_silence",
+      "duration_sec": 8.0,
+      "video_path": "assets/videos/ch01_s12_end_silence.mp4",
+      "task_id": "2124535284470390784",
+      "credits_spent": 60.26,
+      "resolution": "832x480",
+      "status": "succeeded"
+    }
+  ],
+  "totals": {
+    "clips": 12,
+    "duration_sec": 91.0,
+    "credits": 689.02,
+    "failed": 0,
+    "retries": 0
+  },
+  "balances": {
+    "before": 11498.12,
+    "after": 10862.54
+  }
+}

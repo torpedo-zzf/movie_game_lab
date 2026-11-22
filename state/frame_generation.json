@@ -29,10 +29,10 @@
     {
       "node_id": "ch01_s01_voiceover",
       "frame": "first",
-      "seed": 20261132,
-      "mode": "ref",
-      "steps": 16,
-      "cfg": 2.5,
+      "seed": null,
+      "mode": "codex-imagegen",
+      "steps": null,
+      "cfg": null,
       "refs": [
         "assets/frames/anchors/shen_yan_anchor.png"
       ],
@@ -41,8 +41,8 @@
       ],
       "prompt": "深夜老公寓 703 玄关，沈砚穿深灰连帽卫衣、银色耳机挂脖，左眉尾有旧疤，黑色三七分短发，落地灯暖黄，门缝透进走廊冷绿光，中景，16:9 电影静帧。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
       "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
-      "prompt_id": "7c78069a-123f-40a2-aa8c-170e6a4c8078",
-      "elapsed_sec": 110.3,
+      "prompt_id": null,
+      "elapsed_sec": null,
       "master_path": "assets/frames/chapter_01/_master/ch01_s01_voiceover_first.png",
       "delivery_path": "assets/frames/chapter_01/ch01_s01_voiceover_first.png",
       "master_px": [
@@ -54,25 +54,39 @@
         480
       ],
       "status": "ok",
-      "generated_at": "2026-11-22T14:03:44+08:00"
+      "generated_at": "2026-11-22T14:03:44+08:00",
+      "previous_qwen": {
+        "mode": "ref",
+        "seed": 20261132,
+        "steps": 16,
+        "cfg": 2.5,
+        "refs": [
+          "assets/frames/anchors/shen_yan_anchor.png"
+        ],
+        "prompt_id": "7c78069a-123f-40a2-aa8c-170e6a4c8078",
+        "elapsed_sec": 110.3
+      },
+      "provider": "codex",
+      "note": "s01 A/B 采用 Codex 版；见 docs/ab_s01_imagegen_vs_qwen.md"
     },
     {
       "node_id": "ch01_s01_voiceover",
       "frame": "last",
-      "seed": 20261133,
-      "mode": "ref",
-      "steps": 16,
-      "cfg": 2.5,
+      "seed": null,
+      "mode": "codex-imagegen",
+      "steps": null,
+      "cfg": null,
       "refs": [
-        "assets/frames/anchors/shen_yan_anchor.png"
+        "assets/frames/anchors/shen_yan_anchor.png",
+        "assets/frames/chapter_01/_ab_codex/ch01_s01_voiceover_first_codex.png"
       ],
       "characters": [
         "shen_yan"
       ],
       "prompt": "沈砚侧身贴近防盗门，右手悬在门把上方，门缝冷光切过侧脸，走廊拖行声逼近，浅景深。角色设定（逐字复用，不得改词）：沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾有一道 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸有白色漆点，银色监听耳机挂在脖上，神情疲惫而克制。沈砚左眉尾的旧疤在画面右侧眉毛末端；左胸白漆点在画面右侧胸口。左胸（画面右侧）一小块洗不掉的白色漆点，不要大面积溅点。33 岁，窄长脸、偏瘦、眼下青黑、疲惫克制，不要年轻偶像脸/磨皮。 Keep the same person as the reference images: same face, hairstyle, age and clothing. 16:9 电影静帧，写实电影质感，35mm，浅景深，低照度，画面干净，无文字、无水印。",
       "negative": "多余手指, 手部畸形, 文字, 水印, logo, 过饱和, 塑料皮肤, 双人重复, 服装不一致, 现代电子设备乱入, 多余肢体",
-      "prompt_id": "42953729-aaed-4a7d-8c96-c8c5aa0bc9d7",
-      "elapsed_sec": 110.3,
+      "prompt_id": null,
+      "elapsed_sec": null,
       "master_path": "assets/frames/chapter_01/_master/ch01_s01_voiceover_last.png",
       "delivery_path": "assets/frames/chapter_01/ch01_s01_voiceover_last.png",
       "master_px": [
@@ -84,7 +98,20 @@
         480
       ],
       "status": "ok",
-      "generated_at": "2026-11-22T14:05:34+08:00"
+      "generated_at": "2026-11-22T14:05:34+08:00",
+      "previous_qwen": {
+        "mode": "ref",
+        "seed": 20261133,
+        "steps": 16,
+        "cfg": 2.5,
+        "refs": [
+          "assets/frames/anchors/shen_yan_anchor.png"
+        ],
+        "prompt_id": "42953729-aaed-4a7d-8c96-c8c5aa0bc9d7",
+        "elapsed_sec": 110.3
+      },
+      "provider": "codex",
+      "note": "s01 A/B 采用 Codex 版；见 docs/ab_s01_imagegen_vs_qwen.md"
     },
     {
       "node_id": "ch01_s02_peephole",

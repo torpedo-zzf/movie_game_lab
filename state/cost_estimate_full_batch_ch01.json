@@ -1,0 +1,159 @@
+{
+  "estimate_id": "EST-20261122-BATCH-01",
+  "approval_id": "APR-20261122-VID-005",
+  "task_id": "T-014",
+  "stage": "批量生视频",
+  "status": "pending_user_confirmation",
+  "requested_at": "2026-11-22T23:43:07+08:00",
+  "provider": "MiniMax API (metaso.cn proxy)",
+  "model": "MiniMax-H3",
+  "chapter_file": "story/03_storyboards/chapter_01.json",
+  "excluded": [
+    "ch01_s01_voiceover（已完成，APR-20261122-VID-004）"
+  ],
+  "clips": [
+    {
+      "node_id": "ch01_s02_peephole",
+      "node_type": "video_play",
+      "duration_sec": 8.0,
+      "resolution": "480p",
+      "ratio": "adaptive",
+      "first_frame": "movie_game_lab/frames/ch01_s02_peephole_first.png",
+      "last_frame": "movie_game_lab/frames/ch01_s02_peephole_last.png",
+      "est_credits": 61.07
+    },
+    {
+      "node_id": "ch01_s03_knock",
+      "node_type": "choice_branch",
+      "duration_sec": 8.0,
+      "resolution": "480p",
+      "ratio": "adaptive",
+      "first_frame": "movie_game_lab/frames/ch01_s03_knock_first.png",
+      "last_frame": "movie_game_lab/frames/ch01_s03_knock_last.png",
+      "est_credits": 61.07
+    },
+    {
+      "node_id": "ch01_s04_open",
+      "node_type": "video_play",
+      "duration_sec": 8.0,
+      "resolution": "480p",
+      "ratio": "adaptive",
+      "first_frame": "movie_game_lab/frames/ch01_s04_open_first.png",
+      "last_frame": "movie_game_lab/frames/ch01_s04_open_last.png",
+      "est_credits": 61.07
+    },
+    {
+      "node_id": "ch01_s05_listen",
+      "node_type": "video_play",
+      "duration_sec": 8.0,
+      "resolution": "480p",
+      "ratio": "adaptive",
+      "first_frame": "movie_game_lab/frames/ch01_s05_listen_first.png",
+      "last_frame": "movie_game_lab/frames/ch01_s05_listen_last.png",
+      "est_credits": 61.07
+    },
+    {
+      "node_id": "ch01_s06_lock",
+      "node_type": "video_play",
+      "duration_sec": 7.0,
+      "resolution": "480p",
+      "ratio": "adaptive",
+      "first_frame": "movie_game_lab/frames/ch01_s06_lock_first.png",
+      "last_frame": "movie_game_lab/frames/ch01_s06_lock_last.png",
+      "est_credits": 53.44
+    },
+    {
+      "node_id": "ch01_s07_elevator",
+      "node_type": "video_play",
+      "duration_sec": 7.0,
+      "resolution": "480p",
+      "ratio": "adaptive",
+      "first_frame": "movie_game_lab/frames/ch01_s07_elevator_first.png",
+      "last_frame": "movie_game_lab/frames/ch01_s07_elevator_last.png",
+      "est_credits": 53.44
+    },
+    {
+      "node_id": "ch01_s08_groupchat",
+      "node_type": "video_play",
+      "duration_sec": 7.0,
+      "resolution": "480p",
+      "ratio": "adaptive",
+      "first_frame": "movie_game_lab/frames/ch01_s08_groupchat_first.png",
+      "last_frame": "movie_game_lab/frames/ch01_s08_groupchat_last.png",
+      "est_credits": 53.44
+    },
+    {
+      "node_id": "ch01_s09_second_knock",
+      "node_type": "video_play",
+      "duration_sec": 8.0,
+      "resolution": "480p",
+      "ratio": "adaptive",
+      "first_frame": "movie_game_lab/frames/ch01_s09_second_knock_first.png",
+      "last_frame": "movie_game_lab/frames/ch01_s09_second_knock_last.png",
+      "est_credits": 61.07
+    },
+    {
+      "node_id": "ch01_s10_choice",
+      "node_type": "choice_branch",
+      "duration_sec": 8.0,
+      "resolution": "480p",
+      "ratio": "adaptive",
+      "first_frame": "movie_game_lab/frames/ch01_s10_choice_first.png",
+      "last_frame": "movie_game_lab/frames/ch01_s10_choice_last.png",
+      "est_credits": 61.07
+    },
+    {
+      "node_id": "ch01_s11_end_testify",
+      "node_type": "ending",
+      "duration_sec": 7.0,
+      "resolution": "480p",
+      "ratio": "adaptive",
+      "first_frame": "movie_game_lab/frames/ch01_s11_end_testify_first.png",
+      "last_frame": "movie_game_lab/frames/ch01_s11_end_testify_last.png",
+      "est_credits": 53.44
+    },
+    {
+      "node_id": "ch01_s12_end_silence",
+      "node_type": "ending",
+      "duration_sec": 8.0,
+      "resolution": "480p",
+      "ratio": "adaptive",
+      "first_frame": "movie_game_lab/frames/ch01_s12_end_silence_first.png",
+      "last_frame": "movie_game_lab/frames/ch01_s12_end_silence_last.png",
+      "est_credits": 61.07
+    }
+  ],
+  "counts": {
+    "clips": 11,
+    "duration_sec": 84.0,
+    "by_duration": {
+      "7s": 4,
+      "8s": 7
+    }
+  },
+  "pricing_basis": {
+    "source": "APR-20261122-VID-003 实测：7s / 480p / 2 张输入图 = 53.44 credits",
+    "credits_per_sec_linear": 7.634,
+    "usd_per_credit": 0.0025,
+    "note": "官方计费为基础费+素材费+输出费；8s 按线性外推，实际可能略低，故给出上限。"
+  },
+  "estimated": {
+    "base_credits": 641.25,
+    "retry_budget_credits": 128.25,
+    "cap_credits": 800,
+    "base_usd": 1.6,
+    "cap_usd": 2.0
+  },
+  "retry_policy": {
+    "same_clip_max_retries": 1,
+    "stop_if_over_cap": true,
+    "reconfirm_threshold": "实际基础用量超预估 10%（>705 credits）或需换方案重跑时停手重出单"
+  },
+  "prerequisites": {
+    "frames_on_oss": "22 张首末帧已上传 movie_game_lab/frames/，HEAD 200（2026-11-22 23:42）",
+    "validate_graph": "exit 0",
+    "balance_before": 11498.12
+  },
+  "submit_mode": "顺序单条提交（scripts/minimax_h3_generate.py），逐条回填 video_path",
+  "user_reply_required": "确认生成 11 条"
+}

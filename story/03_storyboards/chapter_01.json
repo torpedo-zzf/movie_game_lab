@@ -14,7 +14,8 @@
         "video_prompt": "沈砚摘下耳机，走廊传来低沉拖行声，他转头看向门，镜头缓慢前推，尘埃在暖光里浮动",
         "duration_sec": 7.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s01_voiceover_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s01_voiceover_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s01_voiceover_last.png",
+        "video_path": "assets/videos/ch01_s01_voiceover.mp4"
       },
       "interaction": {
         "trigger_time_sec": 6.0,
@@ -34,7 +35,8 @@
         "video_prompt": "鱼眼畸变下，周启明拖地毯到 703 门前停下，缓慢抬头贴向猫眼，镜头轻微推近",
         "duration_sec": 8.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s02_peephole_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s02_peephole_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s02_peephole_last.png",
+        "video_path": "assets/videos/ch01_s02_peephole.mp4"
       },
       "interaction": {
         "trigger_time_sec": 6.8,
@@ -54,7 +56,8 @@
         "video_prompt": "三下沉闷敲门，周启明贴近门缝低声说话，镜头从猫眼缓慢拉回门板，门灯轻微闪烁",
         "duration_sec": 8.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s03_knock_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s03_knock_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s03_knock_last.png",
+        "video_path": "assets/videos/ch01_s03_knock.mp4"
       },
       "interaction": {
         "trigger_time_sec": 4.0,
@@ -85,7 +88,8 @@
         "video_prompt": "门开，周启明向前半步用身体挡住地毯，沈砚低头看见手指，呼吸停顿，镜头轻推",
         "duration_sec": 8.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s04_open_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s04_open_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s04_open_last.png",
+        "video_path": "assets/videos/ch01_s04_open.mp4"
       },
       "interaction": {
         "trigger_time_sec": 6.5,
@@ -105,7 +109,8 @@
         "video_prompt": "门内极静，地毯下传来三下闷响，一个女声气音说「别信他」，沈砚手指收紧",
         "duration_sec": 8.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s05_listen_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s05_listen_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s05_listen_last.png",
+        "video_path": "assets/videos/ch01_s05_listen.mp4"
       },
       "interaction": {
         "trigger_time_sec": 6.5,
@@ -125,7 +130,8 @@
         "video_prompt": "锁舌扣入，脚步声远去，704 门合拢，沈砚从猫眼退开，镜头切到走廊空镜",
         "duration_sec": 7.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s06_lock_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s06_lock_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s06_lock_last.png",
+        "video_path": "assets/videos/ch01_s06_lock.mp4"
       },
       "interaction": {
         "trigger_time_sec": 6.0,
@@ -145,7 +151,8 @@
         "video_prompt": "电梯叮一声停层，门开却无人，周启明挂上维修牌，电梯门合拢，镜头沿走廊后退",
         "duration_sec": 7.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s07_elevator_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s07_elevator_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s07_elevator_last.png",
+        "video_path": "assets/videos/ch01_s07_elevator.mp4"
       },
       "interaction": {
         "trigger_time_sec": 6.0,
@@ -165,7 +172,8 @@
         "video_prompt": "群消息弹出，沈砚放大周启明的头像，远处警笛由远及近，镜头从屏幕摇到他的脸",
         "duration_sec": 7.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s08_groupchat_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s08_groupchat_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s08_groupchat_last.png",
+        "video_path": "assets/videos/ch01_s08_groupchat.mp4"
       },
       "interaction": {
         "trigger_time_sec": 6.0,
@@ -185,7 +193,8 @@
         "video_prompt": "三下更重的敲门，周启明贴近门缝低声施压，镜头在鱼眼画面里缓慢推近他的眼睛",
         "duration_sec": 8.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s09_second_knock_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s09_second_knock_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s09_second_knock_last.png",
+        "video_path": "assets/videos/ch01_s09_second_knock.mp4"
       },
       "interaction": {
         "trigger_time_sec": 6.5,
@@ -205,7 +214,8 @@
         "video_prompt": "沈砚看向猫眼，又低头看手机里的录音，呼吸加重，手指在门锁上停住",
         "duration_sec": 8.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s10_choice_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s10_choice_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s10_choice_last.png",
+        "video_path": "assets/videos/ch01_s10_choice.mp4"
       },
       "interaction": {
         "trigger_time_sec": 4.0,
@@ -236,7 +246,8 @@
         "video_prompt": "门开，警灯照亮走廊，担架从沈砚面前经过，镜头缓慢推向他家门上的猫眼，叠化出一枚同款贴纸",
         "duration_sec": 7.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s11_end_testify_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s11_end_testify_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s11_end_testify_last.png",
+        "video_path": "assets/videos/ch01_s11_end_testify.mp4"
       }
     },
     {
@@ -250,7 +261,8 @@
         "video_prompt": "沈砚删掉录音，关掉手机，黑暗吞没玄关；叠化到次日警戒线与监控红灯",
         "duration_sec": 8.0,
         "first_frame_path": "assets/frames/chapter_01/ch01_s12_end_silence_first.png",
-        "last_frame_path": "assets/frames/chapter_01/ch01_s12_end_silence_last.png"
+        "last_frame_path": "assets/frames/chapter_01/ch01_s12_end_silence_last.png",
+        "video_path": "assets/videos/ch01_s12_end_silence.mp4"
       }
     }
   ]

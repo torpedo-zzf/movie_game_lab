@@ -1,7 +1,7 @@
 {
   "project_name": "FMV-Interactive-Project",
   "version": "0.1.0",
-  "updated_at": "2026-11-21",
+  "updated_at": "2026-11-23",
   "current_stage": "批量生视频",
   "stages": [
     "初始化",
@@ -228,6 +228,80 @@
       "failed_nodes": [],
       "note": "A/B：Codex imagegen 首末帧版；中段走廊背影消失，末帧更贴。",
       "completed_at": "2026-11-22T23:29:16+08:00"
+    },
+    {
+      "approval_id": "APR-20261122-VID-005",
+      "task_id": "T-014",
+      "stage": "批量生视频",
+      "kind": "minimax_h3_direct_api_batch",
+      "status": "completed",
+      "requested_at": "2026-11-22T23:43:07+08:00",
+      "confirmed_at": "2026-11-23T00:03:24+08:00",
+      "confirmed_by": "user",
+      "user_reply": "确认生成 11 条（推荐）",
+      "provider": "MiniMax API (metaso.cn proxy)",
+      "chapter_file": "story/03_storyboards/chapter_01.json",
+      "estimate_file": "state/cost_estimate_full_batch_ch01.json",
+      "estimate_doc": "docs/video_batch_cost_ch01.md",
+      "nodes": [
+        "ch01_s02_peephole",
+        "ch01_s03_knock",
+        "ch01_s04_open",
+        "ch01_s05_listen",
+        "ch01_s06_lock",
+        "ch01_s07_elevator",
+        "ch01_s08_groupchat",
+        "ch01_s09_second_knock",
+        "ch01_s10_choice",
+        "ch01_s11_end_testify",
+        "ch01_s12_end_silence"
+      ],
+      "estimated": {
+        "clips": 11,
+        "duration_sec": 84,
+        "resolution": "480p",
+        "ratio": "adaptive",
+        "base_credits": 641.25,
+        "retry_budget_credits": 128.25,
+        "cap_credits": 800,
+        "cap_usd": 2.0
+      },
+      "cap": {
+        "credits": 800,
+        "usd": 2.0
+      },
+      "submitted": {
+        "clips": 11,
+        "duration_sec": 84,
+        "resolution": "480p",
+        "ratio": "adaptive"
+      },
+      "actual": {
+        "clips": 11,
+        "duration_sec": 84,
+        "resolution": "480P",
+        "credits": 635.58,
+        "usd_estimate": 1.589,
+        "balance_before": 11498.12,
+        "balance_after": 10862.54,
+        "failed_nodes": [],
+        "retries": 0,
+        "outputs": [
+          "assets/videos/ch01_s02",
+          "assets/videos/ch01_s03",
+          "assets/videos/ch01_s04",
+          "assets/videos/ch01_s05",
+          "assets/videos/ch01_s06",
+          "assets/videos/ch01_s07",
+          "assets/videos/ch01_s08",
+          "assets/videos/ch01_s09",
+          "assets/videos/ch01_s10",
+          "assets/videos/ch01_s11",
+          "assets/videos/ch01_s12"
+        ]
+      },
+      "note": "11/11 成功、0 重试、0 失败；实际 635.58 credits < 预估 641.25，占 cap 800 的 79.4%，未触发 10% 重新确认阈值。s01 不重复计费。",
+      "completed_at": "2026-11-23T00:09:00+08:00"
     }
   ],
   "environment": {
@@ -395,7 +469,7 @@
       "stage": "批量生图",
       "owner": "Codex",
       "title": "角色锚定图与首尾帧批量生成",
-      "status": "waiting_user",
+      "status": "done",
       "depends_on": [
         "T-012"
       ],
@@ -407,10 +481,8 @@
         "角色跨镜一致",
         "路径回填可被校验器识别"
       ],
-      "blocked_by": [
-        "T-013b 用户抽检 3 张锚定"
-      ],
-      "progress": "24/24 帧生成、chapter_01.json 路径回填、validate_graph --strict 通过；等待用户抽检。"
+      "blocked_by": [],
+      "progress": "24/24 帧生成、chapter_01.json 路径回填、validate_graph --strict 通过；总控抽检 24 帧：三角色跨镜一致、无文字水印，通过。剩余个别构图差异记入 docs/frame_generation_chapter_01.md。"
     },
     {
       "id": "T-013b",
@@ -531,7 +603,7 @@
       "stage": "批量生视频",
       "owner": "Codex",
       "title": "MiniMax H3 分镜视频批量生成",
-      "status": "pending",
+      "status": "done",
       "depends_on": [
         "T-013"
       ],
@@ -546,19 +618,15 @@
         "时长/分辨率符合预算表",
         "实际用量写入 approvals"
       ],
-      "blocked_by": [
-        "T-013",
-        "T-014a 校准结果",
-        "用户确认 A5：12 条全量成本"
-      ],
-      "progress": "A/B 显示 Codex 关键帧明显改善 H3 动作连续性；全量 12 条仍需按新方案重新出预估单。"
+      "blocked_by": [],
+      "progress": "11/11 条 480p 生成成功（635.58 credits / $1.59），video_path 全部回填，validate_graph --strict exit 0；ffprobe 全部 832×480、7.3/8.0s。视觉质检见 docs/video_batch_report_ch01.md。"
     },
     {
       "id": "T-015",
       "stage": "播放器联调",
       "owner": "Codex",
       "title": "互动播放器联调与试玩交付",
-      "status": "pending",
+      "status": "in_progress",
       "depends_on": [
         "T-014"
       ],
@@ -569,7 +637,8 @@
       "acceptance": [
         "分支选择、道具、QTE、超时兜底可用",
         "用户试玩验收"
-      ]
+      ],
+      "progress": "视频齐备；播放器规格 docs/player_spec_chapter_01.md，已派 Codex 实现。"
     }
   ],
   "brief": {
@@ -584,12 +653,15 @@
   "cost_request": {
     "file": "state/cost_estimate_chapter_01.json",
     "plan": "docs/asset_plan_chapter_01.md",
-    "status": "approved",
+    "status": "superseded",
     "items": [
       "A1 本地 27 张（$0，55–245 分钟）",
       "A4 H3 单条校准（约 $0.06–0.08）",
       "A5 H3 12 条全量（约 $0.99–1.13 / 209–239 credits）"
     ],
-    "rule": "未确认前禁止调用 ComfyUI /prompt"
+    "rule": "未确认前禁止调用 ComfyUI /prompt",
+    "superseded_by": "APR-20261122-VID-005",
+    "new_estimate": "state/cost_estimate_full_batch_ch01.json",
+    "note": "旧 A5 报价（209–239 credits）基于 Comfy Cloud 未登录失败的假设，已作废；直连 API 实测 53.44 credits/7s，新报价见新预估单。"
   }
 }
