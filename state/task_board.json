@@ -2,7 +2,7 @@
   "project_name": "FMV-Interactive-Project",
   "version": "0.1.0",
   "updated_at": "2026-11-21",
-  "current_stage": "批量生图",
+  "current_stage": "批量生视频",
   "stages": [
     "初始化",
     "选材",
@@ -105,6 +105,64 @@
       ],
       "failed_at": "2026-11-22T20:46:40+08:00",
       "error": "ComfyCloudMiniMaxH3FirstLastFrameToVideoNode: Unauthorized: Please login first to use this node."
+    },
+    {
+      "approval_id": "APR-20261122-VID-003",
+      "task_id": "T-014a",
+      "stage": "批量生视频",
+      "kind": "minimax_h3_direct_api_calibration",
+      "status": "completed",
+      "requested_at": "2026-11-22T23:13:55+08:00",
+      "confirmed_at": "2026-11-22T23:13:55+08:00",
+      "confirmed_by": "user",
+      "user_reply": "确认直连 480p 7s",
+      "provider": "MiniMax API (metaso.cn proxy)",
+      "estimated": {
+        "clips": 1,
+        "duration_sec": 7,
+        "resolution": "480p",
+        "ratio": "adaptive",
+        "usd": [
+          0.35,
+          0.5
+        ],
+        "credits": [
+          140,
+          200
+        ],
+        "retry_budget": 0
+      },
+      "cap": {
+        "credits": 200,
+        "usd": 0.5
+      },
+      "submitted": {
+        "clips": 1,
+        "duration_sec": 7,
+        "gpu_seconds": null,
+        "credits": 53.44
+      },
+      "actual": {
+        "clips": 1,
+        "duration_sec": 7.3,
+        "resolution": "480P",
+        "ratio": "adaptive",
+        "output": "assets/videos/calibration_ch01_s01.mp4",
+        "task_id": "2124521845248765952",
+        "usage": {
+          "total_seconds": 7,
+          "input_seconds": 0,
+          "output_seconds": 7,
+          "input_image_count": 2
+        },
+        "balance_before": 11605.0,
+        "balance_after": 11551.56,
+        "credits": 53.44,
+        "usd_estimate": 0.1336
+      },
+      "failed_nodes": [],
+      "note": "实际 53.44 credits，低于 200 credits 上限；832×480 / 7.3s / h264+aac。",
+      "completed_at": "2026-11-22T23:14:59+08:00"
     }
   ],
   "environment": {
@@ -338,7 +396,7 @@
       "stage": "批量生视频",
       "owner": "Codex",
       "title": "H3 单条 7s 480p 付费校准",
-      "status": "blocked",
+      "status": "done",
       "depends_on": [
         "T-013"
       ],
@@ -352,10 +410,8 @@
         "实际用量写入 approvals",
         "全量 12 条尚未提交"
       ],
-      "blocked_by": [
-        "Comfy Cloud 未登录（节点报 Unauthorized）"
-      ],
-      "progress": "工作流已建、首尾帧已上传；提交单条时 Cloud 节点报未登录，0 GPU 秒 / 0 费用。"
+      "blocked_by": [],
+      "progress": "直连 480p 7s 成功：task 2124521845248765952，53.44 credits，832×480/7.3s；成片 assets/videos/calibration_ch01_s01.mp4。"
     },
     {
       "id": "T-013e",
@@ -407,7 +463,8 @@
         "T-013",
         "T-014a 校准结果",
         "用户确认 A5：12 条全量成本"
-      ]
+      ],
+      "progress": "校准实际 53.44 credits / 7s 480P；全量 12 条约 650–850 credits，须重新出预估单并确认，尚未提交。"
     },
     {
       "id": "T-015",

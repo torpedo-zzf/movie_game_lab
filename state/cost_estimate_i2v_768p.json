@@ -1,0 +1,40 @@
+{
+  "request_id": "APR-20261122-VID-002-DRAFT",
+  "task_id": "T-014a",
+  "stage": "批量生视频",
+  "kind": "minimax_h3_direct_i2v_calibration",
+  "status": "pending_user",
+  "workflow_file": "comfyui/minimax_h3_direct_i2v_api.template.json",
+  "workflow_basis": "/Users/yul/work/comfy/user/default/workflows/minimax_h3_direct_i2v.json（截图中的 i2v）",
+  "node_chain": [
+    "MiniMaxH3KeyNode",
+    "LoadImage(first)",
+    "LoadImage(last)",
+    "MiniMaxH3FirstLastFrameNode",
+    "SaveVideo"
+  ],
+  "nodes": [
+    "ch01_s01_voiceover"
+  ],
+  "clips": 1,
+  "duration_sec": 7,
+  "resolution": "768P",
+  "output_px": "约 1344×768（16:9，以节点实际输出为准）",
+  "aspect_ratio": "16:9（跟随首帧）",
+  "seed": 20261122,
+  "billing": "MiniMax API（metaso.cn 代理），走你保存工作流里的 token 账户；节点无 price_badge，单价待核实；参考公开 H3 768P 费率 $0.07–0.143/s",
+  "estimated_usd": [
+    0.5,
+    1.0
+  ],
+  "estimated_credits": [
+    105,
+    211
+  ],
+  "cap_usd": 1.2,
+  "cap_credits": 400,
+  "retry_budget": 0,
+  "note": "本单只用于截图 i2v 工作流的 768P 7s 单条校准，不是 480p Cloud 的 $0.08 单；两者计费通道不同，需你单独确认。",
+  "duration_rules": "480p/768P/1080p 支持 4–30 整数秒；2K 最长 15 秒；超过 15 秒总价翻倍。本单 7s，不触发翻倍。",
+  "fee_structure": "基础费 + 素材费 + 输出费；首/末帧 2 张图在每任务前 5 张免费额度内；Context IR 未启用；不启用视频再生成。"
+}

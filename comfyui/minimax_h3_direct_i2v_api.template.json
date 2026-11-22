@@ -1,0 +1,55 @@
+{
+  "1": {
+    "class_type": "MiniMaxH3KeyNode",
+    "inputs": {
+      "base_url": "https://metaso.cn/api/minimax",
+      "token": "__MINIMAX_TOKEN__"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ch01_s01_voiceover_first.png"
+    }
+  },
+  "3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ch01_s01_voiceover_last.png"
+    }
+  },
+  "4": {
+    "class_type": "MiniMaxH3FirstLastFrameNode",
+    "inputs": {
+      "key": [
+        "1",
+        0
+      ],
+      "first_frame": [
+        "2",
+        0
+      ],
+      "last_frame": [
+        "3",
+        0
+      ],
+      "prompt": "从首帧到末帧：深夜老公寓 703 玄关，沈砚缓缓摘下挂在脖上的银色监听耳机，走廊深处传来低沉的拖行声；他停住动作，转头看向防盗门，镜头极缓慢前推，尘埃在暖黄落地灯光里浮动，门缝的冷绿光保持不变。写实电影质感，16:9，无剪切、无转场、无文字、无水印。",
+      "resolution": "768P",
+      "duration": 7,
+      "seed": 20261122,
+      "watermark": false
+    }
+  },
+  "5": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "4",
+        0
+      ],
+      "filename_prefix": "calibration/ch01_s01_768p",
+      "format": "mp4",
+      "codec": "h264"
+    }
+  }
+}

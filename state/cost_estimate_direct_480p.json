@@ -1,0 +1,46 @@
+{
+  "request_id": "APR-20261122-VID-003",
+  "task_id": "T-014a",
+  "stage": "批量生视频",
+  "kind": "minimax_h3_direct_api_calibration",
+  "status": "completed",
+  "requested_at": "2026-11-22T23:13:55+08:00",
+  "confirmed_at": "2026-11-22T23:13:55+08:00",
+  "confirmed_by": "user",
+  "user_reply": "确认直连 480p 7s",
+  "provider": "MiniMax API (metaso.cn proxy)",
+  "endpoint": "https://metaso.cn/api/minimax/v2/video_generation",
+  "chapter_file": "story/03_storyboards/chapter_01.json",
+  "nodes": [
+    "ch01_s01_voiceover"
+  ],
+  "clips": 1,
+  "duration_sec": 7,
+  "resolution": "480p",
+  "ratio": "adaptive",
+  "images": {
+    "first": "movie_game_lab/frames/ch01_s01_voiceover_first.png",
+    "last": "movie_game_lab/frames/ch01_s01_voiceover_last.png"
+  },
+  "estimated_usd": [
+    0.35,
+    0.5
+  ],
+  "estimated_credits": [
+    140,
+    200
+  ],
+  "cap_usd": 0.5,
+  "cap_credits": 200,
+  "retry_budget": 0,
+  "fee_structure": "基础费+素材费+输出费；7s≤15s 不翻倍；Context IR/再生成未启用",
+  "note": "用户已明确确认「确认直连 480p 7s」；实际扣费按余额变化回填。",
+  "actual": {
+    "clips": 1,
+    "duration_sec": 7.3,
+    "credits": 53.44,
+    "usd_estimate": 0.1336,
+    "task_id": "2124521845248765952",
+    "output": "assets/videos/calibration_ch01_s01.mp4"
+  }
+}
