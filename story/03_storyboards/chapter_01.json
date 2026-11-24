@@ -1,0 +1,269 @@
+{
+  "chapter_id": "chapter_01",
+  "title": "第一章：猫眼之后",
+  "start_node": "ch01_s01_voiceover",
+  "nodes": [
+    {
+      "node_id": "ch01_s01_voiceover",
+      "node_type": "video_play",
+      "speaker": "旁白",
+      "dialogue": "凌晨两点，最后一条配音过了。",
+      "video": {
+        "first_frame_prompt": "深夜 703 玄关中景，平视机位，16:9 电影静帧；低照度夜景，唯一暖源是画面右侧矮柜上的暖黄台灯（约 2700K 柔光罩），门缝底部渗进一条走廊冷绿光（#7FA88C），室内其余部分压进暗部；沈砚，33 岁，窄长脸、单眼皮、眼尾略垂，左眉尾 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，左胸白色漆点，银色监听耳机挂在脖上，神情疲惫克制；他站在玄关中央偏左，双手刚离开耳侧、耳机已落在脖上，视线微垂；背景干净：浅灰墙面、空鞋柜、素色门垫，无挂钩、无包、无植物、无杂物；35mm，浅景深，胶片颗粒，无文字无水印",
+        "last_frame_prompt": "同一玄关中景、同一机位与光位（右侧暖黄台灯 + 门缝冷绿），16:9；沈砚侧身贴上防盗门，左肩靠门板，右手停在门把上方约 10cm、手指微张，头转向门缝，侧脸被冷绿光切出一道边光；银色耳机仍挂在脖上；背景保持干净，只见门边空墙与鞋柜；末帧为同一镜结束构图，人物不离开玄关、不走向走廊；35mm，浅景深，无文字无水印",
+        "video_prompt": "He slowly turns his head toward the door seam, his right hand rising to hover near the handle; his breathing tightens. Dust drifts through the warm lamplight, and the green under-door glow stays steady. Slow dolly in to a medium close-up. Preserving the exact cinematic medium, contrast, and color palette of the first frame. He settles into a tense, expectant stillness, gaze fixed on the door. Avoid deformed hands, extra fingers, extra limbs, fast motion, cuts, text.",
+        "duration_sec": 7.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s01_voiceover_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s01_voiceover_last.png",
+        "video_path": "assets/videos/ch01_s01_voiceover.mp4"
+      },
+      "interaction": {
+        "trigger_time_sec": 6.0,
+        "timeout_sec": 1.0,
+        "default_next_node": "ch01_s02_peephole",
+        "options": []
+      }
+    },
+    {
+      "node_id": "ch01_s02_peephole",
+      "node_type": "video_play",
+      "speaker": "旁白",
+      "dialogue": "猫眼里，对门的老周正拖着一卷地毯。",
+      "video": {
+        "first_frame_prompt": "猫眼鱼眼视角，老公寓七楼走廊，绿色应急灯，周启明拖着暗红地毯经过 703 门口，寸头、深蓝工装夹克、左眼下黑痣，画面边缘暗角，16:9",
+        "last_frame_prompt": "鱼眼画面里周启明的脸贴向猫眼，一只眼睛占据画面中心，身后走廊灯拉出长影，边缘畸变",
+        "video_prompt": "Zhou stops dragging the rolled carpet, straightens, and slowly tilts his head toward the peephole, his expression shifting from effort to watchful curiosity. The carpet settles with a soft thud; the green emergency light flickers once across the wet floor. Slow push-in on the peephole. Preserving the exact cinematic medium, contrast, and color palette of the first frame. He holds at the lens, staring directly into it, motionless. Avoid deformed hands, extra fingers, extra limbs, cuts, text.",
+        "duration_sec": 8.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s02_peephole_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s02_peephole_last.png",
+        "video_path": "assets/videos/ch01_s02_peephole.mp4"
+      },
+      "interaction": {
+        "trigger_time_sec": 6.8,
+        "timeout_sec": 1.2,
+        "default_next_node": "ch01_s03_knock",
+        "options": []
+      }
+    },
+    {
+      "node_id": "ch01_s03_knock",
+      "node_type": "choice_branch",
+      "speaker": "周启明",
+      "dialogue": "小沈，我家跳闸了，借个电话。",
+      "video": {
+        "first_frame_prompt": "门内视角，猫眼外周启明抬手敲门，寸头、深蓝工装夹克、左眼下黑痣，门灯暖黄，背景走廊冷绿，16:9",
+        "last_frame_prompt": "周启明的手停在门板上，右手虎口烫伤疤清晰，身体前倾，门缝透出半张脸",
+        "video_prompt": "Zhou knocks three times with his right fist, then leans close to the door seam and speaks in a low, patient voice; his left hand stays out of frame at his side. The door lamp flickers; dust hangs in the corridor air. Slow dolly out from the door panel to a steady medium close-up. Preserving the exact cinematic medium, contrast, and color palette of the first frame. He pauses with an expectant, unreadable look, waiting for an answer. Avoid deformed hands, extra fingers, extra limbs, hand passing through the door, fast motion, cuts, text.",
+        "duration_sec": 9.083333,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s03_knock_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s03_knock_last.png",
+        "video_path": "assets/videos/ch01_s03_knock.mp4"
+      },
+      "interaction": {
+        "trigger_time_sec": 6.542,
+        "timeout_sec": 2.541333,
+        "default_next_node": "ch01_s05_listen",
+        "options": [
+          {
+            "option_id": "opt_open",
+            "label": "开门，把电话借给他",
+            "next_node": "ch01_s04_open"
+          },
+          {
+            "option_id": "opt_listen",
+            "label": "不出声，贴着门录音",
+            "next_node": "ch01_s05_listen"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ch01_s04_open",
+      "node_type": "video_play",
+      "speaker": "周启明",
+      "dialogue": "地毯？旧东西，明天就扔。",
+      "video": {
+        "first_frame_prompt": "703 门口中景，沈砚拉开防盗门一半，深灰连帽卫衣、银色挂脖耳机，周启明站门外，暗红地毯卷在他脚后，走廊绿色应急灯，16:9",
+        "last_frame_prompt": "沈砚视线下移，地毯边缘露出一截苍白手指，周启明侧身挡住，脸上仍挂着笑",
+        "video_prompt": "Shen pulls the door open with his right hand while Zhou steps forward, his right palm braced on the frame, blocking the rolled carpet behind him; Shen's gaze drops toward the carpet edge and his breath catches. The door chain swings; green corridor light spills across the threshold. Slow dolly in to a medium shot. Preserving the exact cinematic medium, contrast, and color palette of the first frame. Shen freezes, eyes locked downward, body half-turned. Avoid deformed hands, extra fingers, extra limbs, hands passing through objects, cuts, text.",
+        "duration_sec": 8.458333,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s04_open_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s04_open_last.png",
+        "video_path": "assets/videos/ch01_s04_open.mp4"
+      },
+      "interaction": {
+        "trigger_time_sec": 6.958333,
+        "timeout_sec": 1.5,
+        "default_next_node": "ch01_s06_lock",
+        "options": []
+      }
+    },
+    {
+      "node_id": "ch01_s05_listen",
+      "node_type": "video_play",
+      "speaker": "苏敏",
+      "dialogue": "别信他。",
+      "video": {
+        "first_frame_prompt": "门内特写，沈砚侧脸贴防盗门，深灰卫衣，手机屏幕亮着录音界面，冷蓝光映在脸上，左眉尾疤可见，16:9",
+        "last_frame_prompt": "沈砚瞳孔收缩，手指按住手机屏幕，门缝外传来气音，画面停在门锁特写",
+        "video_prompt": "Shen presses the phone against the door with his right hand, his fingers tightening around it as he leans in to listen; his left hand braces on the frame. The carpet underneath gives a muffled triple thud; his jaw tightens at the whispered warning. Subtle handheld breathing in a static medium close-up. Preserving the exact cinematic medium, contrast, and color palette of the first frame. He holds still, ear to the door, breathing shallowly. Avoid deformed hands, extra fingers, extra limbs, phone merging with fingers, cuts, text.",
+        "duration_sec": 6.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s05_listen_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s05_listen_last.png",
+        "video_path": "assets/videos/ch01_s05_listen.mp4"
+      },
+      "interaction": {
+        "trigger_time_sec": 5.0,
+        "timeout_sec": 1.0,
+        "default_next_node": "ch01_s06_lock",
+        "options": []
+      }
+    },
+    {
+      "node_id": "ch01_s06_lock",
+      "node_type": "video_play",
+      "speaker": "旁白",
+      "dialogue": "门锁扣上的声音，比想象中响。",
+      "video": {
+        "first_frame_prompt": "703 玄关，沈砚把防盗门反锁、扣上门链，暖黄壁灯，深灰连帽卫衣，银色耳机挂脖，16:9",
+        "last_frame_prompt": "猫眼视角，704 的门轻轻合上，走廊空无一人，绿色应急灯闪烁",
+        "video_prompt": "Shen's right hand turns the lock until the bolt clicks home, then he steps back from the peephole, his shoulders dropping as the corridor footsteps fade. The chain swings once; the green light under the door thins to a line. Slow dolly back to a medium shot. Preserving the exact cinematic medium, contrast, and color palette of the first frame. He settles against the wall, gaze fixed on the door, still and watchful. Avoid deformed hands, extra fingers, extra limbs, hand passing through the lock, cuts, text.",
+        "duration_sec": 8.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s06_lock_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s06_lock_last.png",
+        "video_path": "assets/videos/ch01_s06_lock.mp4"
+      },
+      "interaction": {
+        "trigger_time_sec": 7.0,
+        "timeout_sec": 1.0,
+        "default_next_node": "ch01_s07_elevator",
+        "options": []
+      }
+    },
+    {
+      "node_id": "ch01_s07_elevator",
+      "node_type": "video_play",
+      "speaker": "旁白",
+      "dialogue": "电梯停在七楼，很久没有动。",
+      "video": {
+        "first_frame_prompt": "七楼电梯厅，低照度夜景，16:9 电影静帧；机位在走廊一端、略低角度平视，28mm 广角；画面中央是紧闭的金属电梯门，门缝一线漆黑、无光；门楣上方楼层显示屏亮着琥珀色「7」，屏幕其余区域无字；左侧绿色应急灯（#7FA88C）给墙面与地面一层冷绿，右侧按钮面板只有微光；周启明，42 岁，方脸浓眉、眉间竖纹，左眼下方小黑痣，灰黑寸头，青灰胡茬，穿深蓝工装夹克与灰 polo，左袖口磨白，站在画面左侧三分之一、侧背身，右手垂在身侧握一块黄色维修牌（牌面朝内、无任何可读文字）；地面有反光，墙面干净，无广告牌无海报，无文字无水印",
+        "last_frame_prompt": "同一机位、同一光位（左侧绿应急灯 + 门楣琥珀「7」），16:9；周启明已退到画面左侧阴影里，只剩肩背轮廓；黄色维修牌挂在电梯门右侧把手上，牌面侧向镜头、无可读文字；电梯门仍然紧闭，门缝漆黑，楼层显示仍是「7」，门机无动作；构图与首帧一致，仅人物位移与挂牌状态变化；无文字无水印",
+        "video_prompt": "Zhou hangs the yellow maintenance sign on the elevator handle with his right hand, then retreats a half-step into the shadow; his left hand rests at his waist with the keys. The elevator doors stay shut, the floor indicator glowing a steady amber; the corridor hums. Slow tilt up from the handle to the indicator. Preserving the exact cinematic medium, contrast, and color palette of the first frame. He stops in the shadow, watching the closed doors. Avoid deformed hands, extra fingers, extra limbs, hand passing through the door, elevator opening, cuts, text.",
+        "duration_sec": 7.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s07_elevator_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s07_elevator_last.png",
+        "video_path": "assets/videos/ch01_s07_elevator.mp4"
+      },
+      "interaction": {
+        "trigger_time_sec": 6.0,
+        "timeout_sec": 1.0,
+        "default_next_node": "ch01_s08_groupchat",
+        "options": []
+      }
+    },
+    {
+      "node_id": "ch01_s08_groupchat",
+      "node_type": "video_play",
+      "speaker": "旁白",
+      "dialogue": "业主群里有人说：704 好像出事，已经报警。",
+      "video": {
+        "first_frame_prompt": "703 玄关，过肩近景，16:9 电影静帧；机位在沈砚右后方、略高，越过右肩俯看手机；手机屏幕严重过曝、失焦，只看到几团模糊的冷白聊天气泡轮廓和一个未读红点，屏幕上没有任何可辨认文字；他的右手拇指悬在屏幕上方，指节因用力发白；屏幕冷白光（约 6500K）从下方打亮他的下半张脸，背景右侧暖黄台灯虚化，画面左缘一条门缝冷绿；沈砚，33 岁，窄长脸、单眼皮、左眉尾 1.5cm 旧疤，黑色三七分短发，穿深灰连帽卫衣与白 T，银色耳机挂脖；35mm，浅景深，背景干净，无文字无水印",
+        "last_frame_prompt": "同一过肩机位与轴线、同机位高度，16:9；沈砚已抬头看向防盗门与猫眼方向，手机垂在胸前、屏幕光已暗；一束警灯蓝红光从猫眼与窗帘缝扫进来，掠过他的右侧脸与眉尾旧疤，右后方暖黄台灯仍在；背景是干净玄关与防盗门，猫眼为视觉落点；末帧为同一镜结束构图，无切镜、无第二机位；35mm，浅景深，无文字无水印",
+        "video_prompt": "Shen's thumb slides once across the phone screen, then he slowly lifts his gaze from the overexposed screen toward the peephole; the phone lowers to his chest. Police light begins to sweep across the door seam in slow blue-red pulses, catching his cheek. Gentle handheld with a slow five-percent push-in, over-the-shoulder framing. Preserving the exact cinematic medium, contrast, and color palette of the first frame. He holds, eyes fixed on the peephole, jaw tight. Avoid deformed hands, extra fingers, extra limbs, readable screen text, fast motion, cuts, text.",
+        "duration_sec": 6.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s08_groupchat_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s08_groupchat_last.png",
+        "video_path": "assets/videos/ch01_s08_groupchat.mp4"
+      },
+      "interaction": {
+        "trigger_time_sec": 5.0,
+        "timeout_sec": 1.0,
+        "default_next_node": "ch01_s09_second_knock",
+        "options": []
+      }
+    },
+    {
+      "node_id": "ch01_s09_second_knock",
+      "node_type": "video_play",
+      "speaker": "周启明",
+      "dialogue": "警察来了，你打算怎么说？",
+      "video": {
+        "first_frame_prompt": "猫眼鱼眼视角，周启明站在 703 门外，手里攥着黄铜钥匙串，左眼下黑痣，寸头，走廊绿色应急灯，16:9",
+        "last_frame_prompt": "周启明把耳朵贴向门板，右手按住门框，钥匙串垂在身侧，门外警灯开始扫过墙面",
+        "video_prompt": "Zhou knocks harder, three heavy blows with his right fist, then leans close to the seam and speaks with quiet pressure; his left hand stays at his side. The door frame vibrates; dust falls from the ceiling; the green emergency light pulses. Slow push-in through the fisheye. Preserving the exact cinematic medium, contrast, and color palette of the first frame. He holds near the lens, eyes fixed on the peephole, waiting. Avoid deformed hands, extra fingers, extra limbs, hand passing through the door, cuts, text.",
+        "duration_sec": 6.6,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s09_second_knock_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s09_second_knock_last.png",
+        "video_path": "assets/videos/ch01_s09_second_knock.mp4"
+      },
+      "interaction": {
+        "trigger_time_sec": 6.5,
+        "timeout_sec": 0.1,
+        "default_next_node": "ch01_s10_choice",
+        "options": []
+      }
+    },
+    {
+      "node_id": "ch01_s10_choice",
+      "node_type": "choice_branch",
+      "speaker": "沈砚",
+      "dialogue": "门外的警灯，一下一下扫过猫眼。",
+      "video": {
+        "first_frame_prompt": "703 玄关，沈砚一手握手机一手搭在门把上，警灯红蓝光从猫眼与窗帘缝隙扫进来，深灰连帽卫衣，16:9",
+        "last_frame_prompt": "沈砚的手指停在门锁上，猫眼里红蓝光一闪而过，侧脸一半暖黄一半冷蓝",
+        "video_prompt": "Shen's gaze flicks from the peephole to the phone in his hand, then back; his thumb hovers over the screen without pressing, his breathing quickening. Police light sweeps across the curtain in slow pulses; the phone glow lights his fingers. Static medium close-up with subtle handheld breathing. Preserving the exact cinematic medium, contrast, and color palette of the first frame. He freezes, thumb suspended, eyes lifted toward the door, waiting for a decision. Avoid deformed hands, extra fingers, extra limbs, phone merging with fingers, cuts, text.",
+        "duration_sec": 7.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s10_choice_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s10_choice_last.png",
+        "video_path": "assets/videos/ch01_s10_choice.mp4"
+      },
+      "interaction": {
+        "trigger_time_sec": 3.0,
+        "timeout_sec": 4.0,
+        "default_next_node": "ch01_s12_end_silence",
+        "options": [
+          {
+            "option_id": "opt_testify",
+            "label": "开门，把录音交给警察",
+            "next_node": "ch01_s11_end_testify"
+          },
+          {
+            "option_id": "opt_silence",
+            "label": "关灯，删掉录音，装作睡着",
+            "next_node": "ch01_s12_end_silence"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ch01_s11_end_testify",
+      "node_type": "ending",
+      "speaker": "陈警官（画外音）",
+      "dialogue": "沈先生，把录音给我。",
+      "video": {
+        "first_frame_prompt": "703 门外走廊，两名警察背影，周启明被按在墙边，暗红地毯旁一副担架，毯子盖住人形，无血腥，警灯红蓝，16:9",
+        "last_frame_prompt": "警察抬着担架经过，沈砚站在门口，视线落在自家猫眼上，猫眼贴着一枚崭新的同款贴纸",
+        "video_prompt": "The gurney rolls past in the corridor as Shen stands just inside his doorway, his right hand resting on the handle; his eyes follow the covered stretcher, then lift toward the peephole. Police lights wash the walls in slow blue-red waves; the chain hangs still. Slow dolly in toward the peephole. Preserving the exact cinematic medium, contrast, and color palette of the first frame. His face settles into a hollow, exhausted stillness. Avoid deformed hands, extra fingers, extra limbs, cuts, text.",
+        "duration_sec": 7.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s11_end_testify_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s11_end_testify_last.png",
+        "video_path": "assets/videos/ch01_s11_end_testify.mp4"
+      }
+    },
+    {
+      "node_id": "ch01_s12_end_silence",
+      "node_type": "ending",
+      "speaker": "旁白",
+      "dialogue": "天亮之前，他删掉了那段录音。",
+      "video": {
+        "first_frame_prompt": "黑暗玄关，沈砚背靠防盗门坐在地上，手机屏幕照亮下颌，深灰连帽卫衣，银色耳机挂脖，16:9",
+        "last_frame_prompt": "次日清晨，703 门口拉起警戒线，走廊监控探头红灯亮着，地面有取证标记，无人",
+        "video_prompt": "Shen's thumb presses the delete prompt, then he lowers the phone and switches off the light; the entryway falls into darkness. The phone screen dies last, a faint blue afterglow on his fingers; the corridor light under the door fades. Slow dolly in until the frame is almost black. Preserving the exact cinematic medium, contrast, and color palette of the first frame. He stands motionless in the dark, only his breathing visible. Avoid deformed hands, extra fingers, extra limbs, phone merging with fingers, cuts, text.",
+        "duration_sec": 8.0,
+        "first_frame_path": "assets/frames/chapter_01/ch01_s12_end_silence_first.png",
+        "last_frame_path": "assets/frames/chapter_01/ch01_s12_end_silence_last.png",
+        "video_path": "assets/videos/ch01_s12_end_silence.mp4"
+      }
+    }
+  ]
+}
